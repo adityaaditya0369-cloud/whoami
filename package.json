@@ -1,0 +1,30 @@
+{
+  "name": "iam-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "db:seed": "tsx lib/db/seed.ts",
+    "db:reset": "node -e \"const fs=require('fs');['','-shm','-wal'].forEach(s=>fs.rmSync('data/iam-copilot.db'+s,{force:true,maxRetries:5,retryDelay:200}))\" && tsx lib/db/seed.ts"
+  },
+  "dependencies": {
+    "better-sqlite3": "13.0.3",
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "autoprefixer": "10.4.21",
+    "postcss": "8.5.6",
+    "tailwindcss": "3.4.18",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  }
+}
