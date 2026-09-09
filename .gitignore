@@ -1,27 +1,23 @@
-# dependencies
-/node_modules
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# database
+# database (gitignored — same as the Next.js version; keeps your real
+# catalog/activity data out of git, seed.py recreates the schema + catalog)
 /data
-/prisma/dev.db
-/prisma/dev.db-journal
 
 # env
 .env
 .env*.local
 
+# retired Next.js app (safety net in case these haven't been deleted yet —
+# see the cleanup commands from the Python rewrite; harmless either way)
+node_modules/
+.next/
+next-env.d.ts
+
 # misc
 .DS_Store
 *.pem
-npm-debug.log*
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts

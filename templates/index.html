@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="page">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-title-row">
+        <img src="{{ url_for('static', filename='img/dragon-badge.png') }}" alt="" class="header-badge" width="36" height="36">
+        <h1 class="site-title">IAM Copilot</h1>
+        <span class="version-tag">v1.0 · local</span>
+      </div>
+      <p class="site-subtitle">AI-Powered Identity &amp; Access Management Knowledge Hub</p>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="tab-bar" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="catalog">Catalog</button>
+      <button type="button" class="tab-btn" data-tab="activity">Daily activity log</button>
+    </div>
+
+    <section data-tab-panel="catalog">
+      <div class="search-wrap">
+        <img src="{{ url_for('static', filename='img/dragon-badge.png') }}" alt="" class="search-icon" width="22" height="22">
+
+        <input
+          id="search-input"
+          type="text"
+          placeholder="Search SAML, OIDC, MFA, SCIM, provisioning, agent..."
+          aria-label="Search the IAM and Okta feature catalog"
+          autocomplete="off"
+        />
+      </div>
+
+      <div id="catalog-results">
+        {% include "_catalog_results.html" %}
+      </div>
+    </section>
+
+    <section data-tab-panel="activity" hidden>
+      <div class="activity-wrap" id="activity-results">
+        {% include "_activity_timeline.html" %}
+      </div>
+    </section>
+
+  </div>
+
+  <div id="detail-overlay" class="detail-overlay" hidden>
+    <div class="detail-backdrop" data-action="close-detail"></div>
+    <div class="detail-panel thin-scroll" role="dialog" aria-modal="true" id="detail-panel-content"></div>
+  </div>
+
+  <div class="copilot-teaser" id="copilot-teaser" role="dialog" aria-label="IAM Copilot greeting" hidden>
+    <button type="button" class="teaser-close" id="copilot-teaser-close" aria-label="Dismiss">&times;</button>
+    <div class="teaser-header">
+      <img src="{{ url_for('static', filename='img/dragon-badge.png') }}" alt="" width="40" height="40">
+      <div>
+        <p class="teaser-title">IAM Copilot</p>
+        <p class="teaser-status"><span class="status-dot"></span>Usually replies instantly</p>
+      </div>
+    </div>
+    <p class="teaser-greeting">Hi there! 👋<br>Got a question about SSO, SAML, MFA, or provisioning?</p>
+    <button type="button" class="teaser-cta" id="copilot-teaser-cta">
+      Ask the Copilot
+      <span aria-hidden="true">&rarr;</span>
+    </button>
+  </div>
+
+  <div id="copilot-panel" class="copilot-panel" role="dialog" aria-modal="true" aria-label="IAM Copilot chat" hidden>
+    <div class="panel-header">
+      <img src="{{ url_for('static', filename='img/dragon-badge.png') }}" alt="" class="panel-badge" width="32" height="32">
+      <div class="panel-header-text">
+        <p class="panel-title">IAM Copilot</p>
+        <p class="panel-status"><span class="status-dot"></span>Online</p>
+      </div>
+      <button type="button" id="copilot-panel-close" class="panel-close" aria-label="Close chat">&times;</button>
+    </div>
+
+    <div class="copilot-wrap">
+      <div class="copilot-intro">
+        <p>
+          Ask about any Okta or IAM concept in the catalog. Answers come from
+          Google Gemini, grounded in the local feature catalog.
+          <span class="muted">This is a knowledge prototype — there is no live Okta connection, so it cannot look up your real access (yet).</span>
+        </p>
+      </div>
+
+      <div class="copilot-messages" id="copilot-messages">
+        <div class="copilot-examples" id="copilot-examples">
+          <p class="examples-label">Try asking:</p>
+          <button type="button" class="example-btn">What is the difference between SAML and OIDC?</button>
+          <button type="button" class="example-btn">When should I use SCIM vs Okta Workflows for provisioning?</button>
+          <button type="button" class="example-btn">Why don't I have access to Salesforce?</button>
+          <button type="button" class="example-btn">How does adaptive MFA decide when to challenge me?</button>
+        </div>
+      </div>
+
+      <div id="copilot-error" class="copilot-error" hidden>
+        <p id="copilot-error-text"></p>
+        <button type="button" class="btn-outline-amber" id="copilot-retry" hidden>Try again</button>
+      </div>
+
+      <form id="copilot-form" class="copilot-form">
+        <input
+          id="copilot-input"
+          type="text"
+          placeholder="Ask the IAM Copilot…"
+          aria-label="Ask the IAM Copilot a question"
+          autocomplete="off"
+        />
+        <button type="submit" id="copilot-send">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <button type="button" id="copilot-launcher" class="copilot-launcher" title="Ask the IAM Copilot" aria-label="Ask the IAM Copilot">
+    <img src="{{ url_for('static', filename='img/dragon-badge.png') }}" alt="" width="34" height="34">
+  </button>
+</main>
+{% endblock %}

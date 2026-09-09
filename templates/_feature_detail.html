@@ -1,0 +1,76 @@
+{# Slide-over detail panel content — ported from FeatureDetailPanel.tsx.
+   Rendered into #detail-panel-content by both the initial "open feature"
+   fetch and the "change status" POST response. #}
+<div class="detail-head">
+  <div>
+    <div class="muted-tag">{{ feature.category }}</div>
+    <h2 class="detail-title">{{ feature.name }}</h2>
+  </div>
+  <button type="button" class="btn-outline" data-action="close-detail" aria-label="Close details">Close</button>
+</div>
+
+<p class="detail-desc">{{ feature.description }}</p>
+
+<div class="detail-section">
+  <h3 class="section-title">Okta capability</h3>
+  <p class="section-body">{{ feature.oktaCapability }}</p>
+</div>
+
+<div class="detail-section">
+  <h3 class="section-title">Protocols</h3>
+  <div class="badge-row">
+    {% for p in feature.protocols %}
+    <span class="protocol-badge">{{ p }}</span>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="detail-section">
+  <h3 class="section-title">Agent / integration</h3>
+  <p class="section-body">{{ feature.agentType }}</p>
+</div>
+
+<div class="detail-section">
+  <h3 class="section-title">Use cases</h3>
+  <ul class="dot-list">
+    {% for u in feature.useCases %}
+    <li><span class="dot dot-muted"></span>{{ u }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="detail-section">
+  <h3 class="section-title">Security considerations</h3>
+  <ul class="dot-list">
+    {% for s in feature.securityConsiderations %}
+    <li><span class="dot dot-amber"></span>{{ s }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% if feature.relatedFeatureSlugs | length > 0 %}
+<div class="detail-section">
+  <h3 class="section-title">Related features</h3>
+  <div class="badge-row">
+    {% for slug in feature.relatedFeatureSlugs %}
+    <span class="related-chip">{{ slug.replace('-', ' ') }}</span>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="detail-section">
+  <h3 class="section-title">Learning status</h3>
+  <div class="status-row">
+    <span class="status-badge status-{{ feature.status }}">{{ status_labels[feature.status] }}</span>
+    <div class="badge-row">
+      {% for s in status_order %}
+        {% if s != feature.status %}
+        <button type="button" class="btn-outline btn-small" data-action="set-status" data-feature-id="{{ feature.id }}" data-status="{{ s }}">
+          Mark {{ status_labels[s] }}
+        </button>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

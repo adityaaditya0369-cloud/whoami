@@ -1,0 +1,44 @@
+{# Category filter bar + feature grid — shared by the initial page render
+   and the /api/features/fragment live-search endpoint, so both always stay
+   in sync with exactly one template. Ported from CategoryFilter.tsx +
+   FeatureCard.tsx. #}
+<div class="category-filter" role="tablist" aria-label="Filter by category">
+  <button
+    type="button"
+    role="tab"
+    aria-selected="{{ 'true' if not active_category else 'false' }}"
+    class="category-chip {{ 'active' if not active_category else '' }}"
+    data-category=""
+  >All</button>
+  {% for cat in categories %}
+  <button
+    type="button"
+    role="tab"
+    aria-selected="{{ 'true' if active_category == cat else 'false' }}"
+    class="category-chip {{ 'active' if active_category == cat else '' }}"
+    data-category="{{ cat }}"
+  >{{ cat }} <span class="chip-count">{{ counts.get(cat, 0) }}</span></button>
+  {% endfor %}
+</div>
+
+{% if features | length == 0 %}
+  <p class="empty-state">No features match &ldquo;{{ query }}&rdquo;. Try a different protocol, category, or keyword.</p>
+{% else %}
+  <div class="feature-grid">
+    {% for f in features %}
+    <button type="button" class="feature-card" data-feature-id="{{ f.id }}">
+      <h3 class="feature-card-title">{{ f.name }}</h3>
+      <p class="feature-card-desc">{{ f.description }}</p>
+      <div class="badge-row">
+        {% for p in f.protocols[:3] %}
+        <span class="protocol-badge">{{ p }}</span>
+        {% endfor %}
+      </div>
+      <div class="feature-card-bottom">
+        <span class="muted-tag">{{ f.category }}</span>
+        <span class="status-badge status-{{ f.status }}">{{ status_labels[f.status] }}</span>
+      </div>
+    </button>
+    {% endfor %}
+  </div>
+{% endif %}

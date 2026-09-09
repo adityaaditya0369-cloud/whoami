@@ -1,0 +1,24 @@
+{# Ported from ActivityTimeline.tsx. Grouping/time-formatting is done in
+   activity.group_for_display() so this stays pure presentation. #}
+{% if activity_groups | length == 0 %}
+  <p class="empty-state">No activity yet — search the catalog or open a feature to start the log.</p>
+{% else %}
+  <div class="activity-groups">
+    {% for group in activity_groups %}
+    <div class="activity-group">
+      <h4 class="activity-heading">{{ group.heading }}</h4>
+      <ul class="activity-list">
+        {% for a in group.entries %}
+        <li class="activity-item">
+          <span class="dot {{ a.dot_class }}"></span>
+          <div class="activity-row">
+            <p class="activity-desc">{{ a.description }}</p>
+            <span class="activity-time">{{ a.time }}</span>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+{% endif %}
