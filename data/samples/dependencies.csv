@@ -1,0 +1,4 @@
+source,target,kind,notes
+Mobile Expenses,Expense Portal,DEPENDS_ON,Mobile app uses the Expense Portal session and APIs (FICTIONAL sample)
+Engineering Wiki (Confluence DC),Jira DC,INTEGRATES,Wiki embeds Jira issues; both should move to the same IdP together
+HR Analytics (Tableau),Workday,DATA_FEED,Nightly HR data feed; validate the downstream report after cutover

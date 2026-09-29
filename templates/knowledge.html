@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Knowledge base{% endblock %}
+{% block heading %}<h1>Knowledge base</h1>
+<div class="sub">Runbooks, vendor SSO guides and standards the review agents search and cite. Indexed locally (keyword search); nothing is sent anywhere to index it.</div>{% endblock %}
+{% block content %}
+<div class="grid g-7-5 mb">
+  <div class="card">
+    <h2>Search <span class="muted">what an agent would find</span></h2>
+    <form method="get" class="toolbar" style="margin:0 0 12px">
+      <input name="q" value="{{ q }}" placeholder="e.g. SHA-1 signing, Okta-only groups, NameID" style="flex:1;min-width:240px" aria-label="Search">
+      <select name="app" aria-label="App"><option value="">All-app documents</option>{% for x in apps %}<option value="{{ x.id }}" {{ 'selected' if app_id == x.id }}>+ {{ x.label }}</option>{% endfor %}</select>
+      <button class="btn secondary">Search</button></form>
+    {% for h in hits %}
+      <div class="hit"><div class="src"><span class="kbref">{{ h.ref }}</span> <b>{{ h.doc_title }}</b>{% if h.heading %} › {{ h.heading }}{% endif %} · score {{ h.score }}</div><p>{{ h.text }}</p></div>
+    {% else %}{% if q %}<p class="muted">No passages match.</p>{% else %}<p class="muted small">Try a search to see which passages the agents would be given.</p>{% endif %}{% endfor %}
+  </div>
+  <div class="card">
+    <h2>Add a document</h2>
+    <form method="post" action="{{ url_for('pipeline.knowledge_upload') }}" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <div class="formgrid">
+        <label>File</label><input type="file" name="file" required accept="{{ allowed|join(',') }}">
+        <label>Title</label><input name="title" placeholder="Defaults to the file name">
+        <label>Applies to</label><select name="app_id"><option value="">All apps</option>{% for x in apps %}<option value="{{ x.id }}">{{ x.label }}</option>{% endfor %}</select>
+        <label>Tags</label><input name="tags" placeholder="comma separated">
+        <label>Your name</label><input name="actor" value="{{ current_actor }}" required>
+      </div>
+      <p class="toolbar" style="margin:12px 0 0"><button class="btn">Upload</button>
+        <span class="muted small">{{ allowed|join(' ') }} · max {{ settings.knowledge_max_upload_mb }} MB</span></p>
+    </form>
+    <p class="muted small">Documents go to Claude only as short passages inside an agent request, and only when AI_PROVIDER=anthropic
+      (URLs are masked when AI_MASK_DATA=true). Don't upload secrets.</p>
+  </div>
+</div>
+<div class="card">
+  <h2>Documents <span class="muted">{{ stats.docs }} document(s) · {{ stats.chunks }} passage(s)</span></h2>
+  {% if docs %}
+  <div class="table-wrap"><table><thead><tr><th>Title</th><th>File</th><th>Applies to</th><th class="num">Passages</th><th>Added</th><th></th></tr></thead><tbody>
+  {% for d in docs %}<tr><td><b>{{ d.title }}</b>{% if d.tags %}<div class="small muted">{{ d.tags|join(', ') }}</div>{% endif %}</td>
+    <td class="small mono">{{ d.filename }}</td>
+    <td class="small">{{ (apps|selectattr('id', 'equalto', d.app_id)|map(attribute='label')|first) if d.app_id else 'All apps' }}</td>
+    <td class="num">{{ d.chunks|length }}</td><td class="small nowrap">{{ d.uploaded_at|dt }} · {{ d.uploaded_by }}</td>
+    <td><form method="post" action="{{ url_for('pipeline.knowledge_delete', doc_id=d.id) }}" class="toolbar" style="margin:0">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}"><input name="actor" value="{{ current_actor }}" required placeholder="Your name" style="width:120px" aria-label="Your name">
+      <button class="btn danger">Remove</button></form></td></tr>{% endfor %}
+  </tbody></table></div>
+  {% else %}<div class="empty"><b>No documents yet</b>Upload the customer's SSO standards, runbooks and vendor guides. A fictional sample is in data/knowledge/.</div>{% endif %}
+</div>
+{% endblock %}

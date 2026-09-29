@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}{{ a.label }} · strategy{% endblock %}
+{% macro csrf() %}<input type="hidden" name="_csrf" value="{{ csrf_token() }}">{% endmacro %}
+{% macro strat(s) %}{% if s %}<span class="chip s-{{ s }}">{{ s|title }}</span>{% else %}<span class="muted">—</span>{% endif %}{% endmacro %}
+{% block heading %}<div class="small"><a href="{{ url_for('strategy_model.pack') }}#tab-architect">← Strategy pack</a> · <a href="{{ url_for('web.application', app_id=a.id) }}">App details</a>{% if a.is_saml %} · <a href="{{ url_for('pipeline.app_pipeline', app_id=a.id) }}">Pipeline</a>{% endif %}</div>
+<h1>{{ a.label }}</h1>
+<div class="sub"><span class="proto {{ a.protocol }}">{{ a.protocol }}</span> {{ strat(r.strategy) }}
+  {% if r.compat %}<span class="chip cl-{{ r.compat }}">compatibility {{ r.compat|lower }}</span>{% endif %}
+  <span class="chip plain state">{{ r.wave }}</span> <span class="small muted">risk {{ r.risk|lower }} · complexity {{ r.complexity|lower }}</span></div>{% endblock %}
+{% block content %}
+<div class="grid g-7-5 mb">
+  <div class="card">
+    <h2>Why {{ (r.strategy or 'no strategy')|lower }}</h2>
+    <p class="small muted" style="margin-top:0">{{ HELP.get(r.strategy, '') }}</p>
+    <ul class="list-clean">{% for x in r.reasons %}<li>{% if x.rule == 'OVERRIDE' %}<b>{{ x.text }}</b> <span class="small muted">(rules chose {{ x.rules_chose|lower }})</span>
+      {% else %}{{ x.text }}{% if x.evidence %}<div class="small muted">{{ x.evidence }}</div>{% endif %}{% endif %}</li>{% endfor %}</ul>
+    {% if r.prerequisites %}<h3>Prerequisites (tenant-level design, before this app's wave)</h3>
+      <ul class="list-clean">{% for h in r.prerequisites %}<li>{{ h.evidence }} → {{ p.catalog[h.key].pf_capability }}</li>{% endfor %}</ul>{% endif %}
+    {% if r.wave_reasons or r.flags %}<h3>Sequencing</h3><ul class="list-clean">{% for x in r.wave_reasons %}<li>{{ x }}</li>{% endfor %}
+      {% for x in r.flags %}<li style="color:var(--warn)">{{ x }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  <div class="card">
+    <h2>Complexity factors <span class="muted">from the risk engine{{ ' + dependencies' if r.factors.Dependencies }}</span></h2>
+    {% set mx = r.factors.values()|max %}
+    {% for f in FACTORS %}<div class="bar-row"><div class="small">{{ f }}</div><div class="bar"><span style="width: {{ (100 * r.factors[f] / (mx or 1))|round|int }}%"></span></div><div class="num small">{{ r.factors[f] }}</div></div>{% endfor %}
+    <p class="small muted" style="margin-bottom:0">Dependencies are shown for context (2 points each, max 6) and are not part of the risk score.</p>
+  </div>
+</div>
+
+<div class="grid g2 mb">
+  <div class="card">
+    <h2>Build detail</h2>
+    {% if a.is_saml and a.saml %}{% set s = a.saml %}
+    <div class="table-wrap"><table><tbody>
+      <tr><th style="width:170px">Entity ID</th><td class="mono small">{{ s.audience or 'from vendor metadata' }}</td></tr>
+      <tr><th>NameID</th><td class="small">Okta <span class="mono">{{ s.name_id_template or '?' }}</span> ({{ (s.name_id_format or 'unspecified').rsplit(':',1)[-1] }})
+        → {{ p.target }} <span class="chip {{ s.pf_nameid_source or 'UNKNOWN' }}">{{ s.pf_nameid_source or '?' }}</span> <span class="mono">{{ s.pf_nameid_detail or '' }}</span></td></tr>
+      <tr><th>Certificate</th><td class="small">New {{ p.target }} signing certificate: the SP must import it at cutover.
+        {% for c in a.certificates if c.is_active_signing_key %}Current Okta cert expires {{ c.not_after|dt('%d %b %Y') }}.{% endfor %}</td></tr>
+      <tr><th>SLO · ACS</th><td class="small">{{ 'SLO enabled' if s.slo_enabled else 'no SLO' }} · {{ (s.acs_endpoints or [])|length or 1 }} ACS URL(s)</td></tr>
+    </tbody></table></div>
+    <h3>Attribute mapping</h3>
+    <div class="table-wrap"><table><thead><tr><th>Attribute</th><th>Okta</th><th>{{ p.target }} source</th></tr></thead><tbody>
+      {% for c in a.claims %}<tr><td><b>{{ c.name }}</b></td>
+        <td class="mono small">{{ (c.group_filter_type ~ ' ' ~ c.group_filter_value) if c.claim_type == 'GROUP' else c['values']|join(', ') }}</td>
+        <td><span class="chip {{ c.pf_source or 'UNKNOWN' }}">{{ c.pf_source or '?' }}</span> <span class="small mono">{{ c.pf_source_detail or '' }}</span></td></tr>
+      {% else %}<tr><td colspan="3" class="muted">No attribute statements{{ ' visible (OIN catalog app: take them from the vendor guide)' if not a.is_custom_saml }}.</td></tr>{% endfor %}
+    </tbody></table></div>
+    {% elif a.is_oidc and a.oidc %}{% set o = a.oidc %}
+    <div class="table-wrap"><table><tbody>
+      <tr><th style="width:170px">Client ID</th><td class="mono small">{{ o.client_id }} <span class="muted">(can be kept)</span></td></tr>
+      <tr><th>Client auth</th><td class="small">{{ o.token_endpoint_auth_method }}{{ ' · plan for a new client secret' if (o.token_endpoint_auth_method or '').startswith('client_secret') }}</td></tr>
+      <tr><th>Grants</th><td class="small">{{ (o.grant_types or [])|join(', ') }}{{ ' · PKCE required' if o.pkce_required }}</td></tr>
+      <tr><th>Redirect URIs</th><td class="small mono">{{ (o.redirect_uris or [])|join('\n') or '—' }}</td></tr>
+      <tr><th>Tokens from</th><td class="small">{{ 'Custom authorization server ' ~ a.auth_server_id ~ ' → access token manager + OIDC policy' if a.auth_server_id else 'Org authorization server → default OIDC policy' }}</td></tr>
+    </tbody></table></div>
+    {% else %}<p class="muted">Not a federated app ({{ a.sign_on_mode }}). {{ r.reasons[0].text if r.reasons else '' }}</p>{% endif %}
+  </div>
+  <div class="card">
+    <h2>Validation checklist <span class="muted">{{ r.validation|length }} tests</span></h2>
+    <ol class="list-clean">{% for t in r.validation %}<li>{{ t }}</li>{% else %}<li class="muted">Nothing to validate (not migrated).</li>{% endfor %}</ol>
+    {% if r.depends_on or r.depended_by %}<h3>Dependencies</h3><ul class="list-clean">
+      {% for n, k in r.depends_on %}<li>Depends on <b>{{ n }}</b> <span class="small muted">{{ k|lower|replace('_',' ') }}</span></li>{% endfor %}
+      {% for n, k in r.depended_by %}<li><b>{{ n }}</b> depends on this app <span class="small muted">{{ k|lower|replace('_',' ') }}</span></li>{% endfor %}</ul>{% endif %}
+  </div>
+</div>
+
+<div class="grid g2">
+  <div class="card"><h2>Detected features</h2>
+    <div class="table-wrap"><table><thead><tr><th>Feature</th><th>{{ p.target }}</th><th>Evidence</th></tr></thead><tbody>
+    {% for h in r.hits + r.prerequisites %}{% set c = p.catalog.get(h.key) %}<tr><td><b>{{ c.okta_feature if c else h.key }}</b><div class="small muted mono">{{ h.key }}</div></td>
+      <td class="small">{% if c %}<span class="chip c-{{ c.compatibility }}">{{ c.compatibility|title }}</span> {{ c.pf_capability }}{% endif %}</td>
+      <td class="small">{{ h.evidence }}</td></tr>{% endfor %}</tbody></table></div></div>
+  <div class="card"><h2>Architecture decision</h2>
+    <p class="small muted" style="margin-top:0">Override the rules' strategy for this app. It is recorded with your name and reason and shown in every report.</p>
+    {% if override %}<p class="small"><b>Current:</b> {{ override.strategy|title }} by {{ override.actor }} — {{ override.reason }}</p>{% endif %}
+    <form method="post" action="{{ url_for('strategy_model.override', app_id=a.id) }}">{{ csrf() }}
+      <div class="toolbar" style="margin:0 0 8px"><select name="strategy">{% for k in STRATEGIES %}<option value="{{ k }}" {{ 'selected' if k == r.strategy }}>{{ k|title }}</option>{% endfor %}
+        <option value="RULES">Use the rules again</option></select>
+        <input name="actor" placeholder="Your name" value="{{ current_actor }}" required></div>
+      <textarea name="reason" rows="2" style="width:100%" placeholder="Reason (required)" required></textarea>
+      <p style="margin:8px 0 0"><button class="btn">Record decision</button></p></form></div>
+</div>
+{% endblock %}

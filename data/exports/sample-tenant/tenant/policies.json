@@ -1,0 +1,198 @@
+[
+  {
+    "_embedded": {
+      "rules": [
+        {
+          "actions": {
+            "signon": {
+              "access": "ALLOW",
+              "requireFactor": false
+            }
+          },
+          "id": "0prDefaultRule",
+          "name": "Default Rule",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "id": "00p0globaldefault01",
+    "name": "Default Policy",
+    "priority": 2,
+    "status": "ACTIVE",
+    "system": true,
+    "type": "OKTA_SIGN_ON"
+  },
+  {
+    "_embedded": {
+      "rules": [
+        {
+          "actions": {
+            "signon": {
+              "access": "ALLOW",
+              "requireFactor": true
+            }
+          },
+          "conditions": {
+            "network": {
+              "connection": "ZONE",
+              "include": [
+                "nzo0legacyip000001"
+              ]
+            },
+            "people": {
+              "groups": {
+                "include": [
+                  "00g0engcontractors0h"
+                ]
+              }
+            }
+          },
+          "id": "0prContractorsMFA",
+          "name": "Contractors MFA",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "id": "00p0contractors0002",
+    "name": "Contractors session",
+    "priority": 1,
+    "status": "ACTIVE",
+    "type": "OKTA_SIGN_ON"
+  },
+  {
+    "_embedded": {
+      "rules": [
+        {
+          "actions": {
+            "appSignOn": {
+              "access": "ALLOW",
+              "verificationMethod": {
+                "factorMode": "1FA",
+                "type": "ASSURANCE"
+              }
+            }
+          },
+          "id": "0prCatch-allRule",
+          "name": "Catch-all Rule",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "id": "rst0default0000000",
+    "name": "Default Policy",
+    "status": "ACTIVE",
+    "system": true,
+    "type": "ACCESS_POLICY"
+  },
+  {
+    "_embedded": {
+      "rules": [
+        {
+          "actions": {
+            "appSignOn": {
+              "access": "ALLOW",
+              "verificationMethod": {
+                "factorMode": "2FA",
+                "type": "ASSURANCE"
+              }
+            }
+          },
+          "conditions": {
+            "device": {
+              "managed": true,
+              "registered": true
+            }
+          },
+          "id": "0prManageddevices",
+          "name": "Managed devices",
+          "status": "ACTIVE"
+        },
+        {
+          "actions": {
+            "appSignOn": {
+              "access": "DENY"
+            }
+          },
+          "conditions": {
+            "network": {
+              "connection": "ZONE",
+              "exclude": [
+                "nzo0legacyip000001"
+              ]
+            }
+          },
+          "id": "0prOffnetwork:den",
+          "name": "Off network: deny",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "id": "rst0highassur00001",
+    "name": "High assurance apps",
+    "status": "ACTIVE",
+    "type": "ACCESS_POLICY"
+  },
+  {
+    "_embedded": {
+      "rules": [
+        {
+          "actions": {
+            "appSignOn": {
+              "access": "ALLOW",
+              "verificationMethod": {
+                "factorMode": "2FA",
+                "type": "ASSURANCE"
+              }
+            }
+          },
+          "conditions": {
+            "people": {
+              "groups": {
+                "include": [
+                  "00g0finance00000000c"
+                ]
+              }
+            }
+          },
+          "id": "0prFinanceMFA",
+          "name": "Finance MFA",
+          "status": "ACTIVE"
+        }
+      ]
+    },
+    "id": "rst0finance0000002",
+    "name": "Finance apps",
+    "status": "ACTIVE",
+    "type": "ACCESS_POLICY"
+  },
+  {
+    "_embedded": {
+      "rules": []
+    },
+    "id": "00p0mfaenroll000001",
+    "name": "Default Policy",
+    "settings": {
+      "authenticators": [
+        {
+          "enroll": {
+            "self": "REQUIRED"
+          },
+          "key": "okta_verify"
+        }
+      ]
+    },
+    "status": "ACTIVE",
+    "system": true,
+    "type": "MFA_ENROLL"
+  },
+  {
+    "_embedded": {
+      "rules": []
+    },
+    "id": "00p0password0000001",
+    "name": "Default Policy",
+    "status": "ACTIVE",
+    "system": true,
+    "type": "PASSWORD"
+  }
+]

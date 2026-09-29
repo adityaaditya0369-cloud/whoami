@@ -1,0 +1,2 @@
+# Automated test SSO (TEST_SSO_ENABLED=true). After installing run:  python -m playwright install chromium
+playwright>=1.45

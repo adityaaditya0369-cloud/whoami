@@ -1,0 +1,13 @@
+.env
+secrets/
+*.pem
+data/*.db
+data/exports/*
+!data/exports/sample-tenant/
+data/pf-exports/*
+!data/pf-exports/sample-pf/
+__pycache__/
+.pytest_cache/
+.venv/
+data/demo/
+instance/

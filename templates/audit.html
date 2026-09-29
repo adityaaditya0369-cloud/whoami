@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Audit log{% endblock %}
+{% block heading %}<h1>Audit log</h1><div class="sub">Latest 300 events · append-only</div>{% endblock %}
+{% block content %}
+<div class="table-wrap"><table><thead>
+  <tr><th>Time</th><th>Actor</th><th>Event</th><th>Application</th><th>State</th><th>Detail</th></tr></thead><tbody>
+  {% for e in events %}
+  <tr><td style="white-space:nowrap">{{ e.ts|dt }}</td><td>{{ e.actor }}</td><td class="mono">{{ e.event_type }}</td>
+      <td>{% if e.application %}<a href="{{ url_for('web.application', app_id=e.app_id) }}">{{ e.application.label }}</a>{% endif %}</td>
+      <td>{% if e.to_state %}{{ e.from_state }} → {{ e.to_state }}{% endif %}</td>
+      <td class="mono small break">{{ e.detail|tojson }}</td></tr>
+  {% else %}<tr><td colspan="6" class="muted">No events.</td></tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

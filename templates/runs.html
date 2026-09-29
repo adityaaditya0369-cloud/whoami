@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Discovery runs{% endblock %}
+{% block heading %}<h1>Discovery runs</h1><div class="sub">Every discovery run, including failures</div>{% endblock %}
+{% block content %}
+<div class="table-wrap"><table><thead>
+  <tr><th>#</th><th>Started</th><th>Finished</th><th>Actor</th><th>Source</th><th>Status</th>
+      <th class="num">Apps</th><th class="num">SAML</th><th class="num">New</th><th class="num">Changed</th><th class="num">Removed</th></tr></thead><tbody>
+  {% for r in runs %}
+  <tr><td>{{ r.id }}</td><td>{{ r.started_at|dt }}</td><td>{{ r.finished_at|dt }}</td><td>{{ r.actor }}</td>
+      <td class="mono">{{ r.source }}: {{ r.source_ref }}</td>
+      <td><span class="chip {{ 'OK' if r.status == 'SUCCESS' else ('CRITICAL' if r.status == 'FAILED' else 'INFO') }}">{{ r.status }}</span>
+          {% if r.error %}<div class="mono" style="color:var(--crit)">{{ r.error }}</div>{% endif %}</td>
+      <td class="num">{{ r.apps_total }}</td><td class="num">{{ r.saml_apps }}</td><td class="num">{{ r.new_apps }}</td>
+      <td class="num">{{ r.changed_apps }}</td><td class="num">{{ r.removed_apps }}</td></tr>
+  {% else %}<tr><td colspan="11" class="muted">No runs yet.</td></tr>{% endfor %}
+</tbody></table></div>
+{% endblock %}

@@ -1,0 +1,321 @@
+{
+  "items": [
+    {
+      "id": "expense",
+      "type": "SP",
+      "name": "Expense Portal",
+      "entityId": "https://expenses.northwind.example",
+      "active": true,
+      "virtualIdentities": [],
+      "credentials": {
+        "signingSettings": {
+          "signingKeyPairRef": {
+            "id": "pfsigning2026"
+          },
+          "algorithm": "SHA256withRSA"
+        }
+      },
+      "spBrowserSso": {
+        "protocol": "SAML20",
+        "enabledProfiles": [
+          "IDP_INITIATED_SSO",
+          "SP_INITIATED_SSO"
+        ],
+        "signAssertions": true,
+        "ssoServiceEndpoints": [
+          {
+            "binding": "POST",
+            "url": "https://expenses.northwind.example/saml/acs",
+            "index": 0,
+            "isDefault": true
+          }
+        ],
+        "sloServiceEndpoints": [],
+        "attributeContract": {
+          "coreAttributes": [
+            {
+              "name": "SAML_SUBJECT",
+              "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+            }
+          ],
+          "extendedAttributes": [
+            {
+              "name": "email",
+              "nameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            }
+          ]
+        },
+        "adapterMappings": [
+          {
+            "idpAdapterRef": {
+              "id": "HTMLFormAD"
+            },
+            "attributeContractFulfillment": {
+              "SAML_SUBJECT": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "SAML_SUBJECT"
+              },
+              "email": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "email"
+              }
+            },
+            "issuanceCriteria": {
+              "conditionalCriteria": [
+                {
+                  "source": {
+                    "type": "LDAP_DATA_STORE"
+                  },
+                  "attributeName": "memberOf",
+                  "condition": "MULTIVALUE_CONTAINS_DN",
+                  "value": "CN=App Users,OU=Groups,DC=northwind,DC=example"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "engwiki",
+      "type": "SP",
+      "name": "Engineering Wiki (Confluence DC)",
+      "entityId": "https://wiki.northwind.example",
+      "active": true,
+      "virtualIdentities": [],
+      "credentials": {
+        "signingSettings": {
+          "signingKeyPairRef": {
+            "id": "pfsigning2026"
+          },
+          "algorithm": "SHA256withRSA"
+        }
+      },
+      "spBrowserSso": {
+        "protocol": "SAML20",
+        "enabledProfiles": [
+          "IDP_INITIATED_SSO",
+          "SP_INITIATED_SSO"
+        ],
+        "signAssertions": true,
+        "ssoServiceEndpoints": [
+          {
+            "binding": "POST",
+            "url": "https://wiki.northwind.example/plugins/servlet/samlconsumer",
+            "index": 0,
+            "isDefault": true
+          }
+        ],
+        "sloServiceEndpoints": [],
+        "attributeContract": {
+          "coreAttributes": [
+            {
+              "name": "SAML_SUBJECT",
+              "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+            }
+          ],
+          "extendedAttributes": [
+            {
+              "name": "email",
+              "nameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            },
+            {
+              "name": "fullName",
+              "nameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            },
+            {
+              "name": "groups",
+              "nameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            }
+          ]
+        },
+        "adapterMappings": [
+          {
+            "idpAdapterRef": {
+              "id": "HTMLFormAD"
+            },
+            "attributeContractFulfillment": {
+              "SAML_SUBJECT": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "SAML_SUBJECT"
+              },
+              "email": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "email"
+              },
+              "fullName": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "fullName"
+              },
+              "groups": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "groups"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "servicenow",
+      "type": "SP",
+      "name": "ServiceNow",
+      "entityId": "https://northwind.service-now.com",
+      "active": true,
+      "virtualIdentities": [],
+      "credentials": {
+        "signingSettings": {
+          "signingKeyPairRef": {
+            "id": "pfsigning2026"
+          },
+          "algorithm": "SHA256withRSA"
+        }
+      },
+      "spBrowserSso": {
+        "protocol": "SAML20",
+        "enabledProfiles": [
+          "IDP_INITIATED_SSO",
+          "SP_INITIATED_SSO"
+        ],
+        "signAssertions": true,
+        "ssoServiceEndpoints": [
+          {
+            "binding": "POST",
+            "url": "https://northwind.service-now.com/navpage.do",
+            "index": 0,
+            "isDefault": true
+          }
+        ],
+        "sloServiceEndpoints": [],
+        "attributeContract": {
+          "coreAttributes": [
+            {
+              "name": "SAML_SUBJECT",
+              "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+            }
+          ],
+          "extendedAttributes": []
+        },
+        "adapterMappings": [
+          {
+            "idpAdapterRef": {
+              "id": "HTMLFormAD"
+            },
+            "attributeContractFulfillment": {
+              "SAML_SUBJECT": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "SAML_SUBJECT"
+              }
+            },
+            "issuanceCriteria": {
+              "conditionalCriteria": [
+                {
+                  "source": {
+                    "type": "LDAP_DATA_STORE"
+                  },
+                  "attributeName": "memberOf",
+                  "condition": "MULTIVALUE_CONTAINS_DN",
+                  "value": "CN=App Users,OU=Groups,DC=northwind,DC=example"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "payroll",
+      "type": "SP",
+      "name": "Payroll (already on PingFederate)",
+      "entityId": "https://payroll.northwind.example",
+      "active": true,
+      "virtualIdentities": [],
+      "credentials": {
+        "signingSettings": {
+          "signingKeyPairRef": {
+            "id": "pfsigning2026"
+          },
+          "algorithm": "SHA256withRSA"
+        }
+      },
+      "spBrowserSso": {
+        "protocol": "SAML20",
+        "enabledProfiles": [
+          "IDP_INITIATED_SSO",
+          "SP_INITIATED_SSO"
+        ],
+        "signAssertions": true,
+        "ssoServiceEndpoints": [
+          {
+            "binding": "POST",
+            "url": "https://payroll.northwind.example/sso",
+            "index": 0,
+            "isDefault": true
+          }
+        ],
+        "sloServiceEndpoints": [],
+        "attributeContract": {
+          "coreAttributes": [
+            {
+              "name": "SAML_SUBJECT",
+              "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
+            }
+          ],
+          "extendedAttributes": [
+            {
+              "name": "email",
+              "nameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            }
+          ]
+        },
+        "adapterMappings": [
+          {
+            "idpAdapterRef": {
+              "id": "HTMLFormAD"
+            },
+            "attributeContractFulfillment": {
+              "SAML_SUBJECT": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "SAML_SUBJECT"
+              },
+              "email": {
+                "source": {
+                  "type": "LDAP_DATA_STORE"
+                },
+                "value": "email"
+              }
+            },
+            "issuanceCriteria": {
+              "conditionalCriteria": [
+                {
+                  "source": {
+                    "type": "LDAP_DATA_STORE"
+                  },
+                  "attributeName": "memberOf",
+                  "condition": "MULTIVALUE_CONTAINS_DN",
+                  "value": "CN=App Users,OU=Groups,DC=northwind,DC=example"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

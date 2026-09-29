@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0oa0contosoidp001",
+    "name": "Partner: Contoso (SAML)",
+    "policy": {
+      "provisioning": {
+        "action": "AUTO"
+      }
+    },
+    "protocol": {
+      "type": "SAML2"
+    },
+    "status": "ACTIVE",
+    "type": "SAML2"
+  },
+  {
+    "id": "0oa0googleidp0002",
+    "name": "Google",
+    "policy": {
+      "provisioning": {
+        "action": "DISABLED"
+      }
+    },
+    "protocol": {
+      "type": "OIDC"
+    },
+    "status": "ACTIVE",
+    "type": "GOOGLE"
+  }
+]

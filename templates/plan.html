@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Migration plan{% endblock %}
+{% block heading %}<h1>Migration plan</h1>
+<div class="sub">{{ cards|length }} apps · {{ total_done }} of {{ total_all }} steps done
+  ({{ (100 * total_done / total_all)|round|int if total_all else 0 }}%) · wave = assigned wave, else suggested</div>{% endblock %}
+{% block actions %}<a class="btn secondary" href="{{ url_for('web.export_xlsx') }}">Excel (incl. plan)</a>{% endblock %}
+{% block content %}
+<nav class="tabs">
+  <a href="#tab-board" data-tab="board">Waves board</a>
+  <a href="#tab-checklist" data-tab="checklist">Checklist <span class="count">{{ cards|length }} apps × {{ PLAN_STEPS|length }} steps</span></a>
+  <a href="#tab-progress" data-tab="progress">Progress {% if overdue %}<span class="count" style="background:var(--crit-bg);color:var(--crit)">{{ overdue|length }} overdue</span>{% endif %}</a>
+</nav>
+
+{# ------------------------------------------------------------ board #}
+<section class="tab" id="tab-board">
+  {% if not cards %}<div class="card empty"><b>No apps in the plan</b>Run discovery first.</div>{% endif %}
+  <div class="board">
+    {% for w in waves %}{% set d, t = wave_progress[w] %}
+    <div class="lane {{ 'Blocked' if w == 'Blocked' else '' }}">
+      <h3>{{ w }} <span class="count" style="background:var(--surface);border-radius:99px;padding:0 8px;font-size:12px">{{ by_wave[w]|length }}</span></h3>
+      <div class="lane-sub">{{ d }} / {{ t }} steps done</div>
+      {% for c in by_wave[w] %}{% set a = c.a %}
+      <a class="kcard" href="{{ url_for('web.application', app_id=a.id) }}#tab-plan">
+        <div class="t"><span class="proto {{ a.protocol }}">{{ a.protocol }}</span>{{ a.label }}</div>
+        <div class="row"><span class="build {{ c.build }}">{{ BUILD_LABEL[c.build] }}</span>
+          {% if a.overall_level %}<span class="chip {{ a.overall_level }}">{{ a.overall_level|title }}</span>{% endif %}</div>
+        <div class="row">{% if c.next %}Next: <b style="color:var(--ink-2)">{{ c.next.title }}</b>{% else %}<b style="color:var(--good)">All steps done</b>{% endif %}</div>
+        <div class="mini"><span style="width:{{ (100 * c.done / c.total)|round|int if c.total else 0 }}%"></span></div>
+        <div class="row"><span class="dots">{% for s in PLAN_STEPS %}{% set tk = c.tasks[s.key] %}<span class="dot {{ tk.status if tk.status != 'N/A' else 'NA' }}" title="{{ s.title }}: {{ tk.status|humanize }}">{{ loop.index }}</span>{% endfor %}</span>
+          <span style="margin-left:auto">{{ c.done }}/{{ c.total }}</span></div>
+      </a>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <p class="muted small">To move an app to another wave, set "Assigned wave" on its Business &amp; state tab. Numbers 1–7 are the checklist steps.</p>
+</section>
+
+{# ------------------------------------------------------------ checklist #}
+<section class="tab" id="tab-checklist">
+  <div class="toolbar"><input data-filter="grid" placeholder="Filter apps…" style="min-width:220px">
+    <span class="legend">{% for st in STEP_STATUSES %}<span><span class="dot {{ st if st != 'N/A' else 'NA' }}">·</span> {{ st|humanize }}</span>{% endfor %}</span></div>
+  <div class="table-wrap"><table id="grid">
+    <thead><tr><th>App</th><th>Wave</th>{% for s in PLAN_STEPS %}<th title="{{ s.title }}">{{ loop.index }}. {{ s.title }}</th>{% endfor %}<th class="num">Done</th></tr></thead>
+    <tbody>
+    {% for c in cards %}{% set a = c.a %}
+      <tr data-row data-status="">
+        <td><a href="{{ url_for('web.application', app_id=a.id) }}#tab-plan"><b>{{ a.label }}</b></a> <span class="proto {{ a.protocol }}">{{ a.protocol }}</span></td>
+        <td class="small nowrap">{{ c.wave }}</td>
+        {% for s in PLAN_STEPS %}{% set tk = c.tasks[s.key] %}
+          <td class="small"><span class="dot {{ tk.status if tk.status != 'N/A' else 'NA' }}">{{ '✓' if tk.status == 'DONE' else ('!' if tk.status == 'BLOCKED' else '') }}</span>
+            {% if tk.owner %}<div class="muted">{{ tk.owner }}</div>{% endif %}
+            {% if tk.due_date %}<div class="{{ 'check-bad' if tk.due_date < now and tk.status not in ('DONE', 'N/A') else 'muted' }}">{{ tk.due_date|dt('%d %b') }}</div>{% endif %}</td>
+        {% endfor %}
+        <td class="num"><b>{{ c.done }}/{{ c.total }}</b></td>
+      </tr>
+    {% endfor %}
+    </tbody></table></div>
+</section>
+
+{# ------------------------------------------------------------ progress #}
+<section class="tab" id="tab-progress">
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>Progress by wave</h2>
+      {% for w in waves %}{% set d, t = wave_progress[w] %}
+        <div class="bar-row" style="grid-template-columns:170px 1fr 70px"><span>{{ w }}</span>
+          <div class="bar"><span style="width:{{ (100 * d / t)|round|int if t else 0 }}%;background:var(--good)"></span></div>
+          <b class="num">{{ d }}/{{ t }}</b></div>
+      {% endfor %}
+    </div>
+    <div class="card">
+      <h2>Progress by step <span class="muted">apps done at each step</span></h2>
+      {% for s in PLAN_STEPS %}{% set sc = step_counts[s.key] %}{% set n = cards|length %}
+        <div class="bar-row" style="grid-template-columns:220px 1fr 70px"><span>{{ loop.index }}. {{ s.title }}</span>
+          <div class="bar"><span style="width:{{ (100 * sc.get('DONE', 0) / n)|round|int if n else 0 }}%;background:var(--good)"></span></div>
+          <b class="num">{{ sc.get('DONE', 0) }}/{{ n }}</b></div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="card">
+    <h2>Overdue steps</h2>
+    {% if overdue %}
+    <div class="table-wrap"><table><thead><tr><th>App</th><th>Step</th><th>Owner</th><th>Due</th><th>Status</th></tr></thead><tbody>
+      {% for t in overdue %}{% set a = apps_by_id[t.app_id] %}
+        <tr><td><a href="{{ url_for('web.application', app_id=a.id) }}#tab-plan">{{ a.label }}</a></td>
+          <td>{{ t.position }}. {{ PLAN_STEPS[t.position - 1].title }}</td><td>{{ t.owner or '—' }}</td>
+          <td class="check-bad">{{ t.due_date|dt('%Y-%m-%d') }}</td><td><span class="chip state plain">{{ t.status|humanize }}</span></td></tr>
+      {% endfor %}</tbody></table></div>
+    {% else %}<p class="muted">Nothing overdue. Set owners and due dates on each app's Migration plan tab.</p>{% endif %}
+  </div>
+</section>
+{% endblock %}

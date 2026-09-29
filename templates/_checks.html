@@ -1,0 +1,7 @@
+<div class="table-wrap"><table>
+  <thead><tr><th style="width:24%">Check</th><th style="width:28%">Expected</th><th style="width:28%">Actual</th><th>Result</th></tr></thead><tbody>
+  {% for c in v.result.checks %}
+  <tr class="row-{{ c.status }}"><td><b>{{ c.label }}</b>{% if c.note %}<div class="small muted">{{ c.note }}</div>{% endif %}</td>
+    <td class="mono small break">{{ c.expected }}</td><td class="mono small break">{{ c.actual }}</td>
+    <td><span class="chip {{ c.status }}">{{ c.status|title }}</span></td></tr>
+  {% endfor %}</tbody></table></div>

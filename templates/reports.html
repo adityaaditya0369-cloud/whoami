@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block heading %}<h1>Reports</h1><div class="sub">Downloads for workshops, app owners and the change board</div>{% endblock %}
+{% block content %}
+<div class="grid g3 mb">
+  <div class="card">
+    <h2>Excel migration report</h2>
+    <p class="small muted">All in-scope SAML apps in one workbook, 9 sheets:</p>
+    <ul class="list-clean small">
+      <li><b>Summary</b>: totals by level, wave and comparison status (live formulas)</li>
+      <li><b>Applications</b>: scores, wave, readiness, assessment status</li>
+      <li><b>Okta vs PingFederate</b>: every field side by side with a status</li>
+      <li><b>Attribute mapping</b>, <b>Directory prep</b>, <b>Action plan</b></li>
+      <li><b>Owner questions</b> (answer column to fill in), <b>Findings</b>, <b>Risk breakdown</b></li>
+    </ul>
+    <p style="margin:14px 0 0"><a class="btn" href="{{ url_for('web.export_xlsx') }}">Download .xlsx</a>
+      <a class="btn ghost" href="{{ url_for('web.export_xlsx', all=1) }}">Include out-of-scope</a></p>
+  </div>
+  <div class="card">
+    <h2>Inventory CSV</h2>
+    <p class="small muted">One row per SAML app with every discovered field, scores and <span class="mono">pf_*</span> readiness columns. Good for pivot tables or importing elsewhere.</p>
+    <p style="margin:14px 0 0"><a class="btn secondary" href="{{ url_for('web.export_csv') }}">Download .csv</a></p>
+  </div>
+  <div class="card">
+    <h2>Per-app reports</h2>
+    <p class="small muted">A printable page per app (use Print → Save as PDF) and a single-app Excel. Send these to app owners with their questions.</p>
+    <p class="small muted">Status meanings:</p>
+    <div class="legend">{% for st in STATUS_ORDER %}<span><span class="chip {{ st if st != 'N/A' else 'NA' }}">{{ st }}</span></span>{% endfor %}</div>
+  </div>
+</div>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Application</th><th>Overall</th><th>Suggested wave</th><th>Owner</th><th></th></tr></thead>
+    <tbody>
+    {% for a in apps %}
+      <tr><td><a href="{{ url_for('web.application', app_id=a.id) }}"><b>{{ a.label }}</b></a></td>
+        <td>{% if a.overall_level %}<span class="chip {{ a.overall_level }}">{{ a.overall_level|title }}</span>{% endif %}</td>
+        <td>{{ a.suggested_wave or '—' }}</td><td>{{ a.business_owner or '—' }}</td>
+        <td class="nowrap" style="text-align:right">
+          <a class="btn secondary" href="{{ url_for('web.app_report', app_id=a.id) }}" target="_blank">Printable</a>
+          <a class="btn secondary" href="{{ url_for('web.export_app_xlsx', app_id=a.id) }}">Excel</a></td></tr>
+    {% else %}<tr><td colspan="5" class="empty"><b>No SAML apps yet</b>Run discovery first.</td></tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

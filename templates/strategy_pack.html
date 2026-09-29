@@ -1,0 +1,203 @@
+{% extends "base.html" %}
+{% block title %}Strategy pack{% endblock %}
+{% macro csrf() %}<input type="hidden" name="_csrf" value="{{ csrf_token() }}">{% endmacro %}
+{% macro who() %}<input name="actor" placeholder="Your name" value="{{ current_actor }}" required aria-label="Your name">{% endmacro %}
+{% macro strat(s) %}{% if s %}<span class="chip s-{{ s }}">{{ s|title }}</span>{% else %}<span class="muted">—</span>{% endif %}{% endmacro %}
+{% macro compat(c) %}{% if c %}<span class="chip cl-{{ c }}">{{ {'HIGH':'High','MEDIUM':'Medium','LOW':'Low'}[c] }}</span>{% else %}<span class="muted">—</span>{% endif %}{% endmacro %}
+{% block heading %}<h1>Migration strategy pack</h1>
+<div class="sub">What we have · what can move · what needs transformation · what moves first · how we validate it — Okta → {{ p.target }}</div>{% endblock %}
+{% block actions %}
+<form method="post" action="{{ url_for('strategy_model.analyse') }}" class="inline">{{ csrf() }}<input type="hidden" name="actor" value="{{ current_actor }}">
+  <button class="btn ghost" title="Re-run the rules (after decisions, overrides or a catalog change)">Recalculate</button></form>
+<a class="btn secondary" href="{{ url_for('strategy_model.pack_xlsx') }}">Excel pack</a>
+<a class="btn" href="{{ url_for('strategy_model.pack_docx') }}">Word pack</a>
+{% endblock %}
+{% block content %}
+{% set s = p.summary %}
+{% if s.unscanned %}<div class="flash error" style="margin-bottom:14px">Not read from Okta: {{ s.unscanned|join(', ')|replace('_',' ') }}. Results for these kinds are from an earlier run or missing; grant the read scopes or add them to the export.</div>{% endif %}
+<nav class="tabs">
+  <a href="#tab-executive" data-tab="executive">Executive</a>
+  <a href="#tab-architect" data-tab="architect">Architect <span class="count">{{ p.apps|length }}</span></a>
+  <a href="#tab-engineer" data-tab="engineer">Engineer</a>
+  <a href="#tab-compat" data-tab="compat">Compatibility <span class="count">{{ p.matrix|length }}</span></a>
+  <a href="#tab-dependencies" data-tab="dependencies">Dependencies <span class="count">{{ s.deps_confirmed }}{% if s.deps_suggested %} + {{ s.deps_suggested }} to review{% endif %}</span></a>
+  <a href="#tab-tenant" data-tab="tenant">Tenant objects <span class="count">{{ p.tenant|length }}</span></a>
+  <a href="#tab-catalog" data-tab="catalog">Capability catalog</a>
+</nav>
+
+{# ============================================================ executive #}
+<section class="tab" id="tab-executive">
+  <div class="grid g4 mb">
+    <div class="card kpi accent"><div class="label">Applications in Okta</div><div class="value">{{ s.total }}</div><div class="hint">{{ s.federated }} SAML / OIDC</div></div>
+    <div class="card kpi"><div class="label">Potentially migratable</div><div class="value">{{ s.migratable }}</div><div class="hint">{{ s.recreate }} recreate · {{ s.transform }} transform</div></div>
+    <div class="card kpi"><div class="label">Requires redesign</div><div class="value">{{ s.redesign }}</div><div class="hint">+ {{ s.tenant_redesign }} tenant object(s)</div></div>
+    <div class="card kpi"><div class="label">Retire · retain for now</div><div class="value">{{ s.retire }} · {{ s.retain }}</div><div class="hint">business validation · blocking decisions</div></div>
+  </div>
+  <div class="grid g4 mb">
+    <div class="card kpi"><div class="label">High-risk applications</div><div class="value">{{ s.high_risk }}</div></div>
+    <div class="card kpi"><div class="label">Migration waves</div><div class="value">{{ s.waves }}</div><div class="hint">{{ s.moved_by_deps }} app(s) moved by dependencies</div></div>
+    <div class="card kpi"><div class="label">Effort</div><div class="value">{{ (s.app_hours + s.foundation_hours)|round|int }} h</div><div class="hint">{{ s.foundation_hours|round|int }} h foundation · {{ s.app_hours|round|int }} h apps</div></div>
+    <div class="card kpi"><div class="label">Planned finish</div><div class="value" style="font-size:22px">{{ s.end|dt('%d %b %Y') if s.end else '—' }}</div><div class="hint">from the Strategy timeline assumptions</div></div>
+  </div>
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>Strategy per application</h2>
+      {% set mx = [s.recreate, s.transform, s.redesign, s.retire, s.retain]|max %}
+      {% for k in STRATEGIES %}{% set n = s[k|lower] %}
+      <div class="bar-row"><div>{{ strat(k) }} <span class="small muted">{{ HELP[k] }}</span></div>
+        <div class="bar"><span class="sb-{{ k }}" style="width: {{ (100 * n / (mx or 1))|round|int }}%"></span></div><div class="num">{{ n }}</div></div>
+      {% endfor %}
+      <p class="small muted" style="margin-bottom:0">Compatibility: {{ s.compat.HIGH or 0 }} high · {{ s.compat.MEDIUM or 0 }} medium · {{ s.compat.LOW or 0 }} low.
+        {{ s.expert_rows }} catalog row(s) in use need a PingFederate architect's confirmation.</p>
+    </div>
+    <div class="card">
+      <h2>Wave plan</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Wave</th><th>Applications</th><th>Cutover</th></tr></thead><tbody>
+        {% for w, rows in p.waves.items() %}<tr><td class="nowrap"><b>{{ w }}</b></td>
+          <td>{% for r in rows %}<a href="{{ url_for('strategy_model.app_detail', app_id=r.app.id) }}">{{ r.app.label }}</a>{{ ', ' if not loop.last }}{% endfor %}</td>
+          <td class="nowrap">{{ p.timeline.cutover.get(w)|dt('%d %b %Y') if p.timeline.cutover.get(w) else '—' }}</td></tr>{% endfor %}
+        </tbody></table></div>
+    </div>
+  </div>
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>Foundation work before Wave 0 <span class="muted">{{ s.foundation_hours }} h</span></h2>
+      {% if p.foundation %}<ul class="list-clean">{% for f in p.foundation %}
+        <li><b>{{ f.obj.name }}</b> <span class="small muted">{{ f.obj.kind|replace('_',' ') }}{{ ' · ' ~ f.obj.subtype|replace('_',' ')|lower if f.obj.subtype }}</span> {{ strat(f.obj.strategy) }}
+          <div class="small">{{ f.cap.pf_capability }}{% if f.apps %} · used by {{ f.apps|join(', ') }}{% endif %}</div></li>{% endfor %}</ul>
+      {% else %}<p class="muted">No tenant-level prerequisites found{% if not p.tenant %} (tenant objects not discovered){% endif %}.</p>{% endif %}
+    </div>
+    <div class="card">
+      <h2>Needs attention</h2>
+      <ul class="list-clean">
+        {% for r in p.apps if r.strategy in ('REDESIGN', 'RETAIN') or r.flags %}
+        <li><a href="{{ url_for('strategy_model.app_detail', app_id=r.app.id) }}"><b>{{ r.app.label }}</b></a> {{ strat(r.strategy) }}
+          <div class="small">{{ (r.flags + [r.reasons[0].text if r.reasons else ''])|select|first }}</div></li>
+        {% else %}<li class="muted">Nothing blocking.</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ============================================================ architect #}
+<section class="tab" id="tab-architect">
+  <div class="table-wrap tall"><table>
+    <thead><tr><th>Application</th><th>Strategy</th><th>Compat.</th><th>Complexity</th><th>Risk</th><th>Wave</th>
+      <th>Depends on</th><th>Used by</th><th>Owner</th><th class="num">Tests</th><th class="num">Effort (h)</th></tr></thead><tbody>
+    {% for r in p.apps %}<tr>
+      <td><span class="proto {{ r.app.protocol }}">{{ r.app.protocol }}</span> <a href="{{ url_for('strategy_model.app_detail', app_id=r.app.id) }}"><b>{{ r.app.label }}</b></a>
+        <div class="small muted">{{ r.reasons[0].text if r.reasons else '' }}</div></td>
+      <td>{{ strat(r.strategy) }}{% if r.overridden %}<div class="small muted">override</div>{% endif %}</td>
+      <td>{{ compat(r.compat) }}</td><td>{{ r.complexity }}</td><td>{{ r.risk }}</td>
+      <td class="nowrap">{{ r.wave }}{% if r.wave != r.base_wave and r.base_wave != '—' %}<div class="small muted">was {{ r.base_wave }}</div>{% endif %}
+        {% for f in r.flags %}<div class="small" style="color:var(--warn)">{{ f }}</div>{% endfor %}</td>
+      <td class="small">{% for n, k in r.depends_on %}{{ n }}<span class="muted"> · {{ k|lower|replace('_',' ') }}</span><br>{% else %}<span class="muted">—</span>{% endfor %}</td>
+      <td class="small">{% for n, k in r.depended_by %}{{ n }}<br>{% else %}<span class="muted">—</span>{% endfor %}</td>
+      <td class="small">{{ r.app.business_owner or '—' }}</td><td class="num">{{ r.validation|length }}</td><td class="num">{{ r.effort_hours|round(1) }}</td>
+    </tr>{% endfor %}</tbody></table></div>
+</section>
+
+{# ============================================================ engineer #}
+<section class="tab" id="tab-engineer">
+  <p class="muted" style="margin-top:0">Per-application build and test detail: NameID and attribute mapping, certificates, OIDC settings, dependencies and the validation checklist.</p>
+  <div class="grid g3">
+    {% for r in p.apps %}
+    <a class="card" style="text-decoration:none;color:inherit" href="{{ url_for('strategy_model.app_detail', app_id=r.app.id) }}">
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="proto {{ r.app.protocol }}">{{ r.app.protocol }}</span><b>{{ r.app.label }}</b></div>
+      <div style="margin:8px 0">{{ strat(r.strategy) }} {{ compat(r.compat) }} <span class="small muted">{{ r.wave }}</span></div>
+      <div class="small muted">{{ r.validation|length }} test(s) · {{ r.hits|length }} feature(s){% if r.depends_on %} · {{ r.depends_on|length }} dependency(ies){% endif %}</div>
+    </a>{% endfor %}
+  </div>
+</section>
+
+{# ============================================================ compatibility #}
+<section class="tab" id="tab-compat">
+  <p class="muted" style="margin-top:0">Only features found in this tenant. Each row is a versioned rule (catalog {{ p.catalog_version }}) with its evidence; AI does not decide compatibility.</p>
+  <div class="table-wrap tall"><table>
+    <thead><tr><th>Okta feature</th><th>{{ p.target }} capability</th><th>Compatibility</th><th>Strategy</th><th>Where</th><th>Evidence</th></tr></thead><tbody>
+    {% for m in p.matrix %}<tr>
+      <td><b>{{ m.cap.okta_feature }}</b><div class="small muted">{{ m.cap.area }}</div></td>
+      <td>{{ m.cap.pf_capability }}</td>
+      <td><span class="chip c-{{ m.cap.compatibility }}">{{ m.cap.compatibility|title }}</span>
+        {% if m.cap.review == 'EXPERT' %}<div class="small" style="color:var(--warn)">expert review</div>{% endif %}</td>
+      <td>{{ strat(m.cap.strategy) }}</td>
+      <td class="small">{% if m.apps %}<b>{{ m.apps|length }} app(s):</b> {{ m.apps|join(', ') }}{% endif %}
+        {% if m.objects %}<div><b>{{ m.objects|length }} object(s):</b> {{ m.objects|join(', ') }}</div>{% endif %}</td>
+      <td class="small">{{ m.cap.evidence }}<div class="muted">e.g. {{ m.example }}</div>
+        {% for u in m.cap.sources %}<a href="{{ u }}" target="_blank" rel="noopener">source</a>{{ ' · ' if not loop.last }}{% endfor %}</td>
+    </tr>{% endfor %}</tbody></table></div>
+</section>
+
+{# ============================================================ dependencies #}
+<section class="tab" id="tab-dependencies">
+  <div class="grid g3 mb">
+    <div class="card"><h2>Import from CSV / CMDB</h2>
+      <form method="post" action="{{ url_for('strategy_model.dep_import') }}" enctype="multipart/form-data">{{ csrf() }}
+        <p class="small muted" style="margin-top:0">Columns: <span class="mono">source,target,kind,notes</span>. Use Okta app labels; other names become external systems.</p>
+        <div class="toolbar" style="margin:0">{{ who() }}<input type="file" name="file" accept=".csv,text/csv" required><button class="btn">Import</button></div></form></div>
+    <div class="card"><h2>Add a dependency</h2>
+      <form method="post" action="{{ url_for('strategy_model.dep_add') }}">{{ csrf() }}
+        <div class="toolbar" style="margin:0">
+          <input name="source" list="nodes" placeholder="This app…" required>
+          <select name="kind">{% for k in KINDS[:4] %}<option>{{ k }}</option>{% endfor %}</select>
+          <input name="target" list="nodes" placeholder="…depends on" required>
+          <input name="note" placeholder="Why (optional)">{{ who() }}<button class="btn">Add</button></div></form>
+      <datalist id="nodes">{% for r in p.apps %}<option value="{{ r.app.label }}">{% endfor %}</datalist></div>
+    <div class="card"><h2>Suggest from documents</h2>
+      <p class="small muted" style="margin-top:0">Reads the knowledge base ({{ 'Claude' if settings.ai_provider.value == 'anthropic' and not settings.ai_mask_data else 'offline text analysis' }}). Suggestions never affect the plan until a named person confirms them.</p>
+      <form method="post" action="{{ url_for('strategy_model.dep_suggest') }}">{{ csrf() }}<div class="toolbar" style="margin:0">{{ who() }}<button class="btn secondary">Find dependencies</button></div></form></div>
+  </div>
+
+  {% if p.suggested %}
+  <div class="card mb"><h2>Suggested — confirm or reject <span class="muted">{{ p.suggested|length }}</span></h2>
+    <div class="table-wrap"><table><thead><tr><th>Depends</th><th>On</th><th>Evidence</th><th></th></tr></thead><tbody>
+    {% for d in p.suggested %}<tr><td><b>{{ d.source }}</b></td><td><b>{{ d.target }}</b></td><td class="small">{{ d.dep.evidence }}</td>
+      <td class="nowrap"><form method="post" action="{{ url_for('strategy_model.dep_decide', dep_id=d.dep.id) }}" class="toolbar" style="margin:0">{{ csrf() }}
+        {% if current_actor %}<input type="hidden" name="actor" value="{{ current_actor }}">{% else %}{{ who() }}{% endif %}
+        <button class="btn" name="decision" value="CONFIRMED">Confirm</button><button class="btn danger" name="decision" value="REJECTED">Reject</button></form></td></tr>{% endfor %}
+    </tbody></table></div></div>
+  {% endif %}
+
+  <div class="card"><h2>Dependency graph <span class="muted">confirmed edges drive wave order</span></h2>
+    <div class="table-wrap tall"><table><thead><tr><th>Depends</th><th>On</th><th>Kind</th><th>Origin</th><th>Status</th><th>Evidence</th><th></th></tr></thead><tbody>
+    {% for d in p.deps %}<tr>
+      <td><b>{{ d.source }}</b></td><td>{{ d.target }}</td><td class="small">{{ d.dep.kind|lower|replace('_',' ') }}</td>
+      <td class="small">{{ d.dep.origin|lower }}</td>
+      <td><span class="chip {{ 'OK' if d.dep.status == 'CONFIRMED' else 'REJECTED' }}">{{ d.dep.status|lower }}</span>{% if d.dep.decided_by %}<div class="small muted">{{ d.dep.decided_by }}</div>{% endif %}</td>
+      <td class="small">{{ d.dep.evidence or '' }}</td>
+      <td>{% if d.dep.status == 'CONFIRMED' %}<form method="post" action="{{ url_for('strategy_model.dep_decide', dep_id=d.dep.id) }}" class="toolbar" style="margin:0">{{ csrf() }}
+        {% if current_actor %}<input type="hidden" name="actor" value="{{ current_actor }}">{% else %}<input name="actor" placeholder="Your name" required style="width:110px" aria-label="Your name">{% endif %}
+        <input name="note" placeholder="Why wrong?" style="width:110px" aria-label="Reason">
+        <button class="btn ghost" name="decision" value="REJECTED">Reject</button></form>{% endif %}</td>
+    </tr>{% else %}<tr><td colspan="7" class="muted">No dependencies yet. Import a CSV, add one, or run discovery with tenant objects.</td></tr>{% endfor %}
+    </tbody></table></div></div>
+</section>
+
+{# ============================================================ tenant #}
+<section class="tab" id="tab-tenant">
+  <div class="toolbar">{% for sc in p.scans %}<span class="chip {{ 'OK' if sc.status == 'OK' else 'WARNING' }}" title="{{ sc.error or '' }}">{{ sc.kind|replace('_',' ') }}: {{ sc.count if sc.status == 'OK' else sc.status|lower|replace('_',' ') }}</span>{% else %}<span class="muted">Tenant objects not discovered yet.</span>{% endfor %}</div>
+  <div class="table-wrap tall"><table>
+    <thead><tr><th>Object</th><th>Kind</th><th>Strategy</th><th>Compat.</th><th>{{ p.target }} target</th><th>Used by</th><th class="num">Effort (h)</th></tr></thead><tbody>
+    {% for t in p.tenant %}<tr>
+      <td><b>{{ t.obj.name }}</b><div class="small muted">{{ t.obj.subtype or '' }}{{ ' · ' ~ t.obj.status|lower if t.obj.status and t.obj.status != 'ACTIVE' }}</div>
+        <div class="small">{{ t.hits|map(attribute='evidence')|join('; ') }}</div></td>
+      <td class="small">{{ t.obj.kind|replace('_',' ') }}</td><td>{{ strat(t.obj.strategy) }}</td><td>{{ compat(t.obj.compat_level) }}</td>
+      <td class="small">{{ t.cap.pf_capability if t.cap else (t.obj.strategy_reasons[0].text if t.obj.strategy_reasons else '') }}</td>
+      <td class="small">{{ t.apps|join(', ') or '—' }}</td><td class="num">{{ t.hours }}</td></tr>{% endfor %}
+    </tbody></table></div>
+</section>
+
+{# ============================================================ catalog #}
+<section class="tab" id="tab-catalog">
+  <p class="muted" style="margin-top:0">Catalog {{ p.catalog_version }} · {{ p.catalog|length }} rows · override or extend with <span class="mono">CAPABILITY_CATALOG_FILE</span>.
+    "Expert review" rows need confirmation by a {{ p.target }} architect for this customer (licensing, version).</p>
+  <div class="table-wrap tall"><table>
+    <thead><tr><th>Okta feature</th><th>{{ p.target }}</th><th>Compatibility</th><th>Strategy</th><th class="num">Effort (h)</th><th>Evidence</th></tr></thead><tbody>
+    {% for c in p.catalog.values() %}<tr><td><b>{{ c.okta_feature }}</b><div class="small muted mono">{{ c.key }}{{ ' · prerequisite' if c.prerequisite }}</div></td>
+      <td>{{ c.pf_capability }}</td><td><span class="chip c-{{ c.compatibility }}">{{ c.compatibility|title }}</span>{% if c.review == 'EXPERT' %}<div class="small" style="color:var(--warn)">expert review</div>{% endif %}</td>
+      <td>{{ strat(c.strategy) }}</td><td class="num">{{ c.effort_hours }}</td>
+      <td class="small">{{ c.evidence }} {% for u in c.sources %}<a href="{{ u }}" target="_blank" rel="noopener">source</a>{{ ' · ' if not loop.last }}{% endfor %}</td></tr>{% endfor %}
+    </tbody></table></div>
+</section>
+{% endblock %}

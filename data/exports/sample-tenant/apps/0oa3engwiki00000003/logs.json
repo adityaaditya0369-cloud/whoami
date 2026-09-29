@@ -1,0 +1,2054 @@
+[
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T02:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-100"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T14:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-94"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T12:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-81"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T21:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-102"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T08:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-38"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T17:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-42"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T02:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-17"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T00:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-18"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T09:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-30"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T16:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-9"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T07:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-41"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T20:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-84"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-06T07:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-76"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-07T11:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-87"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T05:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-22"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T07:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-91"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T17:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-2"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T22:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-4"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T07:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-78"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T13:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-53"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T17:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-88"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T00:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-3"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T09:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-7"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T21:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-36"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T04:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-95"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T18:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-59"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T07:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-77"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T15:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-39"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T05:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-23"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T10:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-79"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T23:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-11"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T08:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-40"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T08:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-105"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T13:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-85"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T22:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-26"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T23:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-107"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-25T17:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-16"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T05:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-21"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T05:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-97"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T08:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-28"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T15:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-50"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T03:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-92"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T10:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-96"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T12:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-54"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T16:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-6"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T17:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-66"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T07:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-49"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T09:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-74"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T23:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-62"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-07T20:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-71"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T11:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-47"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T19:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-65"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T11:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-64"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T19:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-25"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T18:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-52"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T22:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-44"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T10:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-67"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T13:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-45"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T17:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-46"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T05:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-5"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T12:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-1"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T13:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-43"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T08:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-51"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T17:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-69"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T05:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-90"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T09:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-57"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T17:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-86"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T04:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-10"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T06:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-33"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T15:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-24"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T18:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-37"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T21:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-63"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T07:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-32"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T04:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-75"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T14:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-80"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-103"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T18:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-19"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-26T01:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-106"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T02:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-55"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T01:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-89"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T19:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-31"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T19:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-68"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T03:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-104"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T10:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-60"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T12:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-58"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T12:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-13"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T14:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-12"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T09:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-35"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T10:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-27"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T20:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-56"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T17:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-0"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T20:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-98"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T00:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-29"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T20:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-70"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T02:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-20"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T21:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-72"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T10:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-14"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T16:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-8"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T04:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-15"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T11:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-93"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T20:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-101"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T09:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-82"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-15T12:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-83"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T05:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-34"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T13:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-73"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T13:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-61"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T16:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-48"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T07:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa3engwiki00000003",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa3engwiki00000003-99"
+  }
+]

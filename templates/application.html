@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+{% block title %}{{ a.label }}{% endblock %}
+{% block content %}
+<p class="small" style="margin:0 0 6px"><a href="{{ url_for('web.applications') }}">← Okta apps</a></p>
+<div class="app-head mb">
+  <div class="title">
+    <h1>{{ a.label }}</h1>
+    <div class="meta">
+      <span class="proto {{ a.protocol }}">{{ a.protocol }}</span>
+      <span class="chip state plain">{% if a.is_saml %}{{ 'Custom SAML' if a.is_custom_saml else 'OIN catalog' }}{% elif a.is_oidc %}{{ (a.oidc.application_type or 'oidc')|title }} client{% else %}{{ a.sign_on_mode }}{% endif %}</span>
+      <span class="chip {{ 'OK' if a.okta_status == 'ACTIVE' else 'WARNING' }}">Okta {{ a.okta_status|lower }}</span>
+      {% if a.in_scope_protocol %}<span class="chip state plain">State: {{ a.state|humanize }}</span>{% endif %}
+      {% if a.suggested_wave %}<span class="chip {{ 'BLOCKED' if a.suggested_wave == 'Blocked' else 'INFO' }}">{{ a.suggested_wave }}</span>{% endif %}
+      {% if a.removed_from_okta %}<span class="chip CRITICAL">Removed from Okta</span>{% endif %}
+      {% if a.changed_in_last_run %}<span class="chip INFO">Changed in last run</span>{% endif %}
+      {% if a.usage_known %}<span class="chip {{ 'WARNING' if not a.usage_events else 'state' }} plain" title="Okta System Log, last {{ a.usage_window_days }} days">
+        {{ a.usage_unique_users }} active / {{ a.user_count }} assigned · {{ a.usage_window_days }}d{% if a.usage_last_seen %} · last {{ a.usage_last_seen|dt('%d %b') }}{% endif %}</span>{% endif %}
+      <span class="muted small mono">{{ a.id }}</span>
+    </div>
+  </div>
+  {% if a.in_scope_protocol %}
+  <div class="toolbar" style="margin:0">
+    {% if a.is_saml %}<a class="btn" href="{{ url_for('pipeline.app_pipeline', app_id=a.id) }}">Migration pipeline →</a>{% endif %}
+    <a class="btn secondary" href="{{ url_for('web.app_report', app_id=a.id) }}" target="_blank">Printable report</a>
+    <a class="btn secondary" href="{{ url_for('web.export_app_xlsx', app_id=a.id) }}">Excel</a>
+  </div>
+  {% endif %}
+</div>
+
+{% if a.in_scope_protocol %}{% set s = a.saml %}
+<nav class="tabs">
+  <a href="#tab-overview" data-tab="overview">Overview</a>
+  <a href="#tab-compare" data-tab="compare">Okta vs PingFederate <span class="count">{{ cmp_rows|length }}</span></a>
+  <a href="#tab-plan" data-tab="plan">Migration plan {% if tasks %}<span class="count">{{ tasks.values()|selectattr('status', 'equalto', 'DONE')|list|length }}/{{ tasks.values()|rejectattr('status', 'equalto', 'N/A')|list|length }}</span>{% endif %}</a>
+  {% if a.is_saml %}
+  <a href="#tab-assessment" data-tab="assessment">Assessment {% if latest %}<span class="count">{{ latest.review_status|lower if latest.status == 'VALID' else latest.status|lower }}</span>{% endif %}</a>
+  <a href="#tab-claims" data-tab="claims">Claims <span class="count">{{ a.claims|length }}</span></a>
+  {% endif %}
+  <a href="#tab-access" data-tab="access">Access <span class="count">{{ groups|length }}g · {{ users|length }}u</span></a>
+  <a href="#tab-config" data-tab="config">{{ 'SAML config & certificates' if a.is_saml else 'OIDC client' }}</a>
+  <a href="#tab-business" data-tab="business">Business &amp; state</a>
+  <a href="#tab-raw" data-tab="raw">Raw</a>
+</nav>
+
+{# ---------------------------------------------------------------- overview #}
+<section class="tab" id="tab-overview">
+  <div class="grid g-7-5">
+    <div class="grid" style="align-content:start">
+      <div class="card">
+        <h2>Risk <span class="muted">rules {{ score.rules_version if score else '—' }}</span></h2>
+        {% if score %}
+        <div class="scores mb">
+          <div class="score {{ score.complexity_level }}"><div class="t">Complexity</div><div class="v">{{ score.complexity_level|title }}</div><div class="n">{{ score.complexity_score }} points</div></div>
+          <div class="score {{ score.impact_level }}"><div class="t">Impact</div><div class="v">{{ score.impact_level|title }}</div><div class="n">{{ score.impact_score }} points</div></div>
+          <div class="score {{ score.overall_level }}"><div class="t">Overall</div><div class="v">{{ score.overall_level|title }}</div><div class="n">{{ 'Blocked' if score.blocked else score.suggested_wave }}</div></div>
+        </div>
+        {% if score.blocked %}<div class="flash error" style="margin-bottom:12px">Blocked by: {{ score.blockers|join(', ') }}</div>{% endif %}
+        <div class="table-wrap"><table>
+          <thead><tr><th>Dimension</th><th>Rule</th><th>Reason</th><th class="num">Points</th></tr></thead><tbody>
+          {% for b in score.breakdown %}
+          <tr><td><span class="chip plain state">{{ b.dimension|title }}</span></td><td class="mono small">{{ b.rule }}</td><td class="small">{{ b.reason }}</td><td class="num"><b>+{{ b.points }}</b></td></tr>
+          {% endfor %}</tbody>
+        </table></div>
+        {% else %}<p class="muted">Not scored yet. Run discovery.</p>{% endif %}
+      </div>
+      {% if pf %}
+      <div class="card">
+        <h2>PingFederate readiness checklist</h2>
+        <dl class="kv">
+          <dt>Issuance criteria needed</dt><dd>{% if pf.issuance_criteria %}<span class="chip ACTION">Yes</span>{% else %}<span class="chip OK">No</span>{% endif %}</dd>
+          <dt>Values needing OGNL</dt><dd>{{ pf.ognl_claims|join(', ') or 'None' }}{% if pf.ognl_claims and not settings.pf_ognl_allowed %} <span class="chip CRITICAL">OGNL not allowed</span>{% endif %}</dd>
+          <dt>LDAP attributes read</dt><dd class="mono">{{ pf.ldap_attributes|join(', ') or '—' }}</dd>
+          <dt>Missing directory inputs</dt><dd class="mono">{{ pf.missing_inputs|join(', ') or 'None' }}</dd>
+          <dt>Okta-only groups to create</dt><dd>{{ pf.okta_only_groups|join(', ') or 'None' }}</dd>
+          <dt>Virtual server ID needed</dt><dd>{{ pf.virtual_server_id|yesno }}</dd>
+          <dt>Shares SP entity ID</dt><dd>{{ pf.duplicate_entity_id|yesno }}</dd>
+        </dl>
+      </div>
+      {% endif %}
+    </div>
+    <div class="card">
+      <h2>Findings <span class="muted">{{ findings|length }} · rule-based</span></h2>
+      {% for f in findings %}
+        <div class="finding {{ f.severity }}">
+          <div class="head"><span class="chip {{ f.severity }}">{{ f.severity|title }}</span><span class="code">{{ f.code }}</span></div>
+          <div class="small">{{ f.message }}</div>
+        </div>
+      {% else %}<p class="muted">No findings.</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------------------------------------------------------------- comparison #}
+<section class="tab" id="tab-compare">
+  {% include "_compare.html" %}
+</section>
+
+{# ---------------------------------------------------------------- plan #}
+<section class="tab" id="tab-plan">
+  <div class="grid g-7-5 mb">
+    <div class="card">
+      <h2>In PingFederate <span class="build {{ bstatus }}">{{ BUILD_LABEL[bstatus] }}</span></h2>
+      {% if recon and recon.pf %}
+        <p class="small" style="margin-top:0">Found <b>{{ recon.pf.name }}</b> ({{ 'SP connection' if recon.pf.kind == 'SP_CONNECTION' else 'OAuth client' }}),
+          matched by {{ recon.matched_by }}.</p>
+        <div class="table-wrap"><table><thead><tr><th style="width:26px"></th><th>Check</th><th>Expected</th><th>PingFederate</th></tr></thead><tbody>
+        {% for c in recon.checks %}<tr><td>{% if c.ok %}<span class="check-ok">✓</span>{% else %}<span class="check-bad">✕</span>{% endif %}</td>
+          <td><b>{{ c.check }}</b></td><td class="small mono break">{{ c.expected }}</td><td class="small mono break">{{ c.actual }}</td></tr>{% endfor %}
+        </tbody></table></div>
+      {% else %}
+        <p class="muted">Not found on PingFederate yet{% if settings.pf_source.value == 'none' %} (PingFederate reading is off){% endif %}.
+          It will be matched by {{ 'SP entity ID' if a.is_saml else 'client ID' }}
+          <span class="mono">{{ (a.saml.audience if a.is_saml and a.saml else (a.oidc.client_id if a.oidc else '')) or '(from vendor metadata)' }}</span>.</p>
+      {% endif %}
+    </div>
+    <div class="card">
+      <h2>Wave</h2>
+      <p style="margin-top:0"><b>{{ a.wave or a.suggested_wave or '—' }}</b>
+        <span class="muted small">{{ '(assigned)' if a.wave else '(suggested)' }}</span></p>
+      <p class="muted small">Change the assigned wave on the Business &amp; state tab. The checklist tracks people's work; it does not change the
+        app's migration state, which stays behind the approval workflow.</p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Checklist <span class="muted">every change is audited</span></h2>
+    <form method="post" action="{{ url_for('target.save_plan', app_id=a.id) }}">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <div class="step-row" style="padding-top:0;font-size:11.5px;color:var(--ink-3);font-weight:600;text-transform:uppercase;letter-spacing:.04em">
+        <div></div><div>Step</div><div>Status</div><div>Owner</div><div>Due</div><div>Notes</div></div>
+      {% for step in PLAN_STEPS %}{% set t = tasks[step.key] %}
+      <div class="step-row">
+        <div class="step-no {{ t.status }}">{{ '✓' if t.status == 'DONE' else loop.index }}</div>
+        <div><b>{{ step.title }}</b><div class="help">{{ step.help_saml if a.is_saml else step.help_oidc }}</div>
+          {% if t.updated_by %}<div class="help">Updated by {{ t.updated_by }} · {{ t.updated_at|dt }}</div>{% endif %}</div>
+        <div><select name="{{ step.key }}_status">{% for st in STEP_STATUSES %}<option value="{{ st }}" {{ 'selected' if t.status == st }}>{{ st|humanize }}</option>{% endfor %}</select></div>
+        <div><input name="{{ step.key }}_owner" value="{{ t.owner or '' }}" placeholder="{{ step.owner }}"></div>
+        <div><input type="date" name="{{ step.key }}_due" value="{{ t.due_date|dt('%Y-%m-%d') if t.due_date else '' }}"></div>
+        <div><input name="{{ step.key }}_notes" value="{{ t.notes or '' }}" placeholder="Notes / change ticket"></div>
+      </div>
+      {% endfor %}
+      <p class="toolbar" style="margin:14px 0 0"><input name="actor" value="{{ current_actor }}" placeholder="Your name" required>
+        <button class="btn" type="submit">Save plan</button></p>
+    </form>
+  </div>
+</section>
+
+{% if a.is_saml %}
+{# ---------------------------------------------------------------- assessment #}
+<section class="tab" id="tab-assessment">
+  <div class="card mb">
+    <form method="post" action="{{ url_for('web.assess', app_id=a.id) }}" class="inline">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <input name="actor" placeholder="Your name" value="{{ current_actor }}" required>
+      <select name="provider">
+        <option value="offline" {{ 'selected' if settings.ai_provider.value == 'offline' }}>Offline rules (no data leaves this machine)</option>
+        <option value="anthropic" {{ 'selected' if settings.ai_provider.value == 'anthropic' }} {{ 'disabled' if not anthropic_ready }}>Claude ({{ settings.claude_model }}){{ '' if anthropic_ready else ': set ANTHROPIC_API_KEY' }}</option>
+      </select>
+      <label class="small"><input type="checkbox" name="force" value="1"> re-run even if unchanged</label>
+      <button class="btn" type="submit">Generate assessment</button>
+      {% if settings.ai_mask_data %}<span class="chip INFO">Masking on</span>{% endif %}
+    </form>
+    <p class="muted small" style="margin:10px 0 0">Scores come from fixed rules; the assessment only explains them and proposes actions.
+      Output is checked against a strict schema and policy before it is shown, and needs a named reviewer to accept.</p>
+  </div>
+  {% if latest %}{% set o = latest.output %}
+  <div class="grid g-7-5">
+    <div class="grid" style="align-content:start">
+      <div class="card">
+        <h2>Assessment #{{ latest.id }}
+          <span class="chip {{ latest.status }}">{{ latest.status|humanize }}</span>
+          {% if latest.status == 'VALID' %}<span class="chip {{ latest.review_status }}">{{ latest.review_status|humanize }}</span>{% endif %}
+          <span class="muted">{{ latest.provider }}{% if latest.model %} · {{ latest.model }}{% endif %} · {{ latest.created_at|dt }}</span></h2>
+        {% if latest.errors %}
+          <div class="flash error"><b>Rejected by validation:</b><ul class="list-clean">{% for e in latest.errors %}<li>{{ e }}</li>{% endfor %}</ul></div>
+        {% endif %}
+        {% if o.summary %}
+          <p style="font-size:15px;line-height:1.6;margin-top:0">{{ o.summary }}</p>
+          <p><span class="chip {{ 'BLOCKED' if o.migration_approach == 'BLOCKED' else 'INFO' }}">Approach: {{ o.migration_approach|humanize }}</span>
+             <span class="chip state plain">Confidence: {{ o.confidence|title }}</span></p>
+          <h3>Recommended actions</h3>
+          {% for act in o.recommended_actions or [] %}
+            <div class="action-item"><div><span class="chip state plain">{{ act.when|humanize }}</span><div class="small muted" style="margin-top:4px">{{ act.owner|humanize }}</div></div>
+              <div>{{ act.action }}{% if act.related_codes %}<div class="small mono muted">{{ act.related_codes|join(', ') }}</div>{% endif %}</div></div>
+          {% endfor %}
+          <h3>Finding explanations</h3>
+          {% for e in o.finding_explanations or [] %}<p class="small"><span class="mono"><b>{{ e.code }}</b></span>: {{ e.explanation }}</p>{% endfor %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="grid" style="align-content:start">
+      {% if latest.status == 'VALID' and latest.review_status == 'PENDING' %}
+      <div class="card">
+        <h2>Review</h2>
+        <form method="post" action="{{ url_for('web.review_assessment', aid=latest.id) }}">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <dl class="kv"><dt>Your name</dt><dd><input name="actor" value="{{ current_actor }}" required style="width:100%"></dd>
+            <dt>Comment</dt><dd><textarea name="comment" rows="2" style="width:100%" placeholder="Required when rejecting"></textarea></dd></dl>
+          <p class="toolbar" style="margin:12px 0 0">
+            <button class="btn" name="decision" value="ACCEPTED">Accept{{ ' and mark Assessed' if a.state == 'DISCOVERED' else '' }}</button>
+            <button class="btn danger" name="decision" value="REJECTED">Reject</button></p>
+        </form>
+      </div>
+      {% elif latest.review_status != 'PENDING' %}
+      <div class="card"><h2>Review</h2>
+        <p><span class="chip {{ latest.review_status }}">{{ latest.review_status|humanize }}</span> by <b>{{ latest.reviewed_by }}</b> · {{ latest.reviewed_at|dt }}</p>
+        {% if latest.review_comment %}<p class="small">{{ latest.review_comment }}</p>{% endif %}</div>
+      {% endif %}
+      {% if o.questions_for_app_owner %}
+      <div class="card"><h2>Questions for the app owner</h2>
+        <ol class="list-clean">{% for q in o.questions_for_app_owner %}<li>{{ q }}</li>{% endfor %}</ol></div>{% endif %}
+      {% if o.pingfederate_notes %}
+      <div class="card"><h2>PingFederate connection notes</h2>
+        <ul class="list-clean small">{% for n in o.pingfederate_notes %}<li>{{ n }}</li>{% endfor %}</ul></div>{% endif %}
+      <div class="card"><h2>History</h2>
+        {% for x in assessments %}
+          <div class="small" style="margin-bottom:6px">#{{ x.id }} · {{ x.created_at|dt }} · {{ x.provider }} ·
+            <span class="chip {{ x.status }}">{{ x.status|humanize }}</span>{% if x.status == 'VALID' %} <span class="chip {{ x.review_status }}">{{ x.review_status|humanize }}</span>{% endif %}
+            {% if x.input_tokens %}<span class="muted">· {{ x.input_tokens }}/{{ x.output_tokens }} tokens</span>{% endif %}</div>
+        {% endfor %}</div>
+    </div>
+  </div>
+  {% else %}<div class="card empty"><b>No assessment yet</b>Generate one above. The offline engine needs no API key.</div>{% endif %}
+</section>
+
+{# ---------------------------------------------------------------- claims #}
+<section class="tab" id="tab-claims">
+  {% if a.claims %}
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Attribute</th><th>Okta value / filter</th><th>Okta type</th><th>PingFederate source</th><th>Detail</th></tr></thead>
+    <tbody>
+    {% for c in a.claims %}
+    <tr>
+      <td class="mono"><b>{{ c.name }}</b></td>
+      <td>{% if c.claim_type == 'GROUP' %}<span class="expr">{{ c.group_filter_type }} {{ c.group_filter_value }}</span>
+            <div class="small muted">matches {{ c.matched_group_count }}: {{ c.matched_group_sample|join(', ') }}</div>
+          {% else %}{% for v in c.values %}<span class="expr">{{ v }}</span> {% endfor %}{% endif %}</td>
+      <td><span class="chip plain {{ 'WARNING' if c.expression_kind == 'COMPLEX' or c.claim_type == 'GROUP' else 'OK' }}">{{ c.expression_kind or 'GROUP' }}</span></td>
+      <td><span class="chip {{ c.pf_source if c.pf_source != 'OGNL' or not settings.pf_ognl_allowed else 'WARNING' }}">{{ c.pf_source }}</span></td>
+      <td class="small">{{ c.pf_source_detail }}
+        {% if c.matched_okta_native_groups %}<div style="color:var(--serious)">Okta-only: {{ c.matched_okta_native_groups|join(', ') }}</div>{% endif %}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  {% else %}<div class="card empty"><b>No attribute statements</b>{{ 'Not exposed by the API for catalog apps. Get them from the vendor.' if s.config_completeness == 'PARTIAL' else 'None configured.' }}</div>{% endif %}
+</section>
+
+{% endif %}
+
+{# ---------------------------------------------------------------- access #}
+<section class="tab" id="tab-access">
+  <div class="grid g2">
+    <div class="card"><h2>Group assignments · {{ groups|length }}</h2>
+      <div class="table-wrap"><table><thead><tr><th>Group</th><th class="num">Priority</th><th>Assignment profile</th></tr></thead><tbody>
+        {% for g in groups %}<tr><td>{{ g.principal_name or g.principal_id }}</td><td class="num">{{ g.priority if g.priority is not none else '—' }}</td>
+          <td class="mono small">{{ g.app_profile|tojson if g.app_profile else '' }}</td></tr>
+        {% else %}<tr><td colspan="3" class="muted">None.</td></tr>{% endfor %}</tbody></table></div></div>
+    <div class="card"><h2>User assignments · {{ users|length }}</h2>
+      <input data-filter="users" placeholder="Filter users…" style="width:100%;margin-bottom:10px">
+      <div class="table-wrap tall"><table id="users"><thead><tr><th>Login</th><th>Via</th><th>App username</th></tr></thead><tbody>
+        {% for u in users %}<tr data-row data-status=""><td>{{ u.principal_name }}</td>
+          <td><span class="chip {{ 'WARNING' if u.scope == 'USER' else 'state' }} plain">{{ 'direct' if u.scope == 'USER' else 'group' }}</span></td>
+          <td class="mono small">{{ u.app_username }}</td></tr>
+        {% else %}<tr><td colspan="3" class="muted">None.</td></tr>{% endfor %}</tbody></table></div></div>
+  </div>
+</section>
+
+{# ---------------------------------------------------------------- config #}
+{% if a.is_saml %}
+<section class="tab" id="tab-config">
+  <div class="grid g2">
+    <div class="card">
+      <h2>SAML configuration <span class="chip {{ 'OK' if s.config_completeness == 'FULL' else 'WARNING' }}">{{ s.config_completeness|title }}</span></h2>
+      {% if s.config_completeness == 'PARTIAL' %}<p class="muted small">Okta's API does not expose SP settings for catalog apps. Get the SP metadata from the vendor.</p>{% endif %}
+      <dl class="kv">
+        <dt>SP entity ID</dt><dd class="mono">{{ s.audience or '—' }}</dd>
+        <dt>ACS URL</dt><dd class="mono">{{ s.sso_acs_url or '—' }}</dd>
+        {% if s.acs_endpoints %}<dt>ACS endpoints</dt><dd class="mono">{% for e in s.acs_endpoints %}[{{ e.index }}] {{ e.url }}<br>{% endfor %}</dd>{% endif %}
+        <dt>Recipient / Destination</dt><dd class="mono">{{ s.recipient or '—' }}<br>{{ s.destination or '—' }}</dd>
+        <dt>NameID</dt><dd class="mono">{{ s.name_id_template or '—' }}<br><span class="muted">{{ s.name_id_format or '' }}</span></dd>
+        <dt>NameID in PingFederate</dt><dd><span class="chip {{ s.pf_nameid_source }}">{{ s.pf_nameid_source }}</span> <span class="small">{{ s.pf_nameid_detail }}</span></dd>
+        <dt>Signed (response / assertion)</dt><dd>{{ s.response_signed|yesno }} / {{ s.assertion_signed|yesno }} · <span class="mono">{{ s.signature_algorithm or '' }}</span></dd>
+        <dt>AuthnContextClassRef</dt><dd class="mono small">{{ s.authn_context_class_ref or '—' }}</dd>
+        <dt>Default RelayState</dt><dd class="mono">{{ s.default_relay_state or '—' }}</dd>
+        <dt>Single logout</dt><dd>{{ s.slo_enabled|yesno }} <span class="mono">{{ s.slo_logout_url or '' }}</span></dd>
+        <dt>Signed AuthnRequests</dt><dd>{{ s.sp_certificate_present|yesno }}</dd>
+        <dt>IdP issuer (app setting)</dt><dd class="mono">{{ s.idp_issuer or '—' }}</dd>
+        <dt>Okta metadata entity ID</dt><dd class="mono">{{ s.metadata_entity_id or '—' }}</dd>
+        <dt>Okta SSO URL</dt><dd class="mono">{{ s.metadata_sso_url or '—' }}</dd>
+        {% if s.catalog_app_settings %}<dt>Catalog settings</dt><dd class="mono small">{{ s.catalog_app_settings|tojson }}</dd>{% endif %}
+      </dl>
+    </div>
+    <div class="card">
+      <h2>Signing certificates</h2>
+      {% for c in a.certificates %}{% set days = (c.not_after - now).days if c.not_after else None %}
+        <dl class="kv mb">
+          <dt>kid</dt><dd class="mono">{{ c.kid }} {% if c.is_active_signing_key %}<span class="chip OK">active</span>{% endif %}</dd>
+          <dt>Subject</dt><dd class="mono small">{{ c.subject or '—' }}</dd>
+          <dt>Valid</dt><dd>{{ c.not_before|dt('%Y-%m-%d') }} → {{ c.not_after|dt('%Y-%m-%d') }}
+            {% if days is not none %}<span class="chip {{ 'CRITICAL' if days < 0 else ('WARNING' if days < settings.cert_expiry_warning_days else 'OK') }}">{{ days }} days</span>{% endif %}</dd>
+          <dt>SHA-1 thumbprint</dt><dd class="mono small">{{ c.sha1_thumbprint or '—' }}</dd>
+          <dt>Key size</dt><dd>{{ c.key_size or '—' }}</dd>
+        </dl>
+      {% else %}<p class="muted">None returned.</p>{% endfor %}
+      <p class="muted small">Okta does not export signing private keys. PingFederate signs with its own key, so the SP must trust the new certificate at cutover.</p>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="tab" id="tab-config">
+  {% set o = a.oidc %}
+  <div class="grid g2">
+    <div class="card">
+      <h2>OAuth / OIDC client</h2>
+      <dl class="kv">
+        <dt>Client ID</dt><dd class="mono">{{ o.client_id }}</dd>
+        <dt>Application type</dt><dd>{{ o.application_type or '—' }}</dd>
+        <dt>Client authentication</dt><dd class="mono">{{ o.token_endpoint_auth_method or '—' }}</dd>
+        <dt>Grant types</dt><dd>{% for g in o.grant_types %}<span class="chip state plain">{{ g }}</span> {% endfor %}</dd>
+        <dt>Response types</dt><dd class="mono">{{ o.response_types|join(', ') or '—' }}</dd>
+        <dt>PKCE required</dt><dd>{{ o.pkce_required|yesno }}</dd>
+        <dt>Consent</dt><dd>{{ o.consent_method or '—' }}</dd>
+        <dt>Issuer mode</dt><dd>{{ o.issuer_mode or '—' }}</dd>
+        <dt>Wildcard redirect</dt><dd>{{ o.wildcard_redirect or '—' }}</dd>
+        <dt>Client JWKS registered</dt><dd>{{ o.has_jwks|yesno }}</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h2>URIs</h2>
+      <h3 style="margin-top:0">Redirect URIs</h3>
+      {% for u in o.redirect_uris %}<div class="mono small">{{ u }}</div>{% else %}<p class="muted">None</p>{% endfor %}
+      <h3>Post-logout redirect URIs</h3>
+      {% for u in o.post_logout_redirect_uris %}<div class="mono small">{{ u }}</div>{% else %}<p class="muted">None</p>{% endfor %}
+      <h3>Initiate login URI</h3><div class="mono small">{{ o.initiate_login_uri or '—' }}</div>
+      <p class="muted small" style="margin-top:16px">Scopes, claims and access policies live on the Okta authorization server.
+        They are analysed in the next sprint.</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ---------------------------------------------------------------- business #}
+<section class="tab" id="tab-business">
+  <div class="grid g2">
+    <div class="card">
+      <h2>Business context <span class="muted">drives the Impact score</span></h2>
+      <form method="post" action="{{ url_for('web.update_details', app_id=a.id) }}">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <dl class="kv">
+          <dt>Business owner</dt><dd><input name="business_owner" value="{{ a.business_owner or '' }}" style="width:100%"></dd>
+          <dt>Business criticality</dt><dd><select name="business_criticality"><option value="">Not captured</option>
+            {% for c in ['LOW','MEDIUM','HIGH'] %}<option {{ 'selected' if a.business_criticality == c }}>{{ c }}</option>{% endfor %}</select></dd>
+          <dt>SP test environment?</dt><dd><select name="has_test_environment"><option value="">Unknown</option>
+            <option value="yes" {{ 'selected' if a.has_test_environment == true }}>Yes</option>
+            <option value="no" {{ 'selected' if a.has_test_environment == false }}>No</option></select></dd>
+          <dt>Assigned wave</dt><dd><input name="wave" value="{{ a.wave or '' }}" placeholder="{{ a.suggested_wave or 'e.g. Wave 0' }}"></dd>
+          <dt>Notes</dt><dd><textarea name="notes" rows="3" style="width:100%">{{ a.notes or '' }}</textarea></dd>
+          <dt>Your name</dt><dd><input name="actor" value="{{ current_actor }}" required></dd>
+        </dl>
+        <p style="margin:14px 0 0"><button class="btn" type="submit">Save and re-score</button></p>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Migration state <span class="chip state plain">{{ a.state|humanize }}</span></h2>
+      {% if targets %}
+      <form method="post" action="{{ url_for('web.change_state', app_id=a.id) }}">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <dl class="kv">
+          <dt>Move to</dt><dd><select name="target">{% for t in targets %}<option>{{ t.value }}</option>{% endfor %}</select></dd>
+          <dt>Reason</dt><dd><input name="reason" required style="width:100%" placeholder="e.g. App retired, confirmed with owner"></dd>
+          <dt>Your name</dt><dd><input name="actor" value="{{ current_actor }}" required></dd>
+        </dl>
+        <p style="margin:14px 0 0"><button class="btn secondary" type="submit">Change state</button></p>
+      </form>
+      {% endif %}
+      <p class="muted small">Accepting an assessment moves the app from Discovered to Assessed.</p>
+      <h3>History</h3>
+      {% for e in a.events[:20] %}
+        <div class="small" style="margin-bottom:5px"><span class="muted">{{ e.ts|dt }}</span> · <b>{{ e.actor }}</b> ·
+          <span class="mono">{{ e.event_type }}</span>{% if e.to_state %} {{ e.from_state }} → {{ e.to_state }}{% endif %}
+          {% if e.detail.reason %}: {{ e.detail.reason }}{% endif %}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------------------------------------------------------------- raw #}
+<section class="tab" id="tab-raw">
+  {% if raw %}<div class="card"><h2>Raw Okta payload <span class="muted">run #{{ raw.run_id }} · sha256 {{ raw.sha256[:12] }}…</span></h2>
+    <pre>{{ raw.payload }}</pre></div>{% endif %}
+</section>
+
+{% else %}
+<div class="card">
+  <p>This app uses <b class="mono">{{ a.sign_on_mode }}</b> (bookmark / password vaulting / other), so it is outside the SAML and OIDC migration scope.</p>
+  {% if raw %}<details><summary>Raw Okta payload</summary><pre>{{ raw.payload }}</pre></details>{% endif %}
+</div>
+{% endif %}
+{% endblock %}

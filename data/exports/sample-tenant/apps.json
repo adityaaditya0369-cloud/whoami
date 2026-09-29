@@ -1,0 +1,711 @@
+[
+  {
+    "_links": {
+      "accessPolicy": {
+        "href": "https://northwind.okta.com/api/v1/policies/rst0finance0000002"
+      },
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa1expenseportal01/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidExpense01"
+      },
+      "userNameTemplate": {
+        "template": "${source.email}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa1expenseportal01",
+    "label": "Expense Portal",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "northwind_expenseportal_1",
+    "settings": {
+      "app": {},
+      "signOn": {
+        "acsEndpoints": [],
+        "allowMultipleAcsEndpoints": false,
+        "assertionSigned": true,
+        "attributeStatements": [
+          {
+            "name": "email",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.email"
+            ]
+          }
+        ],
+        "audience": "https://expenses.northwind.example",
+        "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+        "defaultRelayState": "",
+        "destination": "https://expenses.northwind.example/saml/acs",
+        "digestAlgorithm": "SHA256",
+        "honorForceAuthn": true,
+        "idpIssuer": "http://www.okta.com/${org.externalKey}",
+        "recipient": "https://expenses.northwind.example/saml/acs",
+        "requestCompressed": false,
+        "responseSigned": true,
+        "samlAssertionLifetimeSeconds": 300,
+        "signatureAlgorithm": "RSA_SHA256",
+        "slo": {
+          "enabled": false
+        },
+        "spIssuer": null,
+        "ssoAcsUrl": "https://expenses.northwind.example/saml/acs",
+        "subjectNameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
+        "subjectNameIdTemplate": "${user.email}"
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa1expenseuat00011/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidExpenseUat11"
+      },
+      "userNameTemplate": {
+        "template": "${source.email}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa1expenseuat00011",
+    "label": "Expense Portal (UAT)",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "northwind_expenseportaluat_1",
+    "settings": {
+      "app": {},
+      "signOn": {
+        "acsEndpoints": [],
+        "allowMultipleAcsEndpoints": false,
+        "assertionSigned": true,
+        "attributeStatements": [
+          {
+            "name": "email",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.email"
+            ]
+          }
+        ],
+        "audience": "https://expenses.northwind.example",
+        "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+        "defaultRelayState": "",
+        "destination": "https://expenses-uat.northwind.example/saml/acs",
+        "digestAlgorithm": "SHA256",
+        "honorForceAuthn": true,
+        "idpIssuer": "http://www.okta.com/${org.externalKey}",
+        "recipient": "https://expenses-uat.northwind.example/saml/acs",
+        "requestCompressed": false,
+        "responseSigned": true,
+        "samlAssertionLifetimeSeconds": 300,
+        "signatureAlgorithm": "RSA_SHA256",
+        "slo": {
+          "enabled": false
+        },
+        "spIssuer": null,
+        "ssoAcsUrl": "https://expenses-uat.northwind.example/saml/acs",
+        "subjectNameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
+        "subjectNameIdTemplate": "${user.email}"
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "accessPolicy": {
+        "href": "https://northwind.okta.com/api/v1/policies/rst0highassur00001"
+      },
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa2hranalytics0002/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidHrAnalytics02"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa2hranalytics0002",
+    "label": "HR Analytics (Tableau)",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "northwind_hranalytics_1",
+    "settings": {
+      "app": {},
+      "signOn": {
+        "acsEndpoints": [],
+        "allowMultipleAcsEndpoints": false,
+        "assertionSigned": true,
+        "attributeStatements": [
+          {
+            "name": "firstName",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.firstName"
+            ]
+          },
+          {
+            "name": "lastName",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.lastName"
+            ]
+          },
+          {
+            "name": "email",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.email"
+            ]
+          },
+          {
+            "name": "employeeNumber",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.employeeNumber"
+            ]
+          },
+          {
+            "name": "displayName",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.firstName + \" \" + user.lastName"
+            ]
+          },
+          {
+            "name": "username",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "String.substringBefore(user.login, \"@\")"
+            ]
+          },
+          {
+            "name": "costCenter",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "appuser.costCenter"
+            ]
+          }
+        ],
+        "audience": "https://tableau.northwind.example",
+        "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+        "defaultRelayState": "",
+        "destination": "https://tableau.northwind.example/wg/saml/SSO/index.html",
+        "digestAlgorithm": "SHA256",
+        "honorForceAuthn": true,
+        "idpIssuer": "http://www.okta.com/${org.externalKey}",
+        "recipient": "https://tableau.northwind.example/wg/saml/SSO/index.html",
+        "requestCompressed": false,
+        "responseSigned": true,
+        "samlAssertionLifetimeSeconds": 300,
+        "signatureAlgorithm": "RSA_SHA256",
+        "slo": {
+          "enabled": false
+        },
+        "spIssuer": null,
+        "ssoAcsUrl": "https://tableau.northwind.example/wg/saml/SSO/index.html",
+        "subjectNameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+        "subjectNameIdTemplate": "${user.userName}"
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa3engwiki00000003/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidEngWiki03"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa3engwiki00000003",
+    "label": "Engineering Wiki (Confluence DC)",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "northwind_engwiki_1",
+    "settings": {
+      "app": {},
+      "signOn": {
+        "acsEndpoints": [
+          {
+            "index": 0,
+            "url": "https://wiki.northwind.example/plugins/servlet/samlconsumer"
+          },
+          {
+            "index": 1,
+            "url": "https://wiki-dr.northwind.example/plugins/servlet/samlconsumer"
+          }
+        ],
+        "allowMultipleAcsEndpoints": true,
+        "assertionSigned": true,
+        "attributeStatements": [
+          {
+            "name": "email",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.email"
+            ]
+          },
+          {
+            "name": "fullName",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.firstName + \" \" + user.lastName"
+            ]
+          },
+          {
+            "name": "wikiRole",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.department == \"Engineering\" ? \"wiki-admin\" : \"wiki-user\""
+            ]
+          },
+          {
+            "filterType": "REGEX",
+            "filterValue": "ENG-.*",
+            "name": "groups",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "GROUP"
+          }
+        ],
+        "audience": "https://wiki.northwind.example",
+        "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+        "defaultRelayState": "https://wiki.northwind.example/dashboard.action",
+        "destination": "https://wiki.northwind.example/plugins/servlet/samlconsumer",
+        "digestAlgorithm": "SHA256",
+        "honorForceAuthn": true,
+        "idpIssuer": "https://sso.northwind.example/wiki",
+        "recipient": "https://wiki.northwind.example/plugins/servlet/samlconsumer",
+        "requestCompressed": false,
+        "responseSigned": true,
+        "samlAssertionLifetimeSeconds": 300,
+        "signatureAlgorithm": "RSA_SHA256",
+        "slo": {
+          "enabled": true,
+          "issuer": "https://wiki.northwind.example",
+          "logoutUrl": "https://wiki.northwind.example/plugins/servlet/samlslo"
+        },
+        "spCertificate": {
+          "x5c": [
+            "MIIC...truncated-sp-cert..."
+          ]
+        },
+        "spIssuer": null,
+        "ssoAcsUrl": "https://wiki.northwind.example/plugins/servlet/samlconsumer",
+        "subjectNameIdFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+        "subjectNameIdTemplate": "${user.login}"
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "accessPolicy": {
+        "href": "https://northwind.okta.com/api/v1/policies/rst0default0000000"
+      },
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa4servicenow00004/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidServiceNow04"
+      },
+      "userNameTemplate": {
+        "template": "${source.email}",
+        "type": "BUILT_IN"
+      }
+    },
+    "features": [
+      "PUSH_NEW_USERS",
+      "IMPORT_NEW_USERS"
+    ],
+    "id": "0oa4servicenow00004",
+    "label": "ServiceNow",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "servicenow_ud",
+    "settings": {
+      "app": {
+        "instanceName": "northwind",
+        "loginURL": "https://northwind.service-now.com"
+      },
+      "signOn": {
+        "attributeStatements": [],
+        "audienceOverride": null,
+        "defaultRelayState": null,
+        "destinationOverride": null,
+        "recipientOverride": null,
+        "ssoAcsUrlOverride": null
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "accessPolicy": {
+        "href": "https://northwind.okta.com/api/v1/policies/rst0highassur00001"
+      },
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa5salesforce00005/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidSalesforce05"
+      },
+      "userNameTemplate": {
+        "template": "${source.employeeNumber}@northwind.sfdc",
+        "type": "BUILT_IN"
+      }
+    },
+    "features": [
+      "PUSH_NEW_USERS",
+      "PUSH_PROFILE_UPDATES",
+      "PUSH_USER_DEACTIVATION"
+    ],
+    "id": "0oa5salesforce00005",
+    "label": "Salesforce",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "salesforce",
+    "settings": {
+      "app": {
+        "instanceType": "PRODUCTION",
+        "integrationType": "STANDARD",
+        "loginUrl": "https://northwind.my.salesforce.com"
+      },
+      "signOn": {
+        "attributeStatements": [],
+        "defaultRelayState": null
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa6legacytravel006/sso/saml/metadata"
+      }
+    },
+    "created": "2018-05-02T00:00:00.000Z",
+    "credentials": {
+      "signing": {
+        "kid": "kidLegacy06"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa6legacytravel006",
+    "label": "Legacy Travel Booking",
+    "lastUpdated": "2022-01-09T00:00:00.000Z",
+    "name": "northwind_legacytravel_1",
+    "settings": {
+      "app": {},
+      "signOn": {
+        "acsEndpoints": [],
+        "allowMultipleAcsEndpoints": false,
+        "assertionSigned": true,
+        "attributeStatements": [
+          {
+            "name": "mail",
+            "namespace": "urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified",
+            "type": "EXPRESSION",
+            "values": [
+              "user.email"
+            ]
+          }
+        ],
+        "audience": "urn:northwind:travel",
+        "authnContextClassRef": "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport",
+        "defaultRelayState": "",
+        "destination": "https://travel-old.northwind.example/sso/acs",
+        "digestAlgorithm": "SHA1",
+        "honorForceAuthn": true,
+        "idpIssuer": "http://www.okta.com/${org.externalKey}",
+        "recipient": "https://travel-old.northwind.example/sso/acs",
+        "requestCompressed": false,
+        "responseSigned": true,
+        "samlAssertionLifetimeSeconds": 300,
+        "signatureAlgorithm": "RSA_SHA1",
+        "slo": {
+          "enabled": false
+        },
+        "spIssuer": null,
+        "ssoAcsUrl": "https://travel-old.northwind.example/sso/acs",
+        "subjectNameIdFormat": "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent",
+        "subjectNameIdTemplate": "${user.id}"
+      }
+    },
+    "signOnMode": "SAML_2_0",
+    "status": "INACTIVE"
+  },
+  {
+    "_links": {
+      "accessPolicy": {
+        "href": "https://northwind.okta.com/api/v1/policies/rst0default0000000"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "oauthClient": {
+        "autoKeyRotation": true,
+        "client_id": "0oa7EmpPortalClient01",
+        "pkce_required": false,
+        "token_endpoint_auth_method": "client_secret_basic"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa7employeeportal7",
+    "label": "Employee Portal",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "oidc_client",
+    "settings": {
+      "app": {},
+      "oauthClient": {
+        "application_type": "web",
+        "consent_method": "TRUSTED",
+        "grant_types": [
+          "authorization_code",
+          "refresh_token"
+        ],
+        "initiate_login_uri": "https://portal.northwind.example/login",
+        "issuer_mode": "ORG_URL",
+        "post_logout_redirect_uris": [
+          "https://portal.northwind.example/"
+        ],
+        "redirect_uris": [
+          "https://portal.northwind.example/callback",
+          "https://portal.northwind.example/silent-renew"
+        ],
+        "response_types": [
+          "code"
+        ],
+        "wildcard_redirect": "DISABLED"
+      }
+    },
+    "signOnMode": "OPENID_CONNECT",
+    "status": "ACTIVE"
+  },
+  {
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "oauthClient": {
+        "autoKeyRotation": true,
+        "client_id": "0oa8MobileExpClient08",
+        "pkce_required": true,
+        "token_endpoint_auth_method": "none"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa8mobileexpense08",
+    "label": "Mobile Expenses",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "oidc_client",
+    "settings": {
+      "app": {},
+      "oauthClient": {
+        "application_type": "native",
+        "consent_method": "TRUSTED",
+        "grant_types": [
+          "authorization_code",
+          "refresh_token"
+        ],
+        "initiate_login_uri": null,
+        "issuer_mode": "ORG_URL",
+        "post_logout_redirect_uris": [],
+        "redirect_uris": [
+          "com.northwind.expenses:/callback"
+        ],
+        "response_types": [
+          "code"
+        ],
+        "wildcard_redirect": "DISABLED"
+      }
+    },
+    "signOnMode": "OPENID_CONNECT",
+    "status": "ACTIVE"
+  },
+  {
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "oauthClient": {
+        "autoKeyRotation": true,
+        "client_id": "0oa9ReportingSvc0009",
+        "pkce_required": false,
+        "token_endpoint_auth_method": "private_key_jwt"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa9reportingapi009",
+    "label": "Reporting API",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "oidc_client",
+    "settings": {
+      "app": {},
+      "oauthClient": {
+        "application_type": "service",
+        "consent_method": "TRUSTED",
+        "grant_types": [
+          "client_credentials"
+        ],
+        "initiate_login_uri": null,
+        "issuer_mode": "ORG_URL",
+        "jwks": {
+          "keys": [
+            {
+              "e": "AQAB",
+              "kid": "rpt-1",
+              "kty": "RSA",
+              "n": "sXch..."
+            }
+          ]
+        },
+        "post_logout_redirect_uris": [],
+        "redirect_uris": [],
+        "response_types": [
+          "token"
+        ],
+        "wildcard_redirect": "DISABLED"
+      }
+    },
+    "signOnMode": "OPENID_CONNECT",
+    "status": "ACTIVE"
+  },
+  {
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "oauthClient": {
+        "autoKeyRotation": true,
+        "client_id": "0oa10LegacySpaClnt10",
+        "pkce_required": false,
+        "token_endpoint_auth_method": "none"
+      },
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa10legacyspa00010",
+    "label": "Legacy Intranet SPA",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "oidc_client",
+    "settings": {
+      "app": {},
+      "oauthClient": {
+        "application_type": "browser",
+        "consent_method": "TRUSTED",
+        "grant_types": [
+          "implicit"
+        ],
+        "initiate_login_uri": null,
+        "issuer_mode": "ORG_URL",
+        "post_logout_redirect_uris": [],
+        "redirect_uris": [
+          "https://intranet.northwind.example/*",
+          "https://intranet-old.northwind.example/auth"
+        ],
+        "response_types": [
+          "id_token",
+          "token"
+        ],
+        "wildcard_redirect": "SUBDOMAIN"
+      }
+    },
+    "signOnMode": "OPENID_CONNECT",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa8handbook0000008/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa8handbook0000008",
+    "label": "Company Handbook",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "bookmark",
+    "settings": {
+      "app": {}
+    },
+    "signOnMode": "BOOKMARK",
+    "status": "ACTIVE"
+  },
+  {
+    "_links": {
+      "metadata": {
+        "href": "https://northwind.okta.com/api/v1/apps/0oa9vendorportal009/sso/saml/metadata"
+      }
+    },
+    "created": "2021-03-04T00:00:00.000Z",
+    "credentials": {
+      "userNameTemplate": {
+        "template": "${source.login}",
+        "type": "BUILT_IN"
+      }
+    },
+    "id": "0oa9vendorportal009",
+    "label": "Vendor Portal",
+    "lastUpdated": "2025-11-20T00:00:00.000Z",
+    "name": "template_swa",
+    "settings": {
+      "app": {}
+    },
+    "signOnMode": "AUTO_LOGIN",
+    "status": "ACTIVE"
+  }
+]

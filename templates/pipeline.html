@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Pipeline{% endblock %}
+{% block heading %}<h1>Migration pipeline</h1>
+<div class="sub">Every SAML app from discovery to a validated cutover (or rollback). Each step needs the previous one; people approve, the tool checks.</div>{% endblock %}
+{% block actions %}<a class="btn secondary" href="{{ url_for('pipeline.knowledge_page') }}">Knowledge base · {{ kb.docs }} doc(s)</a>{% endblock %}
+{% block content %}
+<div class="flow mb" role="list" aria-label="Pipeline stages">
+  {% for key, title, states in STAGES %}
+    <a class="st {{ 'rb' if key == 'rollback' and cols[key] }}{{ ' ok' if key == 'done' and cols[key] }}" href="#lane-{{ key }}" role="listitem">
+      <div class="n">{{ cols[key]|length }}</div><div class="l">{{ title }}</div></a>
+    {% if not loop.last %}<div class="arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>{% endif %}
+  {% endfor %}
+</div>
+<p class="muted small" style="margin:-4px 0 14px">{{ apps|length }} SAML app(s) in scope.
+  {% if oidc %}{{ oidc }} OIDC app(s) follow the checklist on the Migration plan page; this pipeline (agents, SAML validation) is SAML-only.{% endif %}</p>
+
+<div class="board">
+  {% for key, title, states in STAGES %}
+  <div class="lane{{ ' Blocked' if key == 'rollback' and cols[key] }}" id="lane-{{ key }}">
+    <h3>{{ title }} <span class="count chip state plain">{{ cols[key]|length }}</span></h3>
+    <div class="lane-sub">{{ states|map(attribute='value')|map('humanize')|join(' · ') }}</div>
+    {% for a in cols[key] %}{% set v = last_v.get(a.id) %}{% set r = runs.get(a.id) %}
+      <a class="pcard" href="{{ url_for('pipeline.app_pipeline', app_id=a.id) }}">
+        <div class="nm">{{ a.label }}</div>
+        <span class="chip state plain">{{ a.state|humanize }}</span>
+        {% if a.blocked %}<span class="chip BLOCKED">Blocked</span>{% endif %}
+        {% if r and key in ('discovery', 'agents') %}<span class="chip {{ r.review_status if r.status == 'VALID' else r.status }}">agents {{ (r.review_status if r.status == 'VALID' else r.status)|lower }}</span>{% endif %}
+        {% if v %}<span class="chip {{ v.verdict }}">{{ v.stage|replace('_', ' ')|lower }}: {{ v.verdict|replace('_', ' ')|lower }}</span>{% endif %}
+        <div class="na">Next: {{ next_action.get(S(a.state), '') }}</div>
+      </a>
+    {% else %}<div class="muted small" style="padding:6px 4px">None</div>{% endfor %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

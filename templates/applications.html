@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Okta apps{% endblock %}
+{% block heading %}<h1>Okta apps</h1><div class="sub">{{ rows|length }} shown</div>{% endblock %}
+{% block actions %}
+<a class="btn secondary" href="{{ url_for('web.export_csv') }}">CSV</a>
+<a class="btn secondary" href="{{ url_for('web.export_xlsx', protocol=protocol if protocol in ('SAML', 'OIDC') else None) }}">Excel report</a>
+{% endblock %}
+{% block content %}
+{% set keep = dict(q=q or None, overall=f.overall or None, wave=f.wave or None, state=f.state or None) %}
+<div class="toolbar">
+  <nav class="seg" aria-label="Protocol">
+    {% for p, label in (('SAML', 'SAML'), ('OIDC', 'OIDC'), ('OTHER', 'Other'), ('ALL', 'All')) %}
+      <a class="{{ 'on' if protocol == p }}" href="{{ url_for('web.applications', protocol=p, **keep) }}">{{ label }}
+        <span class="n">{{ counts[p] if p != 'ALL' else counts.values()|sum }}</span></a>
+    {% endfor %}
+  </nav>
+  <span class="muted small">{% if protocol == 'OTHER' %}Bookmarks, password-vaulted (SWA) and other apps: out of migration scope.
+    {% elif protocol == 'OIDC' %}OAuth / OpenID Connect clients. Scopes and claims are analysed next sprint.{% endif %}</span>
+</div>
+
+<form method="get" class="card toolbar" style="padding:12px 14px;flex-wrap:nowrap;overflow-x:auto">
+  <input type="hidden" name="protocol" value="{{ protocol }}">
+  <input name="q" value="{{ q }}" placeholder="Search label, catalog name or id" style="min-width:220px;flex:1">
+  <select name="overall"><option value="">Any overall level</option>
+    {% for l in LEVELS %}<option {{ 'selected' if f.overall == l }}>{{ l }}</option>{% endfor %}</select>
+  <select name="wave"><option value="">Any suggested wave</option>
+    {% for w in waves %}<option {{ 'selected' if f.wave == w }}>{{ w }}</option>{% endfor %}</select>
+  <select name="state"><option value="">Any state</option>
+    {% for s in states %}<option {{ 'selected' if f.state == s.value }}>{{ s.value }}</option>{% endfor %}</select>
+  {% for k in ('code', 'severity', 'complexity', 'impact') if f[k] %}
+    <input type="hidden" name="{{ k }}" value="{{ f[k] }}"><span class="chip INFO">{{ k }}: {{ f[k] }}</span>
+  {% endfor %}
+  <button type="submit" class="btn secondary">Filter</button>
+  <a href="{{ url_for('web.applications', protocol=protocol) }}" class="btn ghost">Reset</a>
+</form>
+
+<div class="table-wrap">
+<table>
+  <thead><tr>
+    <th>Application</th>
+    {% if protocol == 'SAML' %}<th>Type</th><th>SP entity ID</th>
+    {% elif protocol == 'OIDC' %}<th>Client type</th><th>Grant types</th><th>Client auth</th><th class="num">Redirects</th>
+    {% else %}<th>Protocol</th><th>Sign-on mode</th>{% endif %}
+    {% if protocol != 'OTHER' %}<th>Risk (C · I · Overall)</th><th>Suggested wave</th><th>State</th>{% endif %}
+    {% if protocol == 'SAML' %}<th>Assessment</th>{% endif %}
+    <th class="num">Users</th><th class="num">Groups</th>
+    {% if protocol == 'SAML' %}<th class="num">Claims</th>{% endif %}
+    <th>Findings</th>
+  </tr></thead>
+  <tbody>
+  {% for r in rows %}{% set a = r.app %}
+  <tr>
+    <td><a href="{{ url_for('web.application', app_id=a.id) }}"><b>{{ a.label }}</b></a>
+        <div class="muted small mono">{{ a.oidc.client_id if a.is_oidc and a.oidc else a.okta_name }}{% if a.okta_status != 'ACTIVE' %} · {{ a.okta_status|lower }}{% endif %}</div></td>
+    {% if protocol == 'SAML' %}
+      <td>{{ 'Custom SAML' if a.is_custom_saml else 'OIN catalog' }}</td>
+      <td class="mono small break" style="max-width:240px">{{ a.saml.audience if a.saml and a.saml.audience else '—' }}</td>
+    {% elif protocol == 'OIDC' %}{% set o = a.oidc %}
+      <td>{{ (o.application_type or '—')|title }}</td>
+      <td>{% for g in o.grant_types %}<span class="chip state plain" style="margin:1px">{{ g }}</span>{% endfor %}</td>
+      <td class="mono small">{{ o.token_endpoint_auth_method or '—' }}{% if o.pkce_required %}<div class="muted">PKCE</div>{% endif %}</td>
+      <td class="num">{{ o.redirect_uris|length }}</td>
+    {% else %}
+      <td><span class="proto {{ a.protocol }}">{{ a.protocol }}</span></td><td class="mono small">{{ a.sign_on_mode }}</td>
+    {% endif %}
+    {% if protocol != 'OTHER' %}
+    <td>{% if a.overall_level %}<span class="levels">
+        <span class="lv {{ a.complexity_level }}" title="Complexity score {{ a.complexity_score }}"><small>Cplx</small>{{ a.complexity_level|title }}</span>
+        <span class="lv {{ a.impact_level }}" title="Impact score {{ a.impact_score }}"><small>Impact</small>{{ a.impact_level|title }}</span>
+        <span class="lv {{ a.overall_level }}"><small>Overall</small>{{ a.overall_level|title }}</span></span>
+        {% elif a.in_scope_protocol %}<span class="muted">—</span>{% else %}<span class="muted small">out of scope</span>{% endif %}</td>
+    <td>{% if a.suggested_wave %}<span class="chip {{ 'BLOCKED' if a.suggested_wave == 'Blocked' else ('state' if 'Decom' in a.suggested_wave else 'INFO') }}">{{ a.suggested_wave }}</span>
+        {% if a.wave %}<div class="small muted">set: {{ a.wave }}</div>{% endif %}{% endif %}</td>
+    <td>{% if a.in_scope_protocol %}<span class="chip state plain">{{ a.state|humanize }}</span>{% endif %}</td>
+    {% endif %}
+    {% if protocol == 'SAML' %}
+    <td>{% if r.assessment %}<span class="chip {{ r.assessment.review_status if r.assessment.status == 'VALID' else r.assessment.status }}">
+        {{ (r.assessment.review_status if r.assessment.status == 'VALID' else r.assessment.status)|humanize }}</span>
+        <div class="small muted">{{ r.assessment.provider }}</div>
+        {% else %}<span class="muted small">Not run</span>{% endif %}</td>
+    {% endif %}
+    <td class="num">{{ a.user_count }}{% if a.usage_known %}<div class="small {{ 'check-bad' if not a.usage_events and a.user_count else 'muted' }}" title="active in {{ a.usage_window_days }} days">{{ a.usage_unique_users }} active</div>{% endif %}{% if a.direct_user_count %}<div class="small muted">{{ a.direct_user_count }} direct</div>{% endif %}</td>
+    <td class="num">{{ a.group_count }}</td>
+    {% if protocol == 'SAML' %}<td class="num">{{ r.claims }}</td>{% endif %}
+    <td class="nowrap">{% for s in ['CRITICAL','WARNING','INFO'] if r.fcount[s] %}<span class="chip {{ s }}">{{ r.fcount[s] }} {{ s[:4]|lower }}</span> {% endfor %}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="12" class="empty"><b>No applications match</b>Try another tab or reset the filters.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

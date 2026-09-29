@@ -1,0 +1,19 @@
+[
+  {
+    "channel": {
+      "config": {
+        "uri": "https://siem.northwind.example/okta"
+      }
+    },
+    "events": {
+      "items": [
+        "user.lifecycle.create",
+        "user.session.start"
+      ],
+      "type": "EVENT_TYPE"
+    },
+    "id": "who0siem00000001",
+    "name": "SIEM user events",
+    "status": "ACTIVE"
+  }
+]

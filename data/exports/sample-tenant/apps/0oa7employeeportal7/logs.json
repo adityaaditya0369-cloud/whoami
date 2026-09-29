@@ -1,0 +1,4562 @@
+[
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T02:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-45"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T09:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-98"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T18:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-19"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T00:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-70"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T06:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-39"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T18:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-188"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T21:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-127"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T20:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-35"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T23:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-110"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T03:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-23"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T04:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-106"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T13:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-6"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T23:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-163"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T02:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-44"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T11:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-105"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T21:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-109"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T01:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-234"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T15:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-187"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T18:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-162"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T20:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-219"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T06:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-84"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T18:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-118"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-06T05:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-207"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-07T15:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-236"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T02:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-26"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T02:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-68"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T05:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-1"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T09:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-65"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T16:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-135"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T18:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-169"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-09T15:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-38"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-09T20:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-203"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-10T12:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-126"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T13:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-193"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T13:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-123"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T14:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-211"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T17:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-81"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T17:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-62"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T09:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-42"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T11:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-66"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T18:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-107"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T11:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-137"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T20:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-125"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T08:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-116"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T11:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-175"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T04:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-58"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T21:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-11"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T05:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-192"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T11:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-189"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T19:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-86"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T05:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-54"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T15:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-176"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T05:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-49"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T09:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-146"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T14:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-212"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T02:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-186"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T11:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-205"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T16:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-208"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T12:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-89"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T18:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-103"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T13:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-64"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T17:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-61"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T18:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-190"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T06:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-161"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T08:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-16"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T10:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-53"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T14:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-172"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-25T23:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-231"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T11:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-113"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T12:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-124"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T15:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-92"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T21:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-132"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T14:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-143"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T20:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-104"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T02:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-238"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T23:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-46"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T08:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-136"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T12:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-206"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T14:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-221"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T16:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-13"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T02:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-67"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T09:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-73"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T11:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-155"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T01:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-52"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T02:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-17"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T16:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-79"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T07:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-164"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T03:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-204"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T06:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-142"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T06:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-130"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T12:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-149"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T07:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-28"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T07:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-122"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T09:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-2"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-05T11:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-83"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T03:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-117"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T03:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-224"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T09:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-222"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T17:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-29"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T19:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-114"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-07T02:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-217"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-07T02:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-184"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T08:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-31"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T12:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-21"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T14:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-210"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T02:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-95"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T07:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-145"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T14:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-218"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T15:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-153"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T18:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-14"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T18:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-74"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T09:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-226"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T14:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-59"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T18:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-43"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T20:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-91"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T03:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-75"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T09:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-32"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T11:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-5"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T13:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-133"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T19:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-60"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T02:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-40"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T03:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-99"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T07:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-87"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T14:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-90"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T09:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-166"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T14:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-216"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-15T21:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-18"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T13:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-213"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T14:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-51"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T11:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-237"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T21:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-223"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T00:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-200"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T02:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-97"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T05:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-48"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T08:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-3"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T09:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-228"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T13:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-69"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T14:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-194"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T18:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-121"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T02:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-111"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T05:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-22"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T08:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-239"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T21:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-12"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T22:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-71"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T16:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-214"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T22:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-129"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T02:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-7"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T03:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-112"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T15:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-159"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T17:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-141"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T22:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-152"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T04:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-108"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T12:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-179"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T04:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-170"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T12:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-15"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-24T12:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-183"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T03:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-134"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T05:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-227"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T06:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-63"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T16:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-173"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-26T07:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-93"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T06:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-201"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T20:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-0"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T14:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-151"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T22:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-128"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T04:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-33"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T11:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-47"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T20:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-156"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T05:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-20"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T06:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-56"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T12:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-185"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T23:44:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-57"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T01:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-181"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T04:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-4"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T09:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-209"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T11:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-198"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T17:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-191"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T08:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-72"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T13:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-232"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T21:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-115"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T18:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-235"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T19:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-8"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T16:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-140"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T18:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-88"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T07:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-30"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T10:44:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-150"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T11:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-10"
+  },
+  {
+    "actor": {
+      "alternateId": "uma.nair@northwind.example",
+      "id": "00u20nwusr20abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T12:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-202"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T15:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-119"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T09:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-77"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T16:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-230"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T06:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-27"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T11:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-139"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T11:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-138"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T15:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-82"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T15:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-180"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T05:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-197"
+  },
+  {
+    "actor": {
+      "alternateId": "victor.costa@northwind.example",
+      "id": "00u21nwusr21abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T11:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-215"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T12:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-158"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T16:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-157"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T02:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-101"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T08:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-174"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T20:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-148"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T20:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-225"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T07:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-199"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T08:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-24"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T06:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-165"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T08:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-9"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T14:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-41"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T17:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-55"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T03:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-76"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T17:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-195"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T20:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-85"
+  },
+  {
+    "actor": {
+      "alternateId": "maya.cohen@northwind.example",
+      "id": "00u12nwusr12abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T04:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-120"
+  },
+  {
+    "actor": {
+      "alternateId": "tom.hart@northwind.example",
+      "id": "00u19nwusr19abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T12:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-196"
+  },
+  {
+    "actor": {
+      "alternateId": "pablo.diaz@northwind.example",
+      "id": "00u15nwusr15abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T08:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-154"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T16:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-100"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-15T06:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-171"
+  },
+  {
+    "actor": {
+      "alternateId": "nikhil.shah@northwind.example",
+      "id": "00u13nwusr13abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T08:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-131"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T19:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-178"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T11:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-96"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T15:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-160"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T19:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-78"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T21:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-34"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T13:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-36"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T17:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-168"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T19:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-147"
+  },
+  {
+    "actor": {
+      "alternateId": "quinn.reid@northwind.example",
+      "id": "00u16nwusr16abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T23:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-167"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T08:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-80"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T18:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-50"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T03:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-37"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T04:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-102"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T11:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-25"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T13:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-94"
+  },
+  {
+    "actor": {
+      "alternateId": "xavier.roux@northwind.example",
+      "id": "00u23nwusr23abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T07:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-233"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T07:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-229"
+  },
+  {
+    "actor": {
+      "alternateId": "wen.zhou@northwind.example",
+      "id": "00u22nwusr22abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T07:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-220"
+  },
+  {
+    "actor": {
+      "alternateId": "sara.lund@northwind.example",
+      "id": "00u18nwusr18abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T17:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-182"
+  },
+  {
+    "actor": {
+      "alternateId": "ravi.kumar@northwind.example",
+      "id": "00u17nwusr17abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T01:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-177"
+  },
+  {
+    "actor": {
+      "alternateId": "olga.ivanova@northwind.example",
+      "id": "00u14nwusr14abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T20:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa7employeeportal7",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa7employeeportal7-144"
+  }
+]

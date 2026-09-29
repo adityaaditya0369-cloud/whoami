@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Validation #{{ v.id }}{% endblock %}
+{% block heading %}<h1>Validation #{{ v.id }} · {{ a.label }}</h1>
+<div class="sub">{{ VSTAGES[v.stage] }} · {{ v.source|lower }} · {{ v.created_at|dt }} · {{ v.actor }} · response sha256 <span class="mono">{{ (v.response_sha256 or '')[:16] }}…</span></div>{% endblock %}
+{% block actions %}<a class="btn secondary" href="{{ url_for('pipeline.app_pipeline', app_id=a.id, _anchor='tab-validation') }}">← Pipeline</a>{% endblock %}
+{% block content %}{% set s = v.result.summary %}
+<div class="toolbar"><span class="chip {{ v.verdict }}">{{ v.verdict|humanize }}</span>
+  {% if v.result.baseline_used %}<span class="chip INFO">compared with the Okta baseline</span>{% endif %}</div>
+<div class="grid g-7-5">
+  <div class="card">{% include "_checks.html" %}</div>
+  <div class="card"><h2>What the response contained</h2>
+    <dl class="kv small">
+      <dt>Issuer</dt><dd class="mono">{{ s.issuer or '—' }}</dd>
+      <dt>Destination</dt><dd class="mono">{{ s.destination or '—' }}</dd>
+      <dt>Audience</dt><dd class="mono">{{ (s.audiences or [])|join(', ') or '—' }}</dd>
+      <dt>NameID</dt><dd class="mono">{{ s.name_id or '—' }}<br><span class="muted">{{ s.name_id_format or '' }}</span></dd>
+      <dt>Valid</dt><dd class="mono">{{ s.not_before or '—' }} → {{ s.not_on_or_after or '—' }}</dd>
+      <dt>Authn context</dt><dd class="mono">{{ s.authn_context or '—' }}</dd>
+      <dt>Signed</dt><dd>{{ 'response ' if s.response_signature }}{{ 'assertion' if s.assertion_signature }}{{ 'none' if not s.response_signature and not s.assertion_signature }}</dd>
+      {% for k, vals in (s.attributes or {}).items() %}<dt>{{ k }}</dt><dd class="mono">{{ vals|join(', ') }}</dd>{% endfor %}
+    </dl></div>
+</div>
+{% endblock %}

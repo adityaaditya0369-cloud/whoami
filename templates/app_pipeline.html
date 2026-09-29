@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+{% block title %}{{ a.label }} · pipeline{% endblock %}
+{% macro who() %}<input name="actor" placeholder="Your name" value="{{ current_actor }}" required aria-label="Your name">{% endmacro %}
+{% macro csrf() %}<input type="hidden" name="_csrf" value="{{ csrf_token() }}">{% endmacro %}
+{% macro kb(refs) %}{% for c in refs or [] %}<span class="kbref" title="{{ kb_titles.get(c, 'removed document') }}">{{ c }}</span>{% endfor %}{% endmacro %}
+{% block content %}
+<p class="small" style="margin:0 0 6px"><a href="{{ url_for('pipeline.board') }}">← Pipeline</a> · <a href="{{ url_for('web.application', app_id=a.id) }}">App details</a></p>
+<div class="app-head">
+  <div class="title">
+    <h1>{{ a.label }}</h1>
+    <div class="meta">
+      <span class="proto SAML">SAML</span>
+      <span class="chip state plain">State: {{ a.state|humanize }}</span>
+      {% if a.suggested_wave %}<span class="chip {{ 'BLOCKED' if a.blocked else 'INFO' }}">{{ a.wave or a.suggested_wave }}</span>{% endif %}
+      {% if a.overall_level %}<span class="chip {{ a.overall_level }}">Risk {{ a.overall_level|lower }}</span>{% endif %}
+      <span class="muted small mono">{{ a.saml.audience or 'entity ID unknown' }}</span>
+    </div>
+  </div>
+</div>
+
+{% set order = STAGES|map(attribute=0)|list %}{% set cur = order.index(stage) %}
+<div class="stepper" aria-label="Pipeline progress">
+  {% for key, title, _ in STAGES %}{% if key != 'rollback' or stage == 'rollback' %}
+    {% set i = loop.index0 %}
+    <div class="s {{ 'bad' if key == 'rollback' else ('done' if i < cur or stage == 'done' else ('cur' if i == cur else '')) }}">
+      <div class="bar"></div><div class="t">{{ title }}</div></div>
+  {% endif %}{% endfor %}
+</div>
+<div class="next"><span>Next step:</span> <b>{{ next_action }}</b></div>
+
+<nav class="tabs">
+  <a href="#tab-agents" data-tab="agents">1 · Review agents {% if counts %}<span class="count">{{ counts.DISAGREE }} disagree · {{ counts.CONCERN }} concern</span>{% endif %}</a>
+  <a href="#tab-plan" data-tab="plan">2 · Plan &amp; approval {% if plan %}<span class="count">v{{ plan.version }} {{ plan.status|lower }}</span>{% endif %}</a>
+  <a href="#tab-build" data-tab="build">3 · PingFederate</a>
+  <a href="#tab-validation" data-tab="validation">4 · SAML validation {% if validations %}<span class="count">{{ validations|length }}</span>{% endif %}</a>
+  <a href="#tab-cutover" data-tab="cutover">5 · Cutover &amp; rollback</a>
+</nav>
+<script>if (!location.hash) history.replaceState(null, '', '#tab-{{ tab }}');</script>
+
+{# ================================================================ agents #}
+<section class="tab" id="tab-agents">
+  <div class="card mb">
+    <form method="post" action="{{ url_for('pipeline.run_agents', app_id=a.id) }}" class="toolbar" style="margin:0">
+      {{ csrf() }}{{ who() }}
+      <select name="provider" aria-label="Provider">
+        <option value="offline" {{ 'selected' if settings.ai_provider.value == 'offline' }}>Offline reviewers (no data leaves this machine)</option>
+        <option value="anthropic" {{ 'selected' if settings.ai_provider.value == 'anthropic' }} {{ 'disabled' if not settings.anthropic_api_key }}>Claude ({{ settings.claude_model }}){{ '' if settings.anthropic_api_key else ': set ANTHROPIC_API_KEY' }}</option>
+      </select>
+      <label class="small"><input type="checkbox" name="force" value="1"> re-run even if unchanged</label>
+      <button class="btn" type="submit">Run the 4 agents</button>
+      <a class="small" style="margin-left:auto" href="{{ url_for('pipeline.knowledge_page') }}">Knowledge base →</a>
+    </form>
+    <p class="muted small" style="margin:10px 0 0">The SAML analysis, claims mapping, group mapping and risk agents each <b>review</b> what the rules decided
+      and say agree, concern or disagree, citing the knowledge base (<span class="kbref">KB-n</span>). They cannot change mappings or scores.
+      Output is schema- and policy-checked. A named reviewer accepts the whole panel; every disagreement needs a written resolution.</p>
+  </div>
+
+  {% if run %}
+  <div class="toolbar">
+    <b>Run #{{ run.id }}</b>
+    <span class="chip {{ run.status }}">{{ run.status|humanize }}</span>
+    {% if run.status == 'VALID' %}<span class="chip {{ run.review_status }}">{{ run.review_status|humanize }}</span>{% endif %}
+    <span class="chip AGREE">{{ counts.AGREE }} agree</span><span class="chip CONCERN">{{ counts.CONCERN }} concern</span><span class="chip DISAGREE">{{ counts.DISAGREE }} disagree</span>
+    <span class="muted small">{{ run.provider }}{% if run.model %} · {{ run.model }}{% endif %} · {{ run.created_at|dt }} · by {{ run.requested_by }}{% if run.masked %} · masked{% endif %}</span>
+    <label class="toggle" style="margin-left:auto"><input type="checkbox" id="only-issues" checked> Only concerns and disagreements</label>
+  </div>
+  <script>
+  (function () {
+    var cb = document.getElementById('only-issues');
+    function apply() { document.querySelectorAll('tr.row-AGREE').forEach(function (tr) { tr.style.display = cb.checked ? 'none' : ''; });
+      document.querySelectorAll('[data-agree-note]').forEach(function (el) { el.style.display = cb.checked ? '' : 'none'; }); }
+    cb.addEventListener('change', apply); document.addEventListener('DOMContentLoaded', apply);
+  })();
+  </script>
+  {% for r in run.reviews %}{% set o = r.output or {} %}
+  <div class="card mb">
+    <h2>{{ AGENT_TITLE[r.agent] }}
+      {% if r.status == 'VALID' %}<span class="chip {{ o.verdict }}">{{ o.verdict|humanize }}</span>{% else %}<span class="chip {{ r.status }}">{{ r.status|humanize }}</span>{% endif %}
+      <span class="muted">{{ r.items|length }} item(s){% if r.knowledge_refs %} · {{ r.knowledge_refs|length }} passage(s) offered{% endif %}</span></h2>
+    {% if r.errors %}<div class="flash error"><b>Rejected by validation:</b><ul class="list-clean">{% for e in r.errors %}<li>{{ e }}</li>{% endfor %}</ul></div>{% endif %}
+    {% if o.summary %}<p style="margin-top:0">{{ o.summary }}</p>{% endif %}
+    {% if r.status == 'VALID' %}{% set by_key = {} %}{% for i in r.items %}{% set _ = by_key.update({i.key: i}) %}{% endfor %}
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:18%">Item</th><th style="width:28%">Rules decided</th><th>Agent</th><th style="width:34%">Comment</th><th>Sources</th></tr></thead><tbody>
+      {% for i in o['items'] %}{% set it = by_key.get(i.key, {}) %}
+        <tr class="row-{{ i.assessment }}"><td><b>{{ it.label or i.key }}</b><div class="mono small muted">{{ i.key }}</div></td>
+          <td class="small">{{ it.rule_result }}</td>
+          <td><span class="chip {{ i.assessment }}">{{ i.assessment|title }}</span></td>
+          <td class="small">{{ i.comment }}{% if i.suggestion %}<div style="margin-top:4px"><b>→</b> {{ i.suggestion }}</div>{% endif %}</td>
+          <td>{{ kb(i.citations) }}</td></tr>
+      {% endfor %}
+      {% set n_ok = o['items']|selectattr('assessment', 'equalto', 'AGREE')|list|length %}
+      {% if n_ok %}<tr data-agree-note><td colspan="5" class="small muted">{{ n_ok }} item(s) where the agent agrees are hidden.</td></tr>{% endif %}
+      </tbody></table></div>
+    {% if o.questions %}<h3>Questions</h3><ul class="list-clean small">{% for q in o.questions %}<li>{{ q }}</li>{% endfor %}</ul>{% endif %}
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  {% if run.status == 'VALID' and run.review_status == 'PENDING' %}
+  <div class="card mb">
+    <h2>Review the panel</h2>
+    <form method="post" action="{{ url_for('pipeline.review_agents', run_id=run.id) }}">
+      {{ csrf() }}
+      <div class="formgrid">
+        {% for key, i in disagreements %}
+          <label for="res-{{ loop.index }}">Resolve <span class="mono">{{ key }}</span></label>
+          <textarea id="res-{{ loop.index }}" name="resolve::{{ key }}" rows="2" required placeholder="{{ i.comment }}"></textarea>
+        {% endfor %}
+        <label>Your name</label>{{ who() }}
+        <label>Comment</label><textarea name="comment" rows="2" placeholder="Required when rejecting"></textarea>
+      </div>
+      <p class="toolbar" style="margin:12px 0 0">
+        <button class="btn" name="decision" value="ACCEPTED" {{ 'disabled' if a.state not in ('DISCOVERED','ASSESSED','MAPPING_READY') }}>Accept → Mapping ready</button>
+        <button class="btn danger" name="decision" value="REJECTED" formnovalidate>Reject</button></p>
+    </form>
+  </div>
+  {% elif run.review_status != 'PENDING' %}
+  <div class="card mb"><h2>Review</h2>
+    <p><span class="chip {{ run.review_status }}">{{ run.review_status|humanize }}</span> by <b>{{ run.reviewed_by }}</b> · {{ run.reviewed_at|dt }}</p>
+    {% if run.review_comment %}<p class="small">{{ run.review_comment }}</p>{% endif %}
+    {% for k, v in (run.resolutions or {}).items() %}<p class="small"><span class="mono">{{ k }}</span>: {{ v }}</p>{% endfor %}</div>
+  {% endif %}
+  {% else %}<div class="card empty"><b>No agent review yet</b>Run the agents above. Add runbooks and vendor guides to the knowledge base first so they can cite them.</div>{% endif %}
+</section>
+
+{# ================================================================ plan #}
+<section class="tab" id="tab-plan">
+  <div class="card mb">
+    <form method="post" action="{{ url_for('pipeline.generate_plan', app_id=a.id) }}" class="toolbar" style="margin:0">
+      {{ csrf() }}{{ who() }}
+      <button class="btn" type="submit" {{ 'disabled' if a.state not in ('MAPPING_READY','PLAN_GENERATED','REJECTED','OKTA_ACTIVE') }}>{{ 'Regenerate plan' if plan else 'Generate plan' }}</button>
+      <span class="muted small">Needs an accepted agent review (state Mapping ready). Blocked apps cannot be planned until their decisions are made.</span>
+    </form>
+  </div>
+  {% if plan %}{% set p = plan.plan %}{% set pay = p.pingfederate.payload %}
+  {% if drift %}<div class="flash error">Okta configuration or a decision changed since this plan was generated. It cannot be approved or written - regenerate it.</div>{% endif %}
+  <div class="grid g-7-5">
+    <div class="grid" style="align-content:start">
+      <div class="card">
+        <h2>Plan v{{ plan.version }} <span class="chip {{ plan.status }}">{{ plan.status|humanize }}</span>
+          <span class="muted mono">sha256 {{ plan.sha256[:12] }}…</span>
+          <a class="small" style="margin-left:auto;font-weight:500" href="{{ url_for('pipeline.plan_json', plan_id=plan.id) }}">Download JSON</a></h2>
+        <dl class="kv">
+          <dt>Generated</dt><dd>{{ plan.created_at|dt }} by {{ plan.generated_by }}</dd>
+          <dt>Wave / cutover</dt><dd>{{ p.app.wave or '—' }} · {{ p.cutover_date or 'date to be agreed' }}</dd>
+          <dt>Risk</dt><dd>{% if p.risk %}<span class="chip {{ p.risk.overall }}">{{ p.risk.overall|lower }}</span> <span class="muted small">rules {{ p.risk.rules_version }}</span>{% endif %}</dd>
+          <dt>Agent review</dt><dd>{% if p.agent_review %}run #{{ p.agent_review.run_id }} {{ p.agent_review.status|lower }} by {{ p.agent_review.reviewed_by or '—' }}{% else %}—{% endif %}</dd>
+          <dt>Entity ID</dt><dd class="mono">{{ pay.entityId }}</dd>
+          <dt>ACS</dt><dd class="mono small">{% for e in pay.spBrowserSso.ssoServiceEndpoints %}[{{ e.index }}] {{ e.url }}<br>{% endfor %}</dd>
+          <dt>Attributes</dt><dd class="small">{% for k, v in pay.spBrowserSso.adapterMappings[0].attributeContractFulfillment.items() %}<span class="mono">{{ k }}</span> ← {{ v.source.type|lower }}: <span class="mono">{{ v.value }}</span><br>{% endfor %}</dd>
+          <dt>Created as</dt><dd>{{ 'disabled' if pay.active == false else 'ACTIVE' }}</dd>
+        </dl>
+        {% if p.pingfederate.todos %}<h3>To do before building</h3><ul class="list-clean small">{% for t in p.pingfederate.todos %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+        {% if p.pingfederate.variables %}<h3>App-specific variables</h3><ul class="list-clean small">{% for k, v in p.pingfederate.variables.items() %}<li><span class="mono">{{ '{{' }}{{ k }}{{ '}}' }}</span> {{ v }}</li>{% endfor %}</ul>{% endif %}
+        {% if p.directory_prep.okta_only_groups or p.directory_prep.missing_inputs or p.directory_prep.access_group %}
+        <h3>Directory prep</h3><ul class="list-clean small">
+          {% for g in p.directory_prep.okta_only_groups %}<li>Create and populate group <b>{{ g }}</b></li>{% endfor %}
+          {% for m in p.directory_prep.missing_inputs %}<li>Provide directory attribute for <span class="mono">{{ m }}</span></li>{% endfor %}
+          {% if p.directory_prep.access_group %}<li>Access group <b>{{ p.directory_prep.access_group }}</b> (issuance criteria)</li>{% endif %}</ul>{% endif %}
+      </div>
+    </div>
+    <div class="grid" style="align-content:start">
+      {% if plan.status == 'DRAFT' %}
+      <div class="card"><h2>Submit for approval</h2>
+        <form method="post" action="{{ url_for('pipeline.submit_plan', plan_id=plan.id) }}" class="toolbar" style="margin:0">{{ csrf() }}{{ who() }}
+          <button class="btn" {{ 'disabled' if drift }}>Submit</button></form></div>
+      {% elif plan.status == 'SUBMITTED' %}
+      <div class="card"><h2>Approve or reject</h2>
+        <p class="small muted" style="margin-top:0">Submitted by {{ plan.submitted_by }} · {{ plan.submitted_at|dt }}.
+          {% if four_eyes %}Four-eyes: the approver must not be {{ plan.generated_by }}{% if plan.submitted_by != plan.generated_by %} or {{ plan.submitted_by }}{% endif %}.{% endif %}</p>
+        <form method="post" action="{{ url_for('pipeline.decide_plan', plan_id=plan.id) }}">{{ csrf() }}
+          <div class="formgrid"><label>Approver</label>{{ who() }}<label>Comment</label><textarea name="comment" rows="2" placeholder="Required when rejecting"></textarea></div>
+          <p class="toolbar" style="margin:12px 0 0"><button class="btn" name="decision" value="APPROVED" {{ 'disabled' if drift }}>Approve</button>
+            <button class="btn danger" name="decision" value="REJECTED">Reject</button></p></form></div>
+      {% else %}
+      <div class="card"><h2>Decision</h2><p><span class="chip {{ plan.status }}">{{ plan.status|humanize }}</span>
+        {% if plan.decided_by %} by <b>{{ plan.decided_by }}</b> · {{ plan.decided_at|dt }}{% endif %}</p>
+        {% if plan.decision_comment %}<p class="small">{{ plan.decision_comment }}</p>{% endif %}</div>
+      {% endif %}
+      <div class="card"><h2>Validation expectations</h2>
+        <dl class="kv small"><dt>Issuer</dt><dd class="mono">{{ p.validation.issuer }}</dd><dt>Audience</dt><dd class="mono">{{ p.validation.audience or '—' }}</dd>
+          <dt>NameID format</dt><dd class="mono">{{ (p.validation.name_id_format or 'unspecified').rsplit(':', 1)[-1] }}</dd>
+          <dt>Attributes</dt><dd class="mono">{{ p.validation.attributes|join(', ') or '—' }}</dd>
+          <dt>Signing</dt><dd>{{ 'assertion' if p.validation.sign_assertion else 'response' }}, {{ p.validation.signature_algorithm }}</dd></dl></div>
+      <div class="card"><h2>History</h2>
+        {% for x in plans %}<div class="small" style="margin-bottom:6px">v{{ x.version }} · {{ x.created_at|dt }} · <span class="chip {{ x.status }}">{{ x.status|humanize }}</span>
+          {% if x.decided_by %}<span class="muted">· {{ x.decided_by }}</span>{% endif %}</div>{% endfor %}</div>
+    </div>
+  </div>
+  {% else %}<div class="card empty"><b>No plan yet</b>Accept the agent review, then generate the plan.</div>{% endif %}
+</section>
+
+{# ================================================================ build #}
+<section class="tab" id="tab-build">
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>A · Create through the Admin API <span class="chip {{ 'OK' if settings.pf_write_enabled else 'state' }} plain">{{ 'writes on' if settings.pf_write_enabled else 'writes off' }}</span></h2>
+      <p class="small muted" style="margin-top:0">Creates exactly the approved plan's connection, <b>disabled</b>, with a separate write account. Create-only: it never updates or deletes.
+        A dry run must pass first (valid {{ settings.pf_dry_run_valid_minutes }} min).</p>
+      <form method="post" class="toolbar" style="margin:0">{{ csrf() }}{{ who() }}
+        <button class="btn secondary" formaction="{{ url_for('pipeline.pf_dry_run', app_id=a.id) }}" {{ 'disabled' if a.state != 'APPROVED' }}>Dry run</button>
+        <button class="btn" formaction="{{ url_for('pipeline.pf_apply', app_id=a.id) }}"
+          {{ 'disabled' if a.state != 'APPROVED' or not settings.pf_write_enabled or not (dry and dry.detail.ok) }}>Create on PingFederate</button></form>
+      {% if dry %}
+        <h3>Last dry run · {{ dry.ts|dt }} · {{ dry.actor }} <span class="chip {{ 'PASS' if dry.detail.ok else 'FAIL' }}">{{ 'passed' if dry.detail.ok else 'problems' }}</span></h3>
+        <ul class="gate">{% for label, ok, detail in dry.detail.checks or [] %}
+          <li><span class="ic {{ 'ok' if ok else 'no' }}">{{ '✓' if ok else '✗' }}</span><div>{{ label }}<div class="d">{{ detail }}</div></div></li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    <div class="card">
+      <h2>B · Admins import it themselves</h2>
+      <p class="small muted" style="margin-top:0">Download the approved plan (or the build package in the Delivery kit), import it on PingFederate, run a
+        <a href="{{ url_for('target.pingfederate') }}">PingFederate sync</a>, then confirm here.</p>
+      <dl class="kv small"><dt>Found on PingFederate</dt><dd>{% if rec and rec.pf %}<b>{{ rec.pf.name }}</b> ({{ 'active' if rec.pf.active else 'disabled' }})
+        {% if rec.problems %}<br><span class="check-bad">differs:</span> {{ rec.problems|map(attribute='check')|join(', ') }}{% else %} <span class="check-ok">matches</span>{% endif %}{% else %}not found{% endif %}</dd></dl>
+      <form method="post" action="{{ url_for('pipeline.pf_confirm_manual', app_id=a.id) }}" class="toolbar" style="margin:12px 0 0">{{ csrf() }}{{ who() }}
+        {% if approved %}<a class="btn secondary" href="{{ url_for('pipeline.plan_json', plan_id=approved.id) }}">Approved plan JSON</a>{% endif %}
+        <button class="btn" {{ 'disabled' if a.state != 'APPROVED' or not (rec and rec.pf) }}>Confirm manual import</button></form>
+    </div>
+  </div>
+  {% if preview %}
+  <div class="card">
+    <h2>Approved payload {% if unresolved %}<span class="chip FAIL">{{ unresolved|length }} variable(s) to fill</span>{% else %}<span class="chip PASS">all variables filled</span>{% endif %}</h2>
+    {% if unresolved %}<p class="small">Fill these in <span class="mono">PF_VARIABLES_FILE</span>: <span class="mono">{{ unresolved|join(', ') }}</span></p>{% endif %}
+    <pre style="max-height:420px;overflow:auto">{{ preview|tojson(indent=2) }}</pre>
+  </div>
+  {% else %}<div class="card empty"><b>Nothing to build yet</b>The plan must be approved first.</div>{% endif %}
+</section>
+
+{# ================================================================ validation #}
+<section class="tab" id="tab-validation">
+  <div class="grid g-7-5 mb">
+    <div class="card">
+      <h2>Validate a captured SAML response</h2>
+      <form method="post" action="{{ url_for('pipeline.validate', app_id=a.id) }}" enctype="multipart/form-data">{{ csrf() }}
+        <div class="formgrid">
+          <label>Stage</label><select name="stage">{% for k, v in VSTAGES.items() %}<option value="{{ k }}" {{ 'selected' if k == default_stage }}>{{ v }}</option>{% endfor %}</select>
+          <label>SAML response</label><textarea class="code" name="response" rows="6" placeholder="Paste the SAMLResponse value (base64), the form body, or the XML"></textarea>
+          <label>…or a file</label><input type="file" name="response_file" accept=".txt,.xml,.b64,.saml">
+          <label>IdP signing certificate</label><textarea class="code" name="cert_pem" rows="3" placeholder="{{ 'Ignored for pre/post-cutover: the configured PF_SIGNING_CERT_FILE is always used' if cert_configured else 'Quick check only: a pasted certificate never opens the go/no-go gate. Set PF_SIGNING_CERT_FILE for that.' }}"></textarea>
+          <label>Your name</label>{{ who() }}
+        </div>
+        <p class="toolbar" style="margin:12px 0 0"><button class="btn">Validate</button>
+          <span class="muted small">The raw response is not stored - only its hash and the checks.</span></p>
+      </form>
+    </div>
+    <div class="grid" style="align-content:start">
+      <div class="card"><h2>Automated test SSO <span class="chip {{ 'OK' if test_sso_enabled else 'state' }} plain">{{ 'on' if test_sso_enabled else 'off' }}</span></h2>
+        <p class="small muted" style="margin-top:0">Signs the test user in through PingFederate in a headless browser and captures the response before the SP gets it.
+          Needs Playwright, a test account without MFA, and the connection enabled on PingFederate (safe before cutover: the SP still points at Okta).</p>
+        <p class="small mono break">{{ test_sso_url }}</p>
+        <form method="post" action="{{ url_for('pipeline.validate_auto', app_id=a.id) }}" class="toolbar" style="margin:0">{{ csrf() }}{{ who() }}
+          <select name="stage"><option value="PRE_CUTOVER">Pre-cutover</option><option value="POST_CUTOVER" {{ 'selected' if default_stage == 'POST_CUTOVER' }}>Post-cutover</option></select>
+          <button class="btn secondary" {{ 'disabled' if not test_sso_enabled }}>Run test sign-in</button></form></div>
+      <div class="card"><h2>How to capture one</h2><ol class="list-clean small">
+        <li><b>Okta baseline first:</b> sign the test user in through Okta with SAML-tracer (Firefox/Chrome) and copy the SAMLResponse. It is the reference for NameID and attribute values.</li>
+        <li><b>PingFederate:</b> open the IdP-initiated URL above as the same test user and copy the SAMLResponse posted to the ACS.</li>
+        <li>Paste it here. Checks: issuer, destination, audience, recipient, NameID, attributes vs Okta, signature (verified with the certificate), algorithm, validity.</li></ol></div>
+    </div>
+  </div>
+  {% if validations %}{% set v = validations[0] %}
+  <div class="card mb">
+    <h2>Latest: #{{ v.id }} {{ VSTAGES[v.stage] }} <span class="chip {{ v.verdict }}">{{ v.verdict|humanize }}</span>
+      <span class="muted">{{ v.source|lower }} · {{ v.created_at|dt }} · {{ v.actor }}{% if v.result.baseline_used %} · compared with the Okta baseline{% endif %}</span>
+      <a class="small" style="margin-left:auto;font-weight:500" href="{{ url_for('pipeline.validation_detail', vid=v.id) }}">Details</a></h2>
+    {% include "_checks.html" %}
+  </div>
+  {% if a.state == 'TESTING' %}
+  <div class="card mb"><h2>Business sign-off</h2>
+    <form method="post" action="{{ url_for('pipeline.cutover_action', app_id=a.id, action='signoff') }}" class="toolbar" style="margin:0">{{ csrf() }}{{ who() }}
+      <input name="comment" placeholder="e.g. App owner tested roles with 3 pilot users" style="min-width:320px">
+      <button class="btn">Record sign-off</button></form></div>
+  {% endif %}
+  <div class="card"><h2>All validations</h2>
+    <div class="table-wrap"><table><thead><tr><th>#</th><th>When</th><th>Stage</th><th>Source</th><th>Verdict</th><th>Failed checks</th><th>By</th></tr></thead><tbody>
+    {% for x in validations %}<tr><td><a href="{{ url_for('pipeline.validation_detail', vid=x.id) }}">#{{ x.id }}</a></td><td class="nowrap">{{ x.created_at|dt }}</td>
+      <td>{{ VSTAGES[x.stage] }}</td><td>{{ x.source|lower }}</td><td><span class="chip {{ x.verdict }}">{{ x.verdict|humanize }}</span></td>
+      <td class="small">{{ x.result.checks|selectattr('status', 'equalto', 'FAIL')|map(attribute='label')|join(', ') or '—' }}</td><td>{{ x.actor }}</td></tr>{% endfor %}
+    </tbody></table></div></div>
+  {% else %}<div class="card empty"><b>No validations yet</b>Start with an Okta baseline for your test user, then a pre-cutover check once the connection exists.</div>{% endif %}
+</section>
+
+{# ================================================================ cutover #}
+<section class="tab" id="tab-cutover">
+  <div class="grid g-7-5 mb">
+    <div class="card">
+      <h2>Go / no-go gate <span class="chip {{ 'PASS' if gate_ok else 'FAIL' }}">{{ 'green' if gate_ok else 'not ready' }}</span>
+        <a class="small" style="margin-left:auto;font-weight:500" href="{{ url_for('pipeline.runbook_docx', app_id=a.id) }}">Runbook (.docx)</a></h2>
+      <ul class="gate">{% for c in gate %}
+        <li><span class="ic {{ 'ok' if c.ok else ('no' if c.required else 'opt') }}">{{ '✓' if c.ok else ('✗' if c.required else '!') }}</span>
+          <div>{{ c.label }}{% if not c.required %} <span class="muted small">(recommended)</span>{% endif %}<div class="d">{{ c.detail }}</div></div></li>{% endfor %}</ul>
+    </div>
+    <div class="grid" style="align-content:start">
+      {% set actions = [] %}
+      {% if a.state == 'BUSINESS_VALIDATION' %}{% set _ = actions.append(('go', 'Go decision → ready for cutover', 'btn', 'Change number / window')) %}{% endif %}
+      {% if a.state == 'READY_FOR_CUTOVER' %}{% set _ = actions.append(('done', 'SP switched → record cutover', 'btn', 'What was switched and when (change no.)')) %}{% endif %}
+      {% if a.state in ('PF_CONFIGURED','VENDOR_CONFIGURED','TESTING','BUSINESS_VALIDATION','READY_FOR_CUTOVER','MIGRATED','VALIDATED') %}{% set _ = actions.append(('fail', 'Declare failed', 'btn danger', 'What went wrong')) %}{% endif %}
+      {% if a.state == 'FAILED' %}{% set _ = actions.append(('rollback', 'Start rollback to Okta', 'btn danger', 'Why roll back')) %}{% set _ = actions.append(('retry', 'Fix and test again', 'btn secondary', 'What was fixed')) %}{% endif %}
+      {% if a.state == 'ROLLBACK' %}{% set _ = actions.append(('rollback-confirm', 'Confirm users are back on Okta', 'btn', 'How it was checked')) %}{% endif %}
+      <div class="card"><h2>Actions <span class="chip state plain">{{ a.state|humanize }}</span></h2>
+        {% for key, label, cls, ph in actions %}
+          <form method="post" action="{{ url_for('pipeline.cutover_action', app_id=a.id, action=key) }}" class="toolbar" style="margin:0 0 10px">{{ csrf() }}{{ who() }}
+            <input name="comment" placeholder="{{ ph }}" style="flex:1;min-width:180px" {{ 'required' if key != 'go' }}>
+            <button class="{{ cls }}" {{ 'disabled title="The go/no-go gate is not green"' if key in ('go', 'done') and not gate_ok else '' }}>{{ label }}</button></form>
+        {% else %}<p class="muted small" style="margin:0">No cutover action in this state. {{ next_action }}.</p>{% endfor %}
+        {% if a.state == 'MIGRATED' %}<p class="small" style="margin:6px 0 0">Now record a <a href="#tab-validation" onclick="document.querySelector('[data-tab=validation]').click()">post-cutover validation</a>: PASS moves the app to Validated, FAIL to Failed.</p>{% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>What the SP is switched to - and back to</h2>
+    <div class="table-wrap"><table class="vals"><thead><tr><th>Setting</th><th>Cutover (PingFederate)</th><th>Rollback (Okta, captured)</th></tr></thead><tbody>
+      <tr><td>IdP entity ID</td><td class="mono small">{{ cutover_values.idp_entity_id }}</td><td class="mono small">{{ rollback_values.idp_entity_id or '—' }}</td></tr>
+      <tr><td>SSO URL</td><td class="mono small">{{ cutover_values.sso_url }}</td><td class="mono small">{{ rollback_values.sso_url or '—' }}</td></tr>
+      {% if cutover_values.slo_url %}<tr><td>SLO URL</td><td class="mono small">{{ cutover_values.slo_url }}</td><td class="mono small">{{ rollback_values.slo_url or '—' }}</td></tr>{% endif %}
+      <tr><td>Metadata</td><td class="mono small break">{{ cutover_values.metadata_url or '—' }}</td><td class="mono small break">{{ rollback_values.metadata_url or 'Okta app metadata (Sign On tab)' }}</td></tr>
+      <tr><td>Signing certificate</td><td class="small">{{ cutover_values.certificate }}</td>
+        <td class="mono small">{{ rollback_values.certificate_sha256 or '—' }}{% if rollback_values.certificate_not_after %}<br><span class="muted">valid until {{ rollback_values.certificate_not_after }}</span>{% endif %}</td></tr>
+    </tbody></table></div>
+    <p class="muted small" style="margin:10px 0 0">Keep the Okta app active until the rollback window has closed. Rollback is an SP-side change back to these Okta values.</p>
+  </div>
+</section>
+{% endblock %}

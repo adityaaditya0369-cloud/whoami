@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Delivery kit{% endblock %}
+{% block heading %}<h1>Delivery kit</h1>
+<div class="sub">Ready-to-send app-owner messages and a PingFederate build package for every scheduled app (decommission candidates excluded)</div>{% endblock %}
+{% block actions %}
+<a class="btn secondary" href="{{ url_for('strategy.comms_xlsx') }}">Mail-merge Excel</a>
+<a class="btn" href="{{ url_for('strategy.build_zip') }}">Build package (.zip)</a>
+{% endblock %}
+{% block content %}
+<nav class="tabs">
+  <a href="#tab-comms" data-tab="comms">App-owner messages <span class="count">{{ msgs|length }}</span></a>
+  <a href="#tab-build" data-tab="build">PingFederate build package <span class="count">{{ pkgs|length }}</span></a>
+  <a href="#tab-dir" data-tab="dir">Directory work pack</a>
+</nav>
+
+<section class="tab" id="tab-comms">
+  <p class="muted" style="margin-top:0">One message per app with the new PingFederate values, proposed dates (from the timeline), and that app's
+    open questions. Secrets are never included. Fill in the "To" column in the Excel, or copy a message below.</p>
+  {% for m in msgs %}
+  <details class="card mb" style="padding:14px 18px" {{ 'open' if loop.first }}>
+    <summary style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--ink)">
+      <span class="proto {{ m.app.protocol }}">{{ m.app.protocol }}</span><b>{{ m.app.label }}</b>
+      <span class="chip state plain">{{ wave_of.get(m.app.id) }}</span>
+      <span class="small muted">cutover {{ m.cutover|dt('%d %b %Y') if m.cutover else 'tbd' }} · to {{ m.to or 'owner not captured' }}</span></summary>
+    <div class="toolbar" style="margin:12px 0 8px">
+      <b class="small">Subject:</b> <span class="small">{{ m.subject }}</span>
+      <button class="btn secondary" type="button" style="margin-left:auto" onclick="copyMsg(this)">Copy message</button>
+    </div>
+    <div class="msg">{{ m.body }}</div>
+    <textarea hidden>Subject: {{ m.subject }}
+
+{{ m.body }}</textarea>
+  </details>
+  {% else %}<div class="card empty"><b>No scheduled apps</b>Run discovery first.</div>{% endfor %}
+</section>
+
+<section class="tab" id="tab-build">
+  <div class="card mb">
+    <p style="margin-top:0">JSON for the PingFederate Admin API, one file per app. Connections and clients are created <b>disabled</b>.
+      Environment IDs are <span class="mono">{{ '{{' }}VARIABLES{{ '}}' }}</span> (listed in <span class="mono">variables.json</span>) and anything that needs
+      a person is in <span class="mono">TODO.md</span>. <b>The tool never writes to PingFederate</b>: the admins review and import.</p>
+    <div class="toolbar" style="margin:0">
+      <span class="small muted">Download by wave:</span>
+      {% for w in waves %}<a class="btn secondary" href="{{ url_for('strategy.build_zip', wave=w) }}">{{ w }}</a>{% endfor %}
+    </div>
+  </div>
+  {% for p in pkgs %}
+  <details class="card mb" style="padding:14px 18px">
+    <summary style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:var(--ink)">
+      <span class="proto {{ p.app.protocol }}">{{ p.app.protocol }}</span><b>{{ p.app.label }}</b>
+      <span class="small muted mono">{{ p.filename }}</span>
+      <span class="chip {{ 'WARNING' if p.todos else 'OK' }}">{{ p.todos|length }} to-do</span>
+      <a class="small" style="margin-left:auto" href="{{ url_for('strategy.build_zip', app=p.app.id) }}">download</a></summary>
+    {% if p.todos %}<ul class="list-clean small" style="margin-top:10px">{% for t in p.todos %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+    <pre>{{ json.dumps(p.payload, indent=2) }}</pre>
+  </details>
+  {% endfor %}
+</section>
+
+<section class="tab" id="tab-dir">
+  <p class="muted" style="margin-top:0">For the directory team. The PowerShell script runs with <span class="mono">-WhatIf</span> unless started with <span class="mono">-Apply</span>.</p>
+  {% for name, content in dirpack.items() %}
+    <div class="card mb"><h2 class="mono" style="font-size:13px">{{ name }}</h2><pre>{{ content }}</pre></div>
+  {% endfor %}
+</section>
+<script>
+function copyMsg(btn) {
+  var t = btn.closest('details').querySelector('textarea').value;
+  try { navigator.clipboard.writeText(t); btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy message'; }, 1500); }
+  catch (e) { btn.textContent = 'Copy failed'; }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,4562 @@
+[
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T01:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-177"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T13:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-39"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T18:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-82"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T18:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-25"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T04:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-222"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T09:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-100"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T23:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-232"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T02:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-143"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T11:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-120"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T15:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-210"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T15:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-31"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T18:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-214"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T04:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-46"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T04:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-201"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T09:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-4"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-03T14:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-166"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T05:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-235"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T14:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-79"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T16:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-1"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T22:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-117"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T23:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-91"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T11:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-75"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-06T03:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-139"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-06T18:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-150"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-06T23:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-134"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-07T04:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-65"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-07T11:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-66"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T02:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-219"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T02:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-121"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T13:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-228"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T20:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-138"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-09T06:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-187"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-09T19:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-96"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-09T23:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-32"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T04:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-58"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T07:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-216"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T08:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-48"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T05:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-0"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T05:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-111"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T19:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-63"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T07:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-182"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T15:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-35"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T02:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-123"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T08:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-221"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T04:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-151"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T11:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-44"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T15:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-154"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T02:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-92"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T09:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-68"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T15:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-102"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T15:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-132"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T11:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-125"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T13:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-174"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T13:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-159"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T21:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-113"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T23:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-144"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T15:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-8"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T19:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-89"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T22:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-83"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T19:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-145"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T21:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-190"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T03:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-124"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T07:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-14"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T07:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-160"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T14:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-76"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-25T05:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-202"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-25T19:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-148"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T14:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-192"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T20:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-74"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T01:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-140"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T01:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-94"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T06:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-238"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T08:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-176"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T12:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-175"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T22:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-84"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T02:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-106"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T05:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-197"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T14:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-230"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T16:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-18"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T01:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-191"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T03:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-50"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T03:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-103"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T09:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-17"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T15:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-85"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T06:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-142"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T10:44:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-185"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T21:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-162"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T21:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-211"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T07:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-13"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T10:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-188"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T14:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-55"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T14:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-112"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T15:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-122"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T15:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-78"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T01:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-178"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T10:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-36"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-05T11:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-34"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T03:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-116"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T09:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-2"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T09:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-115"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T19:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-10"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-07T09:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-225"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T01:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-49"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T04:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-196"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T15:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-60"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T16:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-47"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T16:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-3"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T18:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-213"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T21:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-147"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T05:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-20"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T21:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-59"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T05:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-24"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T18:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-203"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T06:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-105"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T12:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-163"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T17:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-62"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T14:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-193"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T20:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-45"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T05:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-149"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T19:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-161"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T09:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-135"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T04:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-239"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T17:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-98"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T01:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-220"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T05:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-119"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T05:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-155"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T09:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-40"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T18:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-90"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T18:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-67"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T18:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-156"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T19:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-37"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T20:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-200"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T04:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-28"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T05:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-204"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T12:44:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-110"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T14:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-131"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T15:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-207"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T23:12:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-104"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T08:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-21"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T16:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-93"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T01:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-107"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T06:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-206"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T22:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-208"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T11:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-114"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T16:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-88"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T01:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-133"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T08:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-181"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T09:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-184"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T17:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-195"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T00:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-164"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T11:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-11"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T11:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-12"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-24T09:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-97"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-24T19:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-224"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T00:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-81"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T14:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-52"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T02:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-137"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T17:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-56"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T08:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-77"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T03:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-229"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T09:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-169"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T14:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-172"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T15:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-51"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T17:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-127"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T20:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-87"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T22:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-53"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T02:31:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-130"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T18:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-218"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T18:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-234"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T15:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-168"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T18:43:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-72"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T04:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-146"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T05:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-99"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T13:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-217"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T15:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-233"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T20:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-158"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T03:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-194"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T03:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-95"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T06:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-5"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T07:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-69"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T14:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-189"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T23:59:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-41"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T09:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-71"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T13:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-19"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T14:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-57"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T20:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-186"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T03:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-205"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T03:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-101"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T05:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-129"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T02:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-153"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T09:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-183"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T11:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-165"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T16:36:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-108"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T10:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-15"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T15:54:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-179"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T21:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-30"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T23:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-136"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T00:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-173"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T09:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-231"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T18:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-212"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T18:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-54"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T20:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-157"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T01:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-223"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T02:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-43"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T03:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-215"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T14:10:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-237"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T15:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-171"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T16:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-64"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T04:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-22"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T16:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-227"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T03:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-199"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T09:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-198"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T09:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-70"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T10:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-152"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-15T00:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-26"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T06:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-7"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T12:46:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-73"
+  },
+  {
+    "actor": {
+      "alternateId": "jon.berg@northwind.example",
+      "id": "00u09nwusr09abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T07:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-180"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T09:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-29"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T15:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-126"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T15:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-38"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T17:03:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-80"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T19:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-109"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T04:56:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-170"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T19:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-86"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T01:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-23"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T06:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-6"
+  },
+  {
+    "actor": {
+      "alternateId": "isla.moore@northwind.example",
+      "id": "00u08nwusr08abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T17:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-167"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T07:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-236"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T09:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-42"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T05:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-128"
+  },
+  {
+    "actor": {
+      "alternateId": "kavya.menon@northwind.example",
+      "id": "00u10nwusr10abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T18:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-209"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T20:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-118"
+  },
+  {
+    "actor": {
+      "alternateId": "liam.walsh@northwind.example",
+      "id": "00u11nwusr11abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T21:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-226"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T04:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-61"
+  },
+  {
+    "actor": {
+      "alternateId": "hiro.sato@northwind.example",
+      "id": "00u07nwusr07abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T12:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-141"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T15:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-33"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T05:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-9"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T22:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-27"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T22:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa4servicenow00004",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa4servicenow00004-16"
+  }
+]

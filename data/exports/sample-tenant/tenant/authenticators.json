@@ -1,0 +1,44 @@
+[
+  {
+    "id": "aut0password00001",
+    "key": "okta_password",
+    "name": "Password",
+    "status": "ACTIVE",
+    "type": "password"
+  },
+  {
+    "id": "aut0oktaverify0001",
+    "key": "okta_verify",
+    "name": "Okta Verify",
+    "status": "ACTIVE",
+    "type": "app"
+  },
+  {
+    "id": "aut0webauthn00001",
+    "key": "webauthn",
+    "name": "Security Key or Biometric",
+    "status": "ACTIVE",
+    "type": "security_key"
+  },
+  {
+    "id": "aut0phone0000001",
+    "key": "phone_number",
+    "name": "Phone",
+    "status": "ACTIVE",
+    "type": "phone"
+  },
+  {
+    "id": "aut0email0000001",
+    "key": "okta_email",
+    "name": "Email",
+    "status": "ACTIVE",
+    "type": "email"
+  },
+  {
+    "id": "aut0secq00000001",
+    "key": "security_question",
+    "name": "Security Question",
+    "status": "INACTIVE",
+    "type": "security_question"
+  }
+]

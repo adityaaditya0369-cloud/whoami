@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block heading %}<h1>Migration dashboard</h1>
+<div class="sub">{% if last_run %}Last discovery run #{{ last_run.id }} · {{ last_run.started_at|dt }} ·
+  <span class="chip {{ 'OK' if last_run.status == 'SUCCESS' else 'CRITICAL' }}">{{ last_run.status }}</span>{% else %}No discovery run yet{% endif %}</div>{% endblock %}
+{% block actions %}
+<a class="btn secondary" href="{{ url_for('web.export_xlsx') }}">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>Excel report</a>
+{% endblock %}
+{% block content %}
+<div class="card mb">
+  <div class="toolbar" style="margin:0">
+    <form method="post" action="{{ url_for('web.discovery_run') }}" class="inline">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <input name="actor" placeholder="Your name (audit)" value="{{ current_actor }}" required>
+      <button class="btn" type="submit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Run discovery</button>
+    </form>
+    {% if stats.saml %}
+    <form method="post" action="{{ url_for('web.assess_all') }}" class="inline" style="margin-left:auto">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <input type="hidden" name="actor" value="{{ current_actor }}">
+      <select name="provider" title="Assessment engine">
+        <option value="offline" {{ 'selected' if settings.ai_provider.value == 'offline' }}>Offline rules</option>
+        <option value="anthropic" {{ 'selected' if settings.ai_provider.value == 'anthropic' }} {{ 'disabled' if not settings.anthropic_api_key }}>Claude{{ '' if settings.anthropic_api_key else ' (no API key)' }}</option>
+      </select>
+      <button class="btn secondary" type="submit">Assess all apps</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+
+{% if stats.total %}
+<div class="toolbar">
+  <nav class="seg" aria-label="Protocol">
+    {% for pk, label, n in (('ALL', 'SAML + OIDC', stats.saml + stats.oidc), ('SAML', 'SAML', stats.saml), ('OIDC', 'OIDC', stats.oidc)) %}
+      <a class="{{ 'on' if protocol == pk }}" href="{{ url_for('web.dashboard', protocol=pk) }}">{{ label }} <span class="n">{{ n }}</span></a>
+    {% endfor %}
+  </nav>
+  <span class="muted small">{{ stats.other }} other Okta app(s) (bookmark, SWA…) are out of scope.
+    <a href="{{ url_for('web.applications', protocol='OTHER') }}">View</a></span>
+</div>
+{% endif %}
+{% if stats.total == 0 %}
+<div class="card empty"><b>No applications yet</b>Run discovery to read the Okta
+  {{ 'tenant' if settings.okta_source.value == 'live' else 'export folder' }}.</div>
+{% else %}
+<div class="grid g5 mb">
+  <div class="card kpi accent"><div class="label">{{ {'ALL': 'SAML + OIDC apps', 'SAML': 'SAML apps', 'OIDC': 'OIDC apps'}[protocol] }}</div><div class="value">{{ stats.selected }}</div>
+    <div class="hint">of {{ stats.total }} Okta apps · {{ stats.saml }} SAML, {{ stats.oidc }} OIDC</div></div>
+  <div class="card kpi"><div class="label">Assigned users</div><div class="value">{{ '{:,}'.format(stats.users) }}</div>
+    <div class="hint">across the selected apps</div></div>
+  <div class="card kpi"><div class="label">Blocked apps</div><div class="value" style="color:var(--crit)">{{ stats.blocked }}</div>
+    <div class="hint">need a decision or directory prep first</div></div>
+  <div class="card kpi"><div class="label">SAML assessments accepted</div><div class="value">{{ stats.accepted }}</div>
+    <div class="hint">{{ stats.pending }} awaiting review · {{ stats.not_assessed }} not run{% if protocol != 'SAML' %} · OIDC next sprint{% endif %}</div></div>
+  <div class="card kpi"><div class="label">Overall level</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:10px">
+      {% for l in LEVELS %}<a href="{{ url_for('web.applications', overall=l, protocol=protocol) }}" class="chip {{ l }}">{{ stats.overall.get(l, 0) }} {{ l|title }}</a>{% endfor %}
+    </div></div>
+</div>
+
+<div class="grid g-7-5 mb">
+  <div class="card">
+    <h2>Risk matrix <span class="muted">Complexity × Impact · click a cell to list its apps</span></h2>
+    <div class="small muted" style="margin:-4px 0 6px">↑ Complexity (technical effort)</div>
+    <div class="matrix" role="table" aria-label="Apps by complexity and impact">
+      {% for c in LEVELS|reverse %}
+        <div class="ax">{{ c|title }}</div>
+        {% for i in LEVELS %}
+          {% set apps_in = matrix[(c, i)] %}
+          {% set n = apps_in|length %}
+          {% set h = [1 + ((n - 1) * 4) // max_cell, 4]|min if n else 0 %}
+          {% if n %}
+          <a class="cell h{{ h }}" href="{{ url_for('web.applications', complexity=c, impact=i, protocol=protocol) }}"
+             title="{{ n }} app(s): {{ apps_in|map(attribute='label')|join(', ') }}">{{ n }}
+            <small>{{ apps_in|map(attribute='label')|join(', ') }}</small></a>
+          {% else %}<div class="cell" style="color:var(--ink-3);font-weight:500">0</div>{% endif %}
+        {% endfor %}
+      {% endfor %}
+      <div></div>{% for i in LEVELS %}<div class="ax col">{{ i|title }}</div>{% endfor %}
+      <div></div><div class="caption">Impact (users · criticality · test environment) →</div>
+    </div>
+    <p class="muted small" style="margin:10px 0 0">Rows: complexity (technical effort from findings). Bottom-left (low complexity, low impact) is where to start; top-right needs the most care.
+      Scores are deterministic; see each app's breakdown.</p>
+  </div>
+  <div class="card">
+    <h2>Suggested waves</h2>
+    {% set wmax = (waves.values()|list + [1])|max %}
+    {% for w in wave_names %}
+      <div class="bar-row">
+        <a href="{{ url_for('web.applications', wave=w, protocol=protocol) }}">{{ w }}</a>
+        <div class="bar"><span style="width:{{ (waves.get(w, 0) * 100 / wmax)|round|int }}%;{% if w == 'Blocked' %}background:var(--crit){% elif w == 'Decommission review' %}background:var(--ink-3){% endif %}"></span></div>
+        <b class="num">{{ waves.get(w, 0) }}</b>
+      </div>
+    {% endfor %}
+    <p class="muted small" style="margin:12px 0 0">Wave 0 = low complexity and low impact. Blocked = a blocking finding (e.g. OGNL not allowed, duplicate entity ID). You set the final wave per app.</p>
+  </div>
+</div>
+
+{% if protocol != 'OIDC' %}<div class="card mb">
+  <h2>PingFederate readiness (SAML) <span class="muted">directory {{ settings.pf_directory_type.value }} · OGNL {{ 'allowed' if settings.pf_ognl_allowed else 'not allowed' }}</span></h2>
+  <div class="grid g4">
+    <div class="kpi" style="padding:0"><div class="label">Need issuance criteria</div><div class="value">{{ pf.issuance }}</div><div class="hint">access control on the SP connection</div></div>
+    <div class="kpi" style="padding:0"><div class="label">Need OGNL</div><div class="value">{{ pf.ognl_apps }}</div><div class="hint">{{ pf.ognl_claims }} value(s) across apps</div></div>
+    <div class="kpi" style="padding:0"><div class="label">Okta-only groups to create</div><div class="value">{{ pf.okta_only_groups|length }}</div><div class="hint">in {{ settings.pf_directory_type.value }}</div></div>
+    <div class="kpi" style="padding:0"><div class="label">Virtual server ID / shared entity ID</div><div class="value">{{ pf.vsid }} / {{ pf.dup }}</div><div class="hint">issuer and connection decisions</div></div>
+  </div>
+  <dl class="kv" style="margin-top:16px">
+    <dt>LDAP attributes read</dt><dd class="mono">{{ pf.ldap_attributes|join(', ') or '—' }}</dd>
+    <dt>Values with no directory source</dt><dd class="mono">{{ pf.missing_inputs|join(', ') or '—' }}</dd>
+    <dt>Okta-only groups</dt><dd>{{ pf.okta_only_groups|join(', ') or '—' }}</dd>
+  </dl>
+</div>{% endif %}
+
+<div class="grid g2">
+  <div class="card">
+    <h2>Findings across SAML and OIDC apps</h2>
+    <div class="table-wrap tall"><table>
+      <thead><tr><th>Finding</th><th>Severity</th><th class="num">Apps</th></tr></thead>
+      <tbody>
+      {% for code, sev, n in code_counts %}
+      <tr><td><a class="mono" href="{{ url_for('web.applications', code=code) }}">{{ code }}</a></td>
+          <td><span class="chip {{ sev }}">{{ sev|title }}</span></td><td class="num">{{ n }}</td></tr>
+      {% endfor %}
+      </tbody>
+    </table></div>
+  </div>
+  <div class="grid" style="align-content:start">
+    <div class="card">
+      <h2>Signing certificates expiring within {{ settings.cert_expiry_warning_days }} days</h2>
+      {% if expiring %}
+      <div class="table-wrap"><table>
+        <thead><tr><th>Application</th><th>Expires</th><th class="num">Days</th></tr></thead><tbody>
+        {% for a, c in expiring %}{% set days = (c.not_after - now).days %}
+        <tr><td><a href="{{ url_for('web.application', app_id=a.id) }}">{{ a.label }}</a></td>
+            <td>{{ c.not_after|dt('%Y-%m-%d') }}</td>
+            <td class="num"><span class="chip {{ 'CRITICAL' if days < 0 else 'WARNING' }}">{{ 'expired ' ~ (-days) ~ 'd ago' if days < 0 else days ~ ' days' }}</span></td></tr>
+        {% endfor %}</tbody>
+      </table></div>
+      {% else %}<p class="muted">None.</p>{% endif %}
+    </div>
+    <div class="card">
+      <h2>All Okta apps by sign-on mode</h2>
+      {% for mode, n in by_mode.most_common() %}
+        <div class="bar-row" style="grid-template-columns:150px 1fr 30px"><span class="mono">{{ mode }}</span>
+          <div class="bar"><span style="width:{{ (n * 100 / stats.total)|round|int }}%;{{ '' if mode.startswith('SAML') else 'background:var(--ink-3)' }}"></span></div><b class="num">{{ n }}</b></div>
+      {% endfor %}
+      <p class="small" style="margin:10px 0 0"><a href="{{ url_for('web.applications', scope='all') }}">View all apps →</a></p>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

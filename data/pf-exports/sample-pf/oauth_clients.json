@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "clientId": "0oa7EmpPortalClient01",
+      "name": "Employee Portal",
+      "enabled": true,
+      "grantTypes": [
+        "AUTHORIZATION_CODE",
+        "REFRESH_TOKEN"
+      ],
+      "redirectUris": [
+        "https://portal.northwind.example/callback"
+      ],
+      "clientAuth": {
+        "type": "SECRET"
+      },
+      "requireProofKeyForCodeExchange": false,
+      "bypassApprovalPage": true,
+      "oidcPolicy": {
+        "policyGroup": {
+          "id": "default-oidc"
+        }
+      }
+    },
+    {
+      "clientId": "0oa9ReportingSvc0009",
+      "name": "Reporting API",
+      "enabled": true,
+      "grantTypes": [
+        "CLIENT_CREDENTIALS"
+      ],
+      "redirectUris": [],
+      "clientAuth": {
+        "type": "PRIVATE_KEY_JWT"
+      },
+      "requireProofKeyForCodeExchange": false,
+      "bypassApprovalPage": true,
+      "oidcPolicy": {
+        "policyGroup": {
+          "id": "default-oidc"
+        }
+      }
+    },
+    {
+      "clientId": "pingaccess-agent",
+      "name": "PingAccess agent",
+      "enabled": true,
+      "grantTypes": [
+        "CLIENT_CREDENTIALS"
+      ],
+      "redirectUris": [],
+      "clientAuth": {
+        "type": "SECRET"
+      },
+      "requireProofKeyForCodeExchange": false,
+      "bypassApprovalPage": true,
+      "oidcPolicy": {
+        "policyGroup": {
+          "id": "default-oidc"
+        }
+      }
+    }
+  ]
+}

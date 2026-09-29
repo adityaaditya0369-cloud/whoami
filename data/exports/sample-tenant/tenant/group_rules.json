@@ -1,0 +1,40 @@
+[
+  {
+    "actions": {
+      "assignUserToGroups": {
+        "groupIds": [
+          "00g0finance00000000c"
+        ]
+      }
+    },
+    "conditions": {
+      "expression": {
+        "type": "urn:okta:expression:1.0",
+        "value": "user.department==\"Finance\""
+      }
+    },
+    "id": "0pr0financedept01",
+    "name": "Finance department",
+    "status": "ACTIVE",
+    "type": "group_rule"
+  },
+  {
+    "actions": {
+      "assignUserToGroups": {
+        "groupIds": [
+          "00g0sales000000000k"
+        ]
+      }
+    },
+    "conditions": {
+      "expression": {
+        "type": "urn:okta:expression:1.0",
+        "value": "user.department==\"Sales\""
+      }
+    },
+    "id": "0pr0salesdept0002",
+    "name": "Sales department",
+    "status": "ACTIVE",
+    "type": "group_rule"
+  }
+]

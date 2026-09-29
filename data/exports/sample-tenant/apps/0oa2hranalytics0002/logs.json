@@ -1,0 +1,382 @@
+[
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T08:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-4"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T11:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-11"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T22:37:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-1"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-10T13:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-6"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T10:35:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-15"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T21:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-12"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T16:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-0"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T19:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-18"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T23:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-17"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T21:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-2"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T04:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-13"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T09:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-7"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T09:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-5"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T02:44:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-10"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T14:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-3"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T17:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-19"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T14:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-9"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T15:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-16"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-19T18:53:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-8"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T06:02:00.000Z",
+    "target": [
+      {
+        "id": "0oa2hranalytics0002",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa2hranalytics0002-14"
+  }
+]

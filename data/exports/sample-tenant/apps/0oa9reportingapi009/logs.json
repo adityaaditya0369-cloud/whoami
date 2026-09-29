@@ -1,0 +1,1082 @@
+[
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-13T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-59"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-58"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-57"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-17T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-56"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-55"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-19T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-54"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-53"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-52"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-51"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-24T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-50"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-25T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-49"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-27T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-48"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-47"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-46"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-45"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-01T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-44"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-43"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-42"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-41"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-40"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-07T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-39"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-38"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-37"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-11T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-36"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-35"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-34"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-33"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-16T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-32"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-31"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-30"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-29"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-21T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-28"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-22T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-27"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-26"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-24T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-25"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-26T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-24"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-23"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-22"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-21"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-20"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-19"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-18"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-03T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-17"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-16"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-15"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-07T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-14"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-08T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-13"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-10T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-12"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-11"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-10"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-9"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-15T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-8"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-7"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-6"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-5"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-20T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-4"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T06:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-3"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T12:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-2"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-1"
+  },
+  {
+    "actor": {
+      "id": "0oa9ReportingSvc0009",
+      "type": "PublicClientApp"
+    },
+    "eventType": "app.oauth2.as.token.grant.access_token",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-25T00:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa9reportingapi009",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa9reportingapi009-0"
+  }
+]

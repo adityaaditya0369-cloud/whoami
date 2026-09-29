@@ -1,0 +1,50 @@
+[
+  {
+    "gateways": [
+      {
+        "type": "CIDR",
+        "value": "10.0.0.0/8"
+      },
+      {
+        "type": "CIDR",
+        "value": "203.0.113.0/24"
+      }
+    ],
+    "id": "nzo0legacyip000001",
+    "name": "Corporate network",
+    "status": "ACTIVE",
+    "type": "IP",
+    "usage": "POLICY"
+  },
+  {
+    "gateways": [
+      {
+        "type": "RANGE",
+        "value": "198.51.100.1-198.51.100.20"
+      }
+    ],
+    "id": "nzo0blocked000002",
+    "name": "Blocked IPs",
+    "status": "ACTIVE",
+    "type": "IP",
+    "usage": "BLOCKLIST"
+  },
+  {
+    "id": "nzo0highrisk00003",
+    "locations": [
+      {
+        "country": "XX"
+      },
+      {
+        "country": "YY"
+      },
+      {
+        "country": "ZZ"
+      }
+    ],
+    "name": "High-risk countries",
+    "status": "ACTIVE",
+    "type": "DYNAMIC",
+    "usage": "POLICY"
+  }
+]

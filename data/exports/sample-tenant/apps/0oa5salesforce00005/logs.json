@@ -1,0 +1,1997 @@
+[
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T09:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-81"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-28T12:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-9"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-29T07:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-53"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T05:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-90"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-06-30T18:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-103"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T06:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-62"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T14:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-78"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-01T16:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-94"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T01:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-42"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T08:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-13"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T10:47:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-84"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-02T22:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-58"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-04T11:07:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-18"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-05T11:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-6"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-07T21:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-98"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T01:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-63"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T18:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-36"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T20:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-76"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-08T21:33:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-7"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-10T11:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-43"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-10T14:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-100"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T03:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-70"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-11T17:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-61"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T18:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-15"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-12T22:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-56"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-14T20:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-14"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-15T02:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-87"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-16T07:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-65"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-18T13:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-50"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-20T15:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-10"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T09:45:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-73"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-21T17:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-75"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T05:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-24"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-22T18:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-21"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-23T04:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-17"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-26T19:20:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-40"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T01:29:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-54"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-28T06:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-8"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-29T14:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-26"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T12:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-33"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-30T13:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-82"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-07-31T14:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-66"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T01:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-67"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-02T02:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-29"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T08:21:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-92"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-03T11:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-83"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T05:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-49"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T06:34:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-19"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-04T06:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-32"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-05T13:22:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-59"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-06T16:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-68"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T03:50:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-4"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T09:30:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-23"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-08T13:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-51"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T16:41:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-89"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-09T23:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-3"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T08:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-25"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T18:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-11"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-10T19:23:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-95"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T10:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-99"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-12T19:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-39"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-13T02:27:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-69"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-14T01:57:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-22"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-15T10:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-101"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-17T21:16:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-28"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T06:14:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-34"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-18T23:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-38"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T00:48:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-1"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T09:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-35"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-19T13:51:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-86"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T08:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-96"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T14:09:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-37"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-20T20:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-77"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-23T08:39:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-93"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-24T19:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-55"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-25T18:15:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-71"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-26T15:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-91"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-26T22:32:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-85"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T15:25:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-16"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T15:40:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-60"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-27T21:00:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-74"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T03:11:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-64"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-28T18:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-88"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-29T09:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-45"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-30T20:05:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-0"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-08-31T22:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-80"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T12:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-48"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-01T19:42:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-97"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-02T05:18:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-52"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-04T17:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-46"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-05T17:49:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-27"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-06T07:06:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-102"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-09T07:28:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-30"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-11T23:58:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-44"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-12T08:55:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-2"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-13T03:19:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-47"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-14T02:17:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-31"
+  },
+  {
+    "actor": {
+      "alternateId": "elena.petrova@northwind.example",
+      "id": "00u04nwusr04abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-15T09:01:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-72"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-16T19:38:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-12"
+  },
+  {
+    "actor": {
+      "alternateId": "asha.rao@northwind.example",
+      "id": "00u00nwusr00abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-17T10:52:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-5"
+  },
+  {
+    "actor": {
+      "alternateId": "chen.li@northwind.example",
+      "id": "00u02nwusr02abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T17:26:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-41"
+  },
+  {
+    "actor": {
+      "alternateId": "farid.khan@northwind.example",
+      "id": "00u05nwusr05abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-18T18:04:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-79"
+  },
+  {
+    "actor": {
+      "alternateId": "ben.adams@northwind.example",
+      "id": "00u01nwusr01abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-21T03:08:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-20"
+  },
+  {
+    "actor": {
+      "alternateId": "divya.iyer@northwind.example",
+      "id": "00u03nwusr03abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-22T21:24:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-57"
+  },
+  {
+    "actor": {
+      "alternateId": "grace.ng@northwind.example",
+      "id": "00u06nwusr06abcdefgh",
+      "type": "User"
+    },
+    "eventType": "user.authentication.sso",
+    "outcome": {
+      "result": "SUCCESS"
+    },
+    "published": "2026-09-23T02:13:00.000Z",
+    "target": [
+      {
+        "id": "0oa5salesforce00005",
+        "type": "AppInstance"
+      }
+    ],
+    "uuid": "0oa5salesforce00005-104"
+  }
+]

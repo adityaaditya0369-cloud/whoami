@@ -1,0 +1,77 @@
+{# Side-by-side Okta <-> PingFederate comparison. Expects: a, cmp_rows, cmp_sections, cmp_summary #}
+<div class="card mb" style="padding:14px 16px">
+  <div class="cmp-bar" style="margin:0">
+    <div class="pills" id="cmp-pills">
+      <button type="button" class="on" data-sec="">All <span class="n">{{ cmp_rows|length }}</span></button>
+      {% for sec in cmp_sections %}
+        <button type="button" data-sec="{{ sec }}">{{ sec }} <span class="n">{{ cmp_rows|selectattr('section', 'equalto', sec)|list|length }}</span></button>
+      {% endfor %}
+    </div>
+    <label class="toggle" style="margin-left:auto"><input type="checkbox" id="cmp-diff-only"> Show only differences</label>
+    <input id="cmp-search" placeholder="Search fields…" style="width:180px">
+    <a class="btn secondary" href="{{ url_for('web.export_app_xlsx', app_id=a.id) }}">Excel</a>
+  </div>
+  <div class="toolbar" style="margin:12px 0 0">
+    {% for st in STATUS_ORDER if cmp_summary.get(st) %}
+      <span class="chip {{ st if st != 'N/A' else 'NA' }}" title="{{ STATUS_HELP[st] }}">{{ cmp_summary[st] }} {{ st }}</span>
+    {% endfor %}
+    <span class="muted small">Highlighted text shows exactly what changes between Okta and PingFederate.</span>
+  </div>
+</div>
+
+<div class="diff" id="cmp-diff">
+  <div class="diff-head">
+    <div class="okta"><span class="logo">O</span> Okta <span class="muted small" style="font-weight:500">current</span></div>
+    <div class="mid">Status</div>
+    <div class="pf"><span class="logo">P</span> PingFederate <span class="muted small" style="font-weight:500">target</span></div>
+  </div>
+  {% set ns = namespace(sec='') %}
+  {% for r in cmp_rows %}
+    {% if r.section != ns.sec %}{% set ns.sec = r.section %}
+      <div class="diff-sec" data-sec-head="{{ r.section }}">{{ r.section }}</div>
+    {% endif %}
+    {% set cls = {'SP_UPDATE': 'changed', 'ACTION': 'action', 'UNKNOWN': 'unknown'}.get(r.status, '') %}
+    {% set marks = r.status == 'SP_UPDATE' and r.okta_value != r.pf_value %}
+    <div class="diff-row {{ cls }}" data-section="{{ r.section }}" data-status="{{ r.status }}">
+      <div class="okta">
+        <div class="lbl">{{ r.field }}</div>
+        <div class="val">{% if marks %}{{ r.okta_value|diffmark(r.pf_value, 'old') }}{% else %}{{ r.okta_value }}{% endif %}</div>
+      </div>
+      <div class="mid"><span class="chip {{ r.status if r.status != 'N/A' else 'NA' }}" title="{{ STATUS_HELP[r.status] }}">{{ r.status }}</span></div>
+      <div class="pf">
+        <div class="lbl">{{ r.pf_setting }}</div>
+        <div class="val">{% if marks %}{{ r.pf_value|diffmark(r.okta_value, 'new') }}{% else %}{{ r.pf_value }}{% endif %}</div>
+        {% if r.note %}<div class="note">{{ r.note }}</div>{% endif %}
+      </div>
+    </div>
+  {% endfor %}
+  <div class="empty-row" id="cmp-empty">No fields match. Try another section or turn off "Show only differences".</div>
+</div>
+<p class="legend" style="margin-top:12px">{% for st in STATUS_ORDER %}<span><b>{{ st }}</b> {{ STATUS_HELP[st] }}</span>{% endfor %}</p>
+
+<script>
+(function () {
+  var sec = '', rows = document.querySelectorAll('#cmp-diff .diff-row'),
+      heads = document.querySelectorAll('#cmp-diff .diff-sec'),
+      only = document.getElementById('cmp-diff-only'), search = document.getElementById('cmp-search');
+  function apply() {
+    var q = (search.value || '').toLowerCase(), shown = {}, any = false;
+    rows.forEach(function (r) {
+      var ok = (!sec || r.dataset.section === sec) &&
+               (!only.checked || (r.dataset.status !== 'SAME' && r.dataset.status !== 'N/A')) &&
+               (!q || r.textContent.toLowerCase().indexOf(q) >= 0);
+      r.style.display = ok ? '' : 'none';
+      if (ok) { shown[r.dataset.section] = true; any = true; }
+    });
+    heads.forEach(function (h) { h.style.display = shown[h.dataset.secHead] ? '' : 'none'; });
+    document.getElementById('cmp-empty').style.display = any ? 'none' : 'block';
+  }
+  document.querySelectorAll('#cmp-pills button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('#cmp-pills button').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on'); sec = b.dataset.sec; apply();
+    });
+  });
+  only.addEventListener('change', apply); search.addEventListener('input', apply);
+})();
+</script>

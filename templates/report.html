@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ a.label }} · Migration report</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+  body { background: var(--bg); }
+  .page { max-width: 980px; margin: 24px auto; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 36px 44px; }
+  .rhead { display: flex; justify-content: space-between; gap: 20px; border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: 22px; }
+  .rhead h1 { margin: 0; font-size: 26px; } .rhead .who { text-align: right; font-size: 12.5px; color: var(--ink-3); }
+  h2 { font-size: 16px; margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  table { font-size: 12.5px; } th { position: static; }
+  .noprint { max-width: 980px; margin: 16px auto 0; display: flex; gap: 8px; justify-content: flex-end; }
+  @media print {
+    :root, :root[data-theme="dark"] { color-scheme: light; --bg: #fff; --surface: #fff; --ink: #000; --line: #ccc; }
+    .noprint { display: none; } .page { border: 0; margin: 0; padding: 0; max-width: none; }
+    tr, .action-item { page-break-inside: avoid; } h2 { page-break-after: avoid; }
+    .chip { border: 1px solid currentColor; }
+  }
+</style>
+</head>
+<body>
+<div class="noprint">
+  <a class="btn secondary" href="{{ url_for('web.application', app_id=a.id) }}">← Back</a>
+  <a class="btn secondary" href="{{ url_for('web.export_app_xlsx', app_id=a.id) }}">Excel</a>
+  <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+</div>
+<div class="page">
+  <div class="rhead">
+    <div><div class="muted small">Okta → PingFederate {{ a.protocol }} migration</div><h1>{{ a.label }}</h1>
+      <div class="small">{{ a.protocol }} · {% if a.is_saml %}{{ 'Custom SAML' if a.is_custom_saml else 'OIN catalog app' }}{% else %}{{ (a.oidc.application_type or '')|title }} client{% endif %} · Okta {{ a.okta_status|lower }} · {{ a.user_count }} users · {{ a.group_count }} groups</div></div>
+    <div class="who">{{ settings.customer_name }}<br>Generated {{ now|dt }}<br>Rules {{ score.rules_version if score else '—' }}<br>
+      Owner: {{ a.business_owner or 'not captured' }}</div>
+  </div>
+
+  {% if score %}
+  <div class="scores">
+    <div class="score {{ score.complexity_level }}"><div class="t">Complexity</div><div class="v">{{ score.complexity_level|title }}</div><div class="n">{{ score.complexity_score }} points</div></div>
+    <div class="score {{ score.impact_level }}"><div class="t">Impact</div><div class="v">{{ score.impact_level|title }}</div><div class="n">{{ score.impact_score }} points</div></div>
+    <div class="score {{ score.overall_level }}"><div class="t">Overall</div><div class="v">{{ score.overall_level|title }}</div><div class="n">{{ score.suggested_wave }}</div></div>
+  </div>
+  {% if score.blocked %}<p class="flash error" style="margin-top:12px">Blocked until resolved: {{ score.blockers|join(', ') }}</p>{% endif %}
+  {% endif %}
+
+  <h2>Assessment</h2>
+  {% if latest and latest.status == 'VALID' %}{% set o = latest.output %}
+    <p style="line-height:1.6">{{ o.summary }}</p>
+    <p class="small muted">Approach: <b>{{ o.migration_approach|humanize }}</b> · Source: {{ latest.provider }}{% if latest.model %} ({{ latest.model }}){% endif %} ·
+      Review: <b>{{ latest.review_status|humanize }}</b>{% if latest.reviewed_by %} by {{ latest.reviewed_by }}{% endif %}</p>
+    <h2>Action plan</h2>
+    {% for act in o.recommended_actions %}
+      <div class="action-item"><div><b class="small">{{ act.when|humanize }}</b><div class="small muted">{{ act.owner|humanize }}</div></div><div class="small">{{ act.action }}</div></div>
+    {% endfor %}
+    {% if o.questions_for_app_owner %}<h2>Questions for the app owner</h2>
+      <ol class="list-clean small">{% for q in o.questions_for_app_owner %}<li>{{ q }}<br><span class="muted">Answer: ______________________________________________</span></li>{% endfor %}</ol>{% endif %}
+  {% else %}<p class="muted">No valid assessment yet.</p>{% endif %}
+
+  <h2>Okta vs PingFederate</h2>
+  <p class="legend">{% for st in STATUS_ORDER if cmp_summary.get(st) %}<span><span class="chip {{ st if st != 'N/A' else 'NA' }}">{{ cmp_summary[st] }} {{ st }}</span> {{ STATUS_HELP[st] }}</span>{% endfor %}</p>
+  <table>
+    <thead><tr><th>Field</th><th>Okta</th><th>PingFederate</th><th>Status</th></tr></thead><tbody>
+    {% set ns = namespace(sec='') %}
+    {% for r in cmp_rows %}
+      {% if r.section != ns.sec %}{% set ns.sec = r.section %}<tr class="section-row"><td colspan="4">{{ r.section }}</td></tr>{% endif %}
+      <tr><td><b>{{ r.field }}</b></td><td class="break">{{ r.okta_value }}</td>
+          <td class="break">{{ r.pf_value }}<div class="muted">{{ r.pf_setting }}{% if r.note %} · {{ r.note }}{% endif %}</div></td>
+          <td><span class="chip {{ r.status if r.status != 'N/A' else 'NA' }}">{{ r.status }}</span></td></tr>
+    {% endfor %}</tbody>
+  </table>
+
+  <h2>Findings</h2>
+  <table><thead><tr><th>Severity</th><th>Code</th><th>Detail</th></tr></thead><tbody>
+    {% for f in findings %}<tr><td><span class="chip {{ f.severity }}">{{ f.severity|title }}</span></td><td class="mono small">{{ f.code }}</td><td class="small">{{ f.message }}</td></tr>{% endfor %}
+  </tbody></table>
+
+  {% if score %}<h2>Risk breakdown</h2>
+  <table><thead><tr><th>Dimension</th><th>Rule</th><th>Reason</th><th class="num">Points</th></tr></thead><tbody>
+    {% for b in score.breakdown %}<tr><td>{{ b.dimension|title }}</td><td class="mono small">{{ b.rule }}</td><td class="small">{{ b.reason }}</td><td class="num">+{{ b.points }}</td></tr>{% endfor %}
+  </tbody></table>{% endif %}
+</div>
+<script>try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
+</body>
+</html>

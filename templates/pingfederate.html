@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}PingFederate apps{% endblock %}
+{% block heading %}<h1>PingFederate apps</h1>
+<div class="sub">Target side: what each Okta app becomes in PingFederate, and what is actually built ·
+  {% if last %}last read #{{ last.id }} {{ last.started_at|dt }} from <span class="mono">{{ last.source }}</span>
+    <span class="chip {{ 'OK' if last.status == 'SUCCESS' else 'CRITICAL' }}">{{ last.status }}</span>{% else %}not read yet{% endif %}</div>{% endblock %}
+{% block actions %}
+<form method="post" action="{{ url_for('target.pingfederate_sync') }}" class="inline" style="flex-wrap:nowrap">
+  <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+  <input name="actor" placeholder="Your name" value="{{ current_actor }}" required style="width:150px">
+  <button class="btn" type="submit" {{ 'disabled' if settings.pf_source.value == 'none' }}>Read PingFederate</button>
+</form>
+{% endblock %}
+{% block content %}
+{% if last and last.status == 'FAILED' %}<div class="flash error">Last read failed: {{ last.error }}</div>{% endif %}
+
+<div class="grid g5 mb">
+  {% for st in ['READY_TO_BUILD', 'BLOCKED', 'BUILT_WITH_DIFFERENCES', 'BUILT', 'VERIFIED'] %}
+  <div class="card kpi"><div class="label"><span class="build {{ st }}">{{ BUILD_LABEL[st] }}</span></div>
+    <div class="value">{{ counts.get(st, 0) }}</div>
+    <div class="hint">{{ {'READY_TO_BUILD': 'not on PingFederate yet, nothing blocking',
+                          'BLOCKED': 'needs a decision or directory prep first',
+                          'BUILT_WITH_DIFFERENCES': 'exists, but does not match the Okta app',
+                          'BUILT': 'exists and matches',
+                          'VERIFIED': 'plan step "Verify" done'}[st] }}</div></div>
+  {% endfor %}
+</div>
+
+<nav class="tabs">
+  <a href="#tab-planned" data-tab="planned">Planned <span class="count">{{ rows|length }}</span></a>
+  <a href="#tab-found" data-tab="found">Found in PingFederate <span class="count">{{ found|length + pf_only|length }}</span></a>
+  <a href="#tab-recon" data-tab="recon">Reconciliation <span class="count">{{ recs|selectattr('status', 'equalto', 'DIFFERS')|list|length }} differ</span></a>
+</nav>
+
+{# ------------------------------------------------------------------ planned #}
+<section class="tab" id="tab-planned">
+  <div class="toolbar">
+    <input data-filter="planned" placeholder="Filter…" style="min-width:220px">
+    <select data-status-filter="planned"><option value="">All build statuses</option>
+      {% for st in statuses %}<option value="{{ st }}">{{ BUILD_LABEL[st] }}</option>{% endfor %}</select>
+  </div>
+  <div class="table-wrap"><table id="planned">
+    <thead><tr><th>Okta app</th><th>Becomes in PingFederate</th><th>Match key</th><th>Needs</th><th>Build status</th><th>Wave</th></tr></thead>
+    <tbody>
+    {% for x in rows %}{% set a = x.a %}
+    <tr data-row data-status="{{ x.status }}">
+      <td><a href="{{ url_for('web.application', app_id=a.id) }}"><b>{{ a.label }}</b></a> <span class="proto {{ a.protocol }}">{{ a.protocol }}</span></td>
+      <td>{{ 'SP connection' if a.is_saml else 'OAuth client + OIDC policy' }}
+        {% if x.r.pf %}<div class="small muted">found: {{ x.r.pf.name }} (by {{ x.r.matched_by }})</div>{% endif %}</td>
+      <td class="mono small break" style="max-width:260px">{{ x.key or 'from vendor metadata' }}</td>
+      <td class="small">
+        {% if x.pf %}
+          {% if x.pf.issuance_criteria %}<div>Issuance criteria</div>{% endif %}
+          {% if x.pf.ognl_claims %}<div style="color:var(--crit)">OGNL: {{ x.pf.ognl_claims|join(', ') }}</div>{% endif %}
+          {% if x.pf.okta_only_groups %}<div>Groups to create: {{ x.pf.okta_only_groups|join(', ') }}</div>{% endif %}
+          {% if x.pf.virtual_server_id %}<div>Virtual server ID</div>{% endif %}
+          {% if x.pf.ldap_attributes %}<div class="muted">LDAP: {{ x.pf.ldap_attributes|join(', ') }}</div>{% endif %}
+        {% else %}
+          {% for f in a.findings if f.code in ('OIDC_NEW_CLIENT_SECRET', 'OIDC_ACCESS_CONTROL_REQUIRED', 'OIDC_IMPLICIT_GRANT', 'OIDC_PKCE_NOT_REQUIRED', 'OIDC_WILDCARD_REDIRECT') %}
+            <div>{{ {'OIDC_NEW_CLIENT_SECRET': 'New client secret', 'OIDC_ACCESS_CONTROL_REQUIRED': 'Access policy',
+                    'OIDC_IMPLICIT_GRANT': 'Move off implicit grant', 'OIDC_PKCE_NOT_REQUIRED': 'Require PKCE',
+                    'OIDC_WILDCARD_REDIRECT': 'Explicit redirect URIs'}[f.code] }}</div>
+          {% endfor %}
+        {% endif %}</td>
+      <td><span class="build {{ x.status }}">{{ BUILD_LABEL[x.status] }}</span>
+        {% if x.r.problems %}<div class="small" style="color:var(--serious)">{{ x.r.problems|length }} difference(s)</div>{% endif %}</td>
+      <td class="small">{{ a.wave or a.suggested_wave or '—' }}</td>
+    </tr>
+    {% endfor %}
+    </tbody></table></div>
+</section>
+
+{# ------------------------------------------------------------------ found #}
+<section class="tab" id="tab-found">
+  {% if not found and not pf_only %}
+    <div class="card empty"><b>Nothing read from PingFederate yet</b>
+      {% if settings.pf_source.value == 'none' %}Set PF_SOURCE=file (export folder) or PF_SOURCE=live (Admin API) in .env.
+      {% else %}Click "Read PingFederate".{% endif %}</div>
+  {% else %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>PingFederate object</th><th>Type</th><th>Entity ID / client ID</th><th>Enabled</th><th>Okta app</th></tr></thead>
+    <tbody>
+    {% for r in found %}
+      <tr><td><b>{{ r.pf.name }}</b></td><td>{{ 'SP connection' if r.pf.kind == 'SP_CONNECTION' else 'OAuth client' }}</td>
+        <td class="mono small break">{{ r.pf.key }}</td><td>{{ r.pf.active|yesno }}</td>
+        <td><a href="{{ url_for('web.application', app_id=r.app.id) }}">{{ r.app.label }}</a>
+          <span class="small muted">by {{ r.matched_by }}</span></td></tr>
+    {% endfor %}
+    {% for o in pf_only %}
+      <tr><td><b>{{ o.name }}</b></td><td>{{ 'SP connection' if o.kind == 'SP_CONNECTION' else 'OAuth client' }}</td>
+        <td class="mono small break">{{ o.key }}</td><td>{{ o.active|yesno }}</td>
+        <td><span class="chip state plain">Only on PingFederate</span></td></tr>
+    {% endfor %}
+    </tbody></table></div>
+  <p class="muted small">"Only on PingFederate" = not linked to any Okta app: already migrated earlier, native to PingFederate, or a typo in the entity ID / client ID.</p>
+  {% endif %}
+</section>
+
+{# ------------------------------------------------------------------ reconciliation #}
+<section class="tab" id="tab-recon">
+  {% set differ = recs|selectattr('status', 'equalto', 'DIFFERS')|list %}
+  {% set match = recs|selectattr('status', 'equalto', 'MATCHES')|list %}
+  {% set notbuilt = recs|selectattr('status', 'equalto', 'NOT_BUILT')|list %}
+  <div class="grid g4 mb">
+    <div class="card kpi"><div class="label">Built, differs from Okta</div><div class="value" style="color:var(--serious)">{{ differ|length }}</div></div>
+    <div class="card kpi"><div class="label">Built and matching</div><div class="value" style="color:var(--good)">{{ match|length }}</div></div>
+    <div class="card kpi"><div class="label">Not built yet</div><div class="value">{{ notbuilt|length }}</div></div>
+    <div class="card kpi"><div class="label">Only on PingFederate</div><div class="value">{{ pf_only|length }}</div></div>
+  </div>
+  {% for r in differ + match %}
+  <div class="card mb">
+    <h2><a href="{{ url_for('web.application', app_id=r.app.id) }}">{{ r.app.label }}</a>
+      <span class="proto {{ r.app.protocol }}">{{ r.app.protocol }}</span>
+      <span class="muted">↔ {{ r.pf.name }} (matched by {{ r.matched_by }})</span>
+      <span class="build {{ 'BUILT' if r.status == 'MATCHES' else 'BUILT_WITH_DIFFERENCES' }}" style="margin-left:auto">{{ 'Matches' if r.status == 'MATCHES' else r.problems|length ~ ' difference(s)' }}</span></h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th style="width:26px"></th><th>Check</th><th>Expected (from Okta)</th><th>Actual (PingFederate)</th></tr></thead><tbody>
+      {% for c in r.checks %}
+        <tr><td>{% if c.ok %}<span class="check-ok">✓</span>{% else %}<span class="check-bad">✕</span>{% endif %}</td>
+          <td><b>{{ c.check }}</b>{% if not c.ok and c.severity == 'CRITICAL' %} <span class="chip CRITICAL">security</span>{% endif %}</td>
+          <td class="small mono break">{{ c.expected }}</td><td class="small mono break">{{ c.actual }}</td></tr>
+      {% endfor %}</tbody></table></div>
+  </div>
+  {% endfor %}
+  {% if notbuilt %}<div class="card"><h2>Not built yet</h2>
+    <p>{% for r in notbuilt %}<a href="{{ url_for('web.application', app_id=r.app.id) }}">{{ r.app.label }}</a>{{ ', ' if not loop.last }}{% endfor %}</p></div>{% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,161 @@
+[
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 25
+      }
+    },
+    "id": "00g0everyone0000000a",
+    "profile": {
+      "description": "All users in your organization",
+      "name": "Everyone"
+    },
+    "type": "BUILT_IN"
+  },
+  {
+    "_embedded": {
+      "app": {
+        "name": "active_directory"
+      },
+      "stats": {
+        "usersCount": 25
+      }
+    },
+    "id": "00g0allemployees000b",
+    "profile": {
+      "description": null,
+      "name": "All Employees",
+      "windowsDomainQualifiedName": "NORTHWIND\\All Employees"
+    },
+    "type": "APP_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 5
+      }
+    },
+    "id": "00g0finance00000000c",
+    "profile": {
+      "description": null,
+      "name": "Finance"
+    },
+    "type": "OKTA_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 5
+      }
+    },
+    "id": "00g0hranalysts00000d",
+    "profile": {
+      "description": null,
+      "name": "HR-Analysts"
+    },
+    "type": "OKTA_GROUP"
+  },
+  {
+    "_embedded": {
+      "app": {
+        "name": "active_directory"
+      },
+      "stats": {
+        "usersCount": 4
+      }
+    },
+    "id": "00g0engplatform0000e",
+    "profile": {
+      "description": null,
+      "name": "ENG-Platform",
+      "windowsDomainQualifiedName": "NORTHWIND\\ENG-Platform"
+    },
+    "type": "APP_GROUP"
+  },
+  {
+    "_embedded": {
+      "app": {
+        "name": "active_directory"
+      },
+      "stats": {
+        "usersCount": 3
+      }
+    },
+    "id": "00g0engdata0000000f",
+    "profile": {
+      "description": null,
+      "name": "ENG-Data",
+      "windowsDomainQualifiedName": "NORTHWIND\\ENG-Data"
+    },
+    "type": "APP_GROUP"
+  },
+  {
+    "_embedded": {
+      "app": {
+        "name": "active_directory"
+      },
+      "stats": {
+        "usersCount": 3
+      }
+    },
+    "id": "00g0engmobile00000g",
+    "profile": {
+      "description": null,
+      "name": "ENG-Mobile",
+      "windowsDomainQualifiedName": "NORTHWIND\\ENG-Mobile"
+    },
+    "type": "APP_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 2
+      }
+    },
+    "id": "00g0engcontractors0h",
+    "profile": {
+      "description": "External contractors",
+      "name": "ENG-Contractors"
+    },
+    "type": "OKTA_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 8
+      }
+    },
+    "id": "00g0snitil00000000i",
+    "profile": {
+      "description": null,
+      "name": "SN-ITIL"
+    },
+    "type": "OKTA_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 4
+      }
+    },
+    "id": "00g0snapprovers000j",
+    "profile": {
+      "description": null,
+      "name": "SN-Approvers"
+    },
+    "type": "OKTA_GROUP"
+  },
+  {
+    "_embedded": {
+      "stats": {
+        "usersCount": 5
+      }
+    },
+    "id": "00g0sales000000000k",
+    "profile": {
+      "description": null,
+      "name": "Sales"
+    },
+    "type": "OKTA_GROUP"
+  }
+]

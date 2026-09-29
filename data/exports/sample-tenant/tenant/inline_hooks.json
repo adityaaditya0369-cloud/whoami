@@ -1,0 +1,24 @@
+[
+  {
+    "channel": {
+      "config": {
+        "uri": "https://hooks.northwind.example/tokens"
+      }
+    },
+    "id": "cal0tokenhook0001",
+    "name": "Add entitlements to tokens",
+    "status": "ACTIVE",
+    "type": "com.okta.oauth2.tokens.transform"
+  },
+  {
+    "channel": {
+      "config": {
+        "uri": "https://hooks.northwind.example/register"
+      }
+    },
+    "id": "cal0prereg000002",
+    "name": "Pre-registration check",
+    "status": "ACTIVE",
+    "type": "com.okta.user.pre-registration"
+  }
+]

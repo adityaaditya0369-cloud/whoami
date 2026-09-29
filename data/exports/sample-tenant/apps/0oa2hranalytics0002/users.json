@@ -1,0 +1,127 @@
+[
+  {
+    "_embedded": {
+      "user": {
+        "id": "00u01nwusr01abcdefgh",
+        "profile": {
+          "department": "HR",
+          "email": "ben.adams@northwind.example",
+          "employeeNumber": "E1001",
+          "firstName": "Ben",
+          "lastName": "Adams",
+          "login": "ben.adams@northwind.example"
+        },
+        "status": "ACTIVE"
+      }
+    },
+    "credentials": {
+      "userName": "ben.adams@northwind.example"
+    },
+    "id": "00u01nwusr01abcdefgh",
+    "profile": {
+      "costCenter": "CC-200"
+    },
+    "scope": "GROUP",
+    "status": "PROVISIONED"
+  },
+  {
+    "_embedded": {
+      "user": {
+        "id": "00u02nwusr02abcdefgh",
+        "profile": {
+          "department": "Engineering",
+          "email": "chen.li@northwind.example",
+          "employeeNumber": "E1002",
+          "firstName": "Chen",
+          "lastName": "Li",
+          "login": "chen.li@northwind.example"
+        },
+        "status": "ACTIVE"
+      }
+    },
+    "credentials": {
+      "userName": "chen.li@northwind.example"
+    },
+    "id": "00u02nwusr02abcdefgh",
+    "profile": {
+      "costCenter": "CC-200"
+    },
+    "scope": "GROUP",
+    "status": "PROVISIONED"
+  },
+  {
+    "_embedded": {
+      "user": {
+        "id": "00u03nwusr03abcdefgh",
+        "profile": {
+          "department": "Engineering",
+          "email": "divya.iyer@northwind.example",
+          "employeeNumber": "E1003",
+          "firstName": "Divya",
+          "lastName": "Iyer",
+          "login": "divya.iyer@northwind.example"
+        },
+        "status": "ACTIVE"
+      }
+    },
+    "credentials": {
+      "userName": "divya.iyer@northwind.example"
+    },
+    "id": "00u03nwusr03abcdefgh",
+    "profile": {
+      "costCenter": "CC-200"
+    },
+    "scope": "GROUP",
+    "status": "PROVISIONED"
+  },
+  {
+    "_embedded": {
+      "user": {
+        "id": "00u10nwusr10abcdefgh",
+        "profile": {
+          "department": "Finance",
+          "email": "kavya.menon@northwind.example",
+          "employeeNumber": "E1010",
+          "firstName": "Kavya",
+          "lastName": "Menon",
+          "login": "kavya.menon@northwind.example"
+        },
+        "status": "ACTIVE"
+      }
+    },
+    "credentials": {
+      "userName": "kavya.menon@northwind.example"
+    },
+    "id": "00u10nwusr10abcdefgh",
+    "profile": {
+      "costCenter": "CC-210"
+    },
+    "scope": "USER",
+    "status": "PROVISIONED"
+  },
+  {
+    "_embedded": {
+      "user": {
+        "id": "00u11nwusr11abcdefgh",
+        "profile": {
+          "department": "HR",
+          "email": "liam.walsh@northwind.example",
+          "employeeNumber": "E1011",
+          "firstName": "Liam",
+          "lastName": "Walsh",
+          "login": "liam.walsh@northwind.example"
+        },
+        "status": "ACTIVE"
+      }
+    },
+    "credentials": {
+      "userName": "liam.walsh@northwind.example"
+    },
+    "id": "00u11nwusr11abcdefgh",
+    "profile": {
+      "costCenter": "CC-210"
+    },
+    "scope": "USER",
+    "status": "PROVISIONED"
+  }
+]

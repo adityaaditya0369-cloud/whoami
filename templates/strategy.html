@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% block title %}Strategy{% endblock %}
+{% block heading %}<h1>Migration strategy</h1>
+<div class="sub">Numbers come from discovery and fixed rules · dates are planning estimates from the assumptions on the Timeline tab</div>{% endblock %}
+{% block actions %}
+<a class="btn secondary" href="{{ url_for('strategy.strategy_docx') }}">Word (.docx)</a>
+{% if st.draft %}<a class="btn secondary" href="{{ url_for('strategy.strategy_docx', draft=1) }}">Word with AI narrative</a>{% endif %}
+<button class="btn ghost" onclick="window.print()">Print / PDF</button>
+{% endblock %}
+{% block content %}
+{% set s = st.scope %}{% set tl = st.timeline %}
+<nav class="tabs">
+  <a href="#tab-report" data-tab="report">Strategy report</a>
+  <a href="#tab-decisions" data-tab="decisions">Decisions <span class="count">{{ st.decisions_open|length }} open</span></a>
+  <a href="#tab-whatif" data-tab="whatif">What-if</a>
+  <a href="#tab-timeline" data-tab="timeline">Timeline &amp; effort <span class="count">{{ tl.total_hours|round|int }} h</span></a>
+</nav>
+
+{# ================================================================ report #}
+<section class="tab" id="tab-report">
+  <div class="card mb">
+    <h2>Executive summary
+      <span class="narr-src">{{ 'AI draft (' ~ st.draft.model ~ '), checked against the figures, please review' if st.draft else 'template, built from the figures below' }}</span></h2>
+    {% set n = st.draft.output if st.draft else st.narrative %}
+    <p class="narr" style="margin-top:0">{{ n.executive_summary }}</p>
+    <ul class="list-clean">{% for m in n.key_messages %}<li>{{ m }}</li>{% endfor %}</ul>
+    <p><b>{{ n.recommendation }}</b></p>
+    <form method="post" action="{{ url_for('strategy.narrative') }}" class="inline">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <input type="hidden" name="actor" value="{{ current_actor }}">
+      <button class="btn ghost" type="submit" {{ 'disabled' if not settings.anthropic_api_key }}
+        title="Claude writes the narrative; any number not in the figures makes the draft invalid">
+        {{ 'Draft narrative with Claude' if settings.anthropic_api_key else 'Claude narrative: set ANTHROPIC_API_KEY' }}</button>
+    </form>
+  </div>
+
+  <div class="card mb">
+    <h2>Scope</h2>
+    <div class="funnel">
+      <div class="f"><div class="n">{{ s.okta_total }}</div><div class="l">apps in Okta</div></div>
+      <div class="f"><div class="n">{{ s.in_scope }}</div><div class="l">SAML ({{ s.saml }}) + OIDC ({{ s.oidc }}) in scope</div></div>
+      <div class="f"><div class="n">−{{ s.decommission }}</div><div class="l">decommission candidates</div></div>
+      <div class="f final"><div class="n">{{ s.to_migrate }}</div><div class="l">apps to migrate</div></div>
+      <div class="f"><div class="n">{{ s.users }}</div><div class="l">people affected (active where known)</div></div>
+    </div>
+    {% if s.decommission_apps %}<p class="small" style="margin-bottom:0">Decommission candidates: {{ s.decommission_apps|join(', ') }}</p>{% endif %}
+    <p class="small muted" style="margin-bottom:0">Usage known for {{ st.usage.known }} app(s) ({{ st.usage.days }} days from the Okta System Log){% if st.usage.unknown %}; {{ st.usage.unknown }} app(s) use assignment counts{% endif %}.</p>
+  </div>
+
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>Waves</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Wave</th><th class="num">Apps</th><th class="num">Users</th><th class="num">Effort (h)</th><th>Cutover</th></tr></thead><tbody>
+        {% for w in st.waves %}<tr><td><b>{{ w.wave }}</b><div class="small muted">{{ w.apps|join(', ') }}</div></td>
+          <td class="num">{{ w.count }}</td><td class="num">{{ w.users }}</td><td class="num">{{ w.hours }}</td>
+          <td class="nowrap">{{ w.cutover|dt('%d %b %Y') if w.cutover else '—' }}</td></tr>{% endfor %}
+        <tr><td><b>Directory prep</b></td><td></td><td></td><td class="num">{{ tl.prep_hours }}</td><td></td></tr>
+        </tbody></table></div>
+      <p class="small muted">{{ tl.start|dt('%d %b %Y') }} → {{ tl.end|dt('%d %b %Y') }} · {{ tl.total_hours|round|int }} h total</p>
+    </div>
+    <div class="card">
+      <h2>Approach</h2>
+      <ul class="list-clean small">{% for a in approach %}<li>{{ a }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+
+  <div class="grid g2 mb">
+    <div class="card">
+      <h2>Decisions needed <a class="small" href="#tab-decisions" onclick="document.querySelector('a[data-tab=decisions]').click();return false;">manage →</a></h2>
+      {% for v in st.decisions_open %}
+        <div class="small" style="margin-bottom:8px"><b>{{ v.d.title }}</b><br>
+          <span class="muted">{{ v.apps|length }} app(s){% if v.blocked_apps %} · <span style="color:var(--crit)">unblocks {{ v.blocked_apps|length }}</span>{% endif %} · owner {{ v.row.owner or v.d.owner }}</span></div>
+      {% else %}<p class="muted">No open decisions.</p>{% endfor %}
+    </div>
+    <div class="card">
+      <h2>Key risks</h2>
+      {% for r in st.risks %}
+        <div class="small" style="margin-bottom:8px"><span class="chip {{ r.severity }}">{{ r.severity|title }}</span> <b>{{ r.risk }}</b>
+          <div class="muted">{{ r.apps|join(', ') }}</div></div>
+      {% else %}<p class="muted">No critical risks.</p>{% endfor %}
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Next steps (two weeks)</h2>
+    <ol class="list-clean">{% for step in st.next_steps %}<li>{{ step }}</li>{% endfor %}</ol>
+  </div>
+</section>
+
+{# ================================================================ decisions #}
+<section class="tab" id="tab-decisions">
+  <p class="muted" style="margin-top:0">Recording a decision (any option) removes the blockers it settles and recalculates scores and waves.
+    Decisions are audited. They do not change apps' migration state.</p>
+  {% for v in reg %}{% set r = v.row %}
+  <div class="dec {{ r.status }} {{ 'block' if v.blocked_apps else '' }}">
+    <h3>{{ v.d.title }}
+      {% if r.status == 'DECIDED' %}<span class="chip OK">Decided</span>{% else %}<span class="chip {{ 'CRITICAL' if v.blocked_apps else 'WARNING' }}">Open</span>{% endif %}
+      {% if v.blocked_apps %}<span class="chip CRITICAL">unblocks {{ v.blocked_apps|length }} app(s)</span>{% endif %}
+      <span class="chip state plain">{{ v.apps|length }} app(s) · {{ v.users }} users</span></h3>
+    <div class="small muted">{{ v.d.why }}</div>
+    <div class="small" style="margin:6px 0">Apps: {% for a in v.apps %}<a href="{{ url_for('web.application', app_id=a.id) }}">{{ a.label }}</a>{{ ', ' if not loop.last }}{% endfor %}</div>
+    {% if r.status == 'DECIDED' %}
+      <p class="small" style="margin:6px 0"><b>{{ r.choice }}</b>. Decided by {{ r.decided_by }} on {{ r.decided_at|dt('%Y-%m-%d') }}{% if r.notes %} · {{ r.notes }}{% endif %}</p>
+      <form method="post" action="{{ url_for('strategy.decide', key=v.d.key) }}" class="inline">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}"><input type="hidden" name="reopen" value="1">
+        <input name="actor" value="{{ current_actor }}" placeholder="Your name" required style="width:150px">
+        <button class="btn ghost" type="submit">Reopen</button></form>
+    {% else %}
+      <form method="post" action="{{ url_for('strategy.decide', key=v.d.key) }}" class="inline" style="margin-top:6px">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <select name="choice"><option value="">(not decided yet)</option>{% for o in v.d.options %}<option>{{ o }}</option>{% endfor %}</select>
+        <input name="owner" value="{{ r.owner or v.d.owner }}" placeholder="Owner" style="width:170px">
+        <input type="date" name="due" value="{{ r.due_date|dt('%Y-%m-%d') if r.due_date else '' }}" title="Decision due">
+        <input name="notes" value="{{ r.notes or '' }}" placeholder="Notes / meeting ref" style="width:200px">
+        <input name="actor" value="{{ current_actor }}" placeholder="Your name" required style="width:140px">
+        <button class="btn" type="submit">Save</button></form>
+    {% endif %}
+  </div>
+  {% else %}<div class="card empty"><b>No decisions needed</b>Nothing in the discovered apps needs a migration-wide decision.</div>{% endfor %}
+</section>
+
+{# ================================================================ what-if #}
+<section class="tab" id="tab-whatif">
+  <div class="grid g-7-5">
+    <div class="card whatif">
+      <h2>Assume these open decisions are taken</h2>
+      <form method="get" action="{{ url_for('strategy.strategy') }}#tab-whatif">
+        {% for v in reg if v.row.status == 'OPEN' and (v.blocked_apps or v.d.removes_from_scope) %}
+          <label><input type="checkbox" name="assume" value="{{ v.d.key }}" {{ 'checked' if v.d.key in assumed }}>
+            <span><b>{{ v.d.title }}</b><br><span class="small muted">{% if v.d.removes_from_scope %}removes {{ v.apps|length }} app(s) from scope{% else %}unblocks {{ v.blocked_apps|length }} app(s){% endif %}</span></span></label>
+        {% else %}<p class="muted">No open decisions that change waves.</p>{% endfor %}
+        <button class="btn" type="submit" onclick="this.form.action='{{ url_for('strategy.strategy') }}#tab-whatif'">Simulate</button>
+        <a class="btn ghost" href="{{ url_for('strategy.strategy') }}#tab-whatif">Clear</a>
+      </form>
+    </div>
+    <div class="card">
+      <h2>Result</h2>
+      {% if sim %}
+        {% set d_end = (tl.end - sim_tl.end).days %}
+        <div class="grid g2">
+          <div class="kpi" style="padding:0"><div class="label">Finish</div><div class="value" style="font-size:22px">{{ sim_tl.end|dt('%d %b %Y') }}</div>
+            <div class="hint">{% if d_end > 0 %}<span class="delta-up">{{ d_end }} days earlier</span>{% elif d_end < 0 %}<span class="delta-down">{{ -d_end }} days later</span>{% else %}no change{% endif %} (now {{ tl.end|dt('%d %b %Y') }})</div></div>
+          <div class="kpi" style="padding:0"><div class="label">Effort</div><div class="value" style="font-size:22px">{{ sim_tl.total_hours|round|int }} h</div>
+            <div class="hint">now {{ tl.total_hours|round|int }} h</div></div>
+        </div>
+        <h3>Apps that move</h3>
+        {% for a, before, after in sim.moved %}
+          <div class="small" style="margin-bottom:5px"><b>{{ a.label }}</b>: {{ before }} → <b>{{ after }}</b></div>
+        {% else %}<p class="muted small">No app changes wave.</p>{% endfor %}
+        <p class="muted small">Nothing is saved. Record the decision on the Decisions tab to make it real.</p>
+      {% else %}<p class="muted">Tick one or more decisions and click Simulate to see how waves, finish date and effort change.</p>{% endif %}
+    </div>
+  </div>
+</section>
+
+{# ================================================================ timeline #}
+<section class="tab" id="tab-timeline">
+  <div class="card mb">
+    <h2>Timeline <span class="muted">{{ tl.start|dt('%d %b %Y') }} → {{ tl.end|dt('%d %b %Y') }}</span></h2>
+    {% if gantt %}
+    <div class="gantt">
+      <div class="g-ticks"><div></div><div class="t">{% for d in ticks %}<span style="left:{{ (100 * (d - tl.start).days / ((tl.end - tl.start).days or 1)) }}%">{{ d|dt('%d %b') }}</span>{% endfor %}</div></div>
+      {% for r in gantt %}
+        <div class="g-row"><div class="lab"><b>{{ r.p.wave }}</b> · {{ r.p.name }}</div>
+          <div class="g-track"><div class="g-bar k-{{ r.p.kind }}" style="left:{{ r.left }}%;width:{{ r.width }}%" title="{{ r.p.name }}: {{ r.p.start|dt('%d %b') }} → {{ r.p.end|dt('%d %b') }}">{{ r.p.start|dt('%d %b') }}</div></div></div>
+      {% endfor %}
+    </div>
+    <p class="legend" style="margin-top:10px"><span><span class="g-bar k-prep" style="position:static;display:inline-block;width:14px"></span> prep / decisions</span>
+      <span><span class="g-bar k-build" style="position:static;display:inline-block;width:14px"></span> build</span>
+      <span><span class="g-bar k-vendor" style="position:static;display:inline-block;width:14px"></span> vendor lead time</span>
+      <span><span class="g-bar k-pilot" style="position:static;display:inline-block;width:14px"></span> pilot</span>
+      <span><span class="g-bar k-cutover" style="position:static;display:inline-block;width:14px"></span> cutover</span>
+      <span><span class="g-bar k-hypercare" style="position:static;display:inline-block;width:14px"></span> hypercare</span></p>
+    {% else %}<p class="muted">No apps scheduled.</p>{% endif %}
+  </div>
+  <div class="grid g-7-5">
+    <div class="card">
+      <h2>Effort per app <span class="muted">hours before the {{ tl.settings.buffer_pct }}% buffer</span></h2>
+      <div class="table-wrap tall"><table><thead><tr><th>App</th><th class="num">Build</th><th class="num">Test &amp; cutover</th><th class="num">Total</th><th>Main drivers</th></tr></thead><tbody>
+        {% for e in efforts %}<tr><td><a href="{{ url_for('web.application', app_id=e.app.id) }}">{{ e.app.label }}</a> <span class="proto {{ e.app.protocol }}">{{ e.app.protocol }}</span></td>
+          <td class="num">{{ e.build }}</td><td class="num">{{ e.test }}</td><td class="num"><b>{{ e.total }}</b></td>
+          <td class="small muted">{{ e.drivers|join(', ') }}</td></tr>{% endfor %}
+      </tbody></table></div>
+    </div>
+    <div class="card">
+      <h2>Assumptions</h2>
+      {% set ps = tl.settings %}
+      <form method="post" action="{{ url_for('strategy.assumptions') }}">
+        <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+        <dl class="kv">
+          <dt>Start date</dt><dd><input type="date" name="start_date" value="{{ ps.start_date|dt('%Y-%m-%d') if ps.start_date else '' }}"></dd>
+          <dt>Engineers</dt><dd><input type="number" step="0.5" min="0.5" name="engineers" value="{{ ps.engineers }}" style="width:90px"></dd>
+          <dt>Hours / week each</dt><dd><input type="number" min="1" name="hours_per_week" value="{{ ps.hours_per_week }}" style="width:90px"></dd>
+          <dt>Vendor lead time (days)</dt><dd><input type="number" min="0" name="vendor_lead_days" value="{{ ps.vendor_lead_days }}" style="width:90px"></dd>
+          <dt>Pilot (days)</dt><dd><input type="number" min="0" name="pilot_days" value="{{ ps.pilot_days }}" style="width:90px"></dd>
+          <dt>Hypercare (days)</dt><dd><input type="number" min="0" name="hypercare_days" value="{{ ps.hypercare_days }}" style="width:90px"></dd>
+          <dt>Decisions within (days)</dt><dd><input type="number" min="0" name="decision_lead_days" value="{{ ps.decision_lead_days }}" style="width:90px"></dd>
+          <dt>Buffer (%)</dt><dd><input type="number" min="0" name="buffer_pct" value="{{ ps.buffer_pct }}" style="width:90px"></dd>
+          <dt>Your name</dt><dd><input name="actor" value="{{ current_actor }}" required></dd>
+        </dl>
+        <p style="margin:14px 0 0"><button class="btn" type="submit">Recalculate</button></p>
+      </form>
+      <p class="muted small">Waves run in order with one build team. SP-side changes need the vendor lead time. The Blocked wave starts after the
+        decision lead time. Calendar days.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

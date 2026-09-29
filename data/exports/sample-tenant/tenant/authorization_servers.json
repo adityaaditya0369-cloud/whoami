@@ -1,0 +1,65 @@
+[
+  {
+    "_embedded": {
+      "claims": [],
+      "policies": [],
+      "scopes": []
+    },
+    "audiences": [
+      "api://default"
+    ],
+    "default": true,
+    "id": "default",
+    "issuerMode": "ORG_URL",
+    "name": "default",
+    "status": "ACTIVE"
+  },
+  {
+    "_embedded": {
+      "claims": [
+        {
+          "name": "department",
+          "system": false,
+          "value": "user.department",
+          "valueType": "EXPRESSION"
+        },
+        {
+          "name": "roles",
+          "system": false,
+          "value": "isMemberOfGroupName(\"Finance\") ? \"finance\" : \"staff\"",
+          "valueType": "EXPRESSION"
+        }
+      ],
+      "policies": [
+        {
+          "conditions": {
+            "clients": {
+              "include": [
+                "0oa9ReportingSvc0009",
+                "0oa7EmpPortalClient01"
+              ]
+            }
+          },
+          "name": "API clients"
+        }
+      ],
+      "scopes": [
+        {
+          "name": "reports.read",
+          "system": false
+        },
+        {
+          "name": "openid",
+          "system": true
+        }
+      ]
+    },
+    "audiences": [
+      "api://northwind"
+    ],
+    "id": "aus0nwapi000000001",
+    "issuerMode": "CUSTOM_URL",
+    "name": "Northwind API",
+    "status": "ACTIVE"
+  }
+]
