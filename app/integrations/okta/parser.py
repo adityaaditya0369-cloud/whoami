@@ -101,7 +101,8 @@ _CUSTOM_SAML_KEYS = ("ssoAcsUrl", "audience")
 
 
 def parse_app(raw: dict) -> AppModel:
-    mode = raw.get("signOnMode", "UNKNOWN")
+    # Okta can return signOnMode: null (e.g. some bookmark/internal apps), so fall back on falsy too.
+    mode = raw.get("signOnMode") or "UNKNOWN"
     is_saml = mode in SAML_MODES
     settings = raw.get("settings") or {}
     sign_on = settings.get("signOn") or {}
@@ -179,7 +180,7 @@ def parse_app(raw: dict) -> AppModel:
 
     return AppModel(
         id=raw["id"], label=raw.get("label") or raw.get("name") or raw["id"],
-        okta_name=raw.get("name", ""), sign_on_mode=mode, okta_status=raw.get("status", "UNKNOWN"),
+        okta_name=raw.get("name") or "", sign_on_mode=mode, okta_status=raw.get("status") or "UNKNOWN",
         is_saml=is_saml, is_custom_saml=is_custom,
         created=_dt(raw.get("created")), last_updated=_dt(raw.get("lastUpdated")),
         user_name_template=(creds.get("userNameTemplate") or {}).get("template"),

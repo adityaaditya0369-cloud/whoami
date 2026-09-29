@@ -74,6 +74,14 @@ def test_parse_non_saml_app():
     assert not m.is_saml and m.saml is None
 
 
+def test_parse_app_with_null_sign_on_mode():
+    # Live Okta returns explicit nulls for some apps; they must not break discovery.
+    m = parser.parse_app({"id": "0oanull", "name": None, "label": "Odd app",
+                          "signOnMode": None, "status": None})
+    assert m.sign_on_mode == "UNKNOWN" and m.okta_status == "UNKNOWN" and m.okta_name == ""
+    assert not m.is_saml and not m.is_oidc
+
+
 def test_parse_key_extracts_thumbprints_and_dates():
     key = json.loads((SAMPLE / "apps" / "0oa2hranalytics0002" / "keys.json").read_text())[0]
     c = parser.parse_key(key)

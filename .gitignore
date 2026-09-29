@@ -11,3 +11,8 @@ __pycache__/
 .venv/
 data/demo/
 instance/
+# Live reports contain customer data; the committed sample_* reports stay tracked
+out/
+/migration_report.xlsx
+/migration-strategy-pack.xlsx
+/migration-strategy-pack.docx
